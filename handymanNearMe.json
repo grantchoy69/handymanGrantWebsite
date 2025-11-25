@@ -1,0 +1,34 @@
+{
+  "seoTitle": "Handyman Near Me — Handyman Grant San Diego",
+  "metaDescription": "Local handyman near you in Greater San Diego. Fast, reliable help with small jobs, home repairs, and punch lists. No contractor minimums.",
+  "heroId": "handyman-near-me",
+  "heroHeading": "Local Handyman Near You in Greater San Diego.",
+  "heroSubheading": "Fast, reliable help with small jobs and home repairs — without the contractor runaround.",
+  "primaryCtaText": "Call / Text for Handyman Help",
+  "primaryCtaHref": "tel:YOUR_PHONE_HERE",
+  "secondaryCtaText": "Request a Handyman Quote",
+  "secondaryCtaHref": "#contact",
+  "badges": [
+    "Small jobs welcome",
+    "Same-week scheduling",
+    "Insured",
+    "Clear, honest pricing"
+  ],
+  "servicesHeading": "Handyman Services",
+  "serviceBullets": [
+    "Fixing loose hinges, handles, and hardware",
+    "Adjusting doors that stick or don't latch",
+    "Caulking and sealing tubs, sinks, and counters",
+    "Minor leaks, drips, and plumbing issues",
+    "Installing shelves, curtain rods, and hardware",
+    "Touch-up repairs and small cosmetic fixes"
+  ],
+  "whyHeading": "Why Hire Handyman Grant?",
+  "whyBullets": [
+    "Fast response and clear communication.",
+    "Perfect for small to medium repairs other contractors avoid.",
+    "Respectful, clean work in your home.",
+    "Straightforward pricing with no surprises.",
+    "Locally based — no waiting weeks for help."
+  ]
+}
