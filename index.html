@@ -217,7 +217,9 @@ function gtag_report_conversion(url) {
         <span>Handyman Grant<br><small>San Diego • Licensed ≤$1,000 jobs</small></span>
       </div>
       <nav>
-        <a class="btn" href="#contact">Get a Quote</a>
+          <a class="btn"
+     href="#contact"
+     onclick="return gtag_report_conversion('#contact');">Get a Quote</a>
       </nav>
     </div>
   </header>
@@ -346,8 +348,9 @@ function gtag_report_conversion(url) {
     </div>
   </footer>
 
-  <div class="floating-call"><a href="tel:+16196954334">📞 Call Grant</a></div>
-
+  <div class="floating-call">
+    <a href="tel:+16196954334" onclick="return gtag_report_conversion('tel:6196954334');">📞 Call Grant</a>
+  </div>
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>

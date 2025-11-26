@@ -217,7 +217,9 @@ function gtag_report_conversion(url) {
         <span>Handyman Grant<br><small>San Diego • Licensed ≤$1,000 jobs</small></span>
       </div>
       <nav>
-        <a class="btn" href="#contact">Get a Quote</a>
+          <a class="btn"
+     href="#contact"
+     onclick="return gtag_report_conversion('#contact');">Get a Quote</a>
       </nav>
     </div>
   </header>
@@ -229,7 +231,7 @@ function gtag_report_conversion(url) {
         <p>Restore privacy, security, and curb appeal with professional fence repair.</p>
         <div class="cta-row">
           <a class="cta" href="tel:YOUR_PHONE_HERE" onclick="return gtag_report_conversion('tel:YOUR_PHONE_HERE');">Call for Fence Repair</a>
-          <a class="cta secondary" href="#contact" onclick="return gtag_report_conversion('#contact');">Request Fence Repair Quote</a>
+          <a class="cta" href="#contact" onclick="return gtag_report_conversion('#contact');">Request Fence Repair Quote</a>
         </div>
         <div class="badges">
           <span class="badge">Wood fence repair</span>
@@ -312,8 +314,9 @@ ooter class="foot">
     </div>
   </footer>
 
-  <div class="floating-call"><a href="tel:+16196954334">📞 Call Grant</a></div>
-
+  <div class="floating-call">
+    <a href="tel:+16196954334" onclick="return gtag_report_conversion('tel:6196954334');">📞 Call Grant</a>
+  </div>
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
