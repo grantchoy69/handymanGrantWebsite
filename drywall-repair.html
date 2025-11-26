@@ -189,7 +189,25 @@
 }
 
   </style>
-  <!-- Google tag (gtag.js) --> <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17749862714"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'AW-17749862714'); </script> 
+  <!-- Google tag (gtag.js) --> <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17749862714"></script> 
+  <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'AW-17749862714'); </script> 
+  <!-- Event snippet for Request Quote Button Click conversion page
+In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+<script>
+function gtag_report_conversion(url) {
+  var callback = function () {
+    if (typeof(url) != 'undefined') {
+      window.location = url;
+    }
+  };
+  gtag('event', 'conversion', {
+      'send_to': 'AW-17749862714/nReaCO3k_8YbELrS5Y9C',
+      'event_callback': callback
+  });
+  return false;
+}
+</script>
+
 </head>
 <body>
   <header>
@@ -210,8 +228,8 @@
         <h1>Clean, seamless drywall repair in Greater San Diego.</h1>
         <p>Holes, dents, cracks, and texture fixes with a paint-ready finish — without the contractor runaround.</p>
         <div class="cta-row">
-          <a class="cta" href="tel:+16196954334">Call for Drywall Repair</a>
-          <a class="cta secondary" href="#contact">Request Drywall Quote</a>
+          <a class="cta" href="tel:+16196954334" onclick="return gtag_report_conversion('tel:+16196954334');">Call for Drywall Repair</a>
+          <a class="cta secondary" href="#contact" onclick="return gtag_report_conversion('#contact');">Request Drywall Quote</a>
         </div>
         <div class="badges">
           <span class="badge">Small drywall jobs welcome</span>

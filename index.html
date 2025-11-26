@@ -189,14 +189,23 @@
 }
 
   </style>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17749862714"></script>
+  <!-- Google tag (gtag.js) --> <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17749862714"></script> 
+  <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'AW-17749862714'); </script> 
+  <!-- Event snippet for Request Quote Button Click conversion page
+In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'AW-17749862714');
+function gtag_report_conversion(url) {
+  var callback = function () {
+    if (typeof(url) != 'undefined') {
+      window.location = url;
+    }
+  };
+  gtag('event', 'conversion', {
+      'send_to': 'AW-17749862714/nReaCO3k_8YbELrS5Y9C',
+      'event_callback': callback
+  });
+  return false;
+}
 </script>
 
 </head>
@@ -220,8 +229,11 @@
         <p>TV mounting • drywall patches • faucet swaps • light fixtures • caulking • furniture assembly • door & lock fixes.
         Serving San Diego neighborhoods with clear pricing and clean work.</p>
         <div class="cta-row">
-          <a class="cta" href="tel:+16193473646">Call (619) 695‑4334</a>
-          <a class="cta secondary" href="#contact">Request a Quote</a>
+          <a class="cta" href="tel:+16196954334" onclick="return gtag_report_conversion('tel:6196954334');">Call (619) 695‑4334</a>
+          <a class="cta" href="#contact" onclick="return gtag_report_conversion('#contact');">
+  Request a Quote
+</a>
+
         </div>
         <div class="badges">
           <span class="badge">Insured</span>

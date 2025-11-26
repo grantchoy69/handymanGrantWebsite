@@ -189,18 +189,26 @@
 }
 
   </style>
-  <!-- Google tag (gtag.js) --> <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17749862714"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'AW-17749862714'); </script> 
-</head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17749862714"></script>
+  <!-- Google tag (gtag.js) --> <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17749862714"></script> 
+  <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'AW-17749862714'); </script> 
+  <!-- Event snippet for Request Quote Button Click conversion page
+In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'AW-17749862714');
+function gtag_report_conversion(url) {
+  var callback = function () {
+    if (typeof(url) != 'undefined') {
+      window.location = url;
+    }
+  };
+  gtag('event', 'conversion', {
+      'send_to': 'AW-17749862714/nReaCO3k_8YbELrS5Y9C',
+      'event_callback': callback
+  });
+  return false;
+}
 </script>
 
+</head>
 <body>
   <header>
     <div class="container nav">
@@ -220,8 +228,8 @@
         <h1>Local Handyman Near You in Greater San Diego.</h1>
         <p>Fast, reliable help with small jobs and home repairs — without the contractor runaround.</p>
         <div class="cta-row">
-          <a class="cta" href="tel:YOUR_PHONE_HERE">Call / Text for Handyman Help</a>
-          <a class="cta secondary" href="#contact">Request a Handyman Quote</a>
+          <a class="cta" href="tel:YOUR_PHONE_HERE" onclick="return gtag_report_conversion('tel:YOUR_PHONE_HERE');">Call / Text for Handyman Help</a>
+          <a class="cta secondary" href="#contact" onclick="return gtag_report_conversion('#contact');">Request a Handyman Quote</a>
         </div>
         <div class="badges">
           <span class="badge">Small jobs welcome</span>

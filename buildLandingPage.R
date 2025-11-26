@@ -14,7 +14,7 @@ generateLandingPage <- function(indexPath, pageSlug, jsonPath) {
   
   # Locate structural markers in index.html
   mainStart    <- regexpr("<main class=\"container\">", indexText)
-  footerStart  <- regexpr("<footer class=\"foot\">", indexText)
+  footerStart  <- regexpr("<footer", indexText)
   contactStart <- regexpr("<section id=\"contact\"", indexText)
   mainEnd      <- regexpr("</main>", indexText)
   
@@ -32,23 +32,56 @@ generateLandingPage <- function(indexPath, pageSlug, jsonPath) {
     headHtml <- sub("(<title>)(.*?)(</title>)",
                     paste0("\\1", config$seoTitle, "\\3"),
                     headHtml)
-    headHtml <- sub("(<meta property=\"og:title\" content=\")[^\"]*(\" />)",
+    headHtml <- sub("(<meta property=\"og:title\" content=\")[^\"]*(\" */?>)",
                     paste0("\\1", config$seoTitle, "\\2"),
                     headHtml)
   }
   
   if (!is.null(config$metaDescription)) {
-    headHtml <- sub("(<meta name=\"description\" content=\")[^\"]*(\"/>)",
+    headHtml <- sub("(<meta name=\"description\" content=\")[^\"]*(\" */?>)",
                     paste0("\\1", config$metaDescription, "\\2"),
                     headHtml)
-    headHtml <- sub("(<meta property=\"og:description\" content=\")[^\"]*(\" />)",
+    headHtml <- sub("(<meta property=\"og:description\" content=\")[^\"]*(\" */?>)",
                     paste0("\\1", config$metaDescription, "\\2"),
                     headHtml)
+  }
+  
+  # ---- Ensure Google Ads gtag + conversion function in <head> ----
+  # Global site tag + conversion helper for Request Quote
+  gaSnippet <- paste(
+    "<script async src=\"https://www.googletagmanager.com/gtag/js?id=AW-17749862714\"></script>",
+    "<script>",
+    "  window.dataLayer = window.dataLayer || [];",
+    "  function gtag(){dataLayer.push(arguments);}",
+    "  gtag('js', new Date());",
+    "  gtag('config', 'AW-17749862714');",
+    "</script>",
+    "<script>",
+    "function gtag_report_conversion(url) {",
+    "  var callback = function () {",
+    "    if (typeof(url) != 'undefined') {",
+    "      window.location = url;",
+    "    }",
+    "  };",
+    "  gtag('event', 'conversion', {",
+    "      'send_to': 'AW-17749862714/nReaCO3k_8YbELrS5Y9C',",
+    "      'event_callback': callback",
+    "  });",
+    "  return false;",
+    "}",
+    "</script>",
+    sep = "\n"
+  )
+  
+  # Only inject once per page
+  if (!grepl("AW-17749862714", headHtml, fixed = TRUE)) {
+    headHtml <- sub("</head>", paste0(gaSnippet, "\n</head>"), headHtml, ignore.case = TRUE)
   }
   
   # ---- Build hero section from JSON ----
   heroId <- if (!is.null(config$heroId)) config$heroId else pageSlug
   
+  # badges
   badgesHtml <- ""
   if (!is.null(config$badges) && length(config$badges) > 0) {
     badgeLines <- paste(
@@ -60,15 +93,24 @@ generateLandingPage <- function(indexPath, pageSlug, jsonPath) {
     badgesHtml <- paste(badgeLines, collapse = "\n")
   }
   
+  # CTAs with conversion tracking
+  primaryHref   <- config$primaryCtaHref
+  secondaryHref <- config$secondaryCtaHref
+  
+  primaryOnclick <- paste0("return gtag_report_conversion('", primaryHref, "');")
+  secondaryOnclick <- paste0("return gtag_report_conversion('", secondaryHref, "');")
+  
   heroHtml <- paste0(
     "    <section class=\"hero\" id=\"", heroId, "\">\n",
     "      <div>\n",
     "        <h1>", config$heroHeading, "</h1>\n",
     "        <p>", config$heroSubheading, "</p>\n",
     "        <div class=\"cta-row\">\n",
-    "          <a class=\"cta\" href=\"", config$primaryCtaHref, "\">",
+    "          <a class=\"cta\" href=\"", primaryHref,
+    "\" onclick=\"", primaryOnclick, "\">",
     config$primaryCtaText, "</a>\n",
-    "          <a class=\"cta secondary\" href=\"", config$secondaryCtaHref, "\">",
+    "          <a class=\"cta secondary\" href=\"", secondaryHref,
+    "\" onclick=\"", secondaryOnclick, "\">",
     config$secondaryCtaText, "</a>\n",
     "        </div>\n",
     "        <div class=\"badges\">\n",

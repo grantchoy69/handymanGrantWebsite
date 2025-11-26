@@ -15,3 +15,8 @@ generateLandingPage("index.html", "light-fixture-installation", "lightFixtureIns
 generateLandingPage("index.html", "ceiling-fan-installation", "ceilingFanInstallation.json")
 generateLandingPage("index.html", "door-repair", "doorRepair.json")
 generateLandingPage("index.html", "fence-repair", "fenceRepair.json")
+generateLandingPage(
+  indexPath = "index.html",
+  pageSlug  = "handyman-near-me",
+  jsonPath  = "handymanNearMe.json"
+)
