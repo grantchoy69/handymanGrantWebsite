@@ -2,16 +2,16 @@
 <html lang="en">
 <head>
 
-<!-- Google tag (gtag.js) --> 
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17749862714"></script> 
-<script> 
-  window.dataLayer = window.dataLayer || []; 
-  function gtag(){dataLayer.push(arguments);} 
-  gtag('js', new Date()); 
-  gtag('config', 'AW-17749862714'); 
-</script> 
-<!-- Event snippet for Request Quote Button Click conversion page
-In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+<!-- Google tag (gtag.js) - Google Ads -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17749862714"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-17749862714');
+</script>
+
+<!-- Event snippet for Request Quote Button Click conversion -->
 <script>
   function gtag_report_conversion(url) {
     try {
@@ -26,11 +26,11 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
           'event_callback': callback
         });
       } else {
-        // gtag not ready; just go to the URL
+        // gtag not ready; just follow the link
         callback();
       }
     } catch (e) {
-      // If something explodes, still let the click work
+      // If something breaks, still follow the link
       if (url) {
         window.location = url;
       }
@@ -238,7 +238,7 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
       <nav>
         <a class="btn"
         href="#contact"
-        onclick="return gtag_report_conversion();">Get a Quote</a>
+        onclick="gtag_report_conversion('#contact');">Get a Quote</a>
       </nav>
     </div>
   </header>
@@ -250,8 +250,8 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
         <p>TV mounting • drywall patches • faucet swaps • light fixtures • caulking • furniture assembly • door & lock fixes.
         Serving San Diego neighborhoods with clear pricing and clean work.</p>
         <div class="cta-row">
-          <a class="cta" href="tel:+16196954334" onclick="return gtag_report_conversion();">Call (619) 695‑4334</a>
-          <a class="cta" href="#contact" onclick="return gtag_report_conversion();">
+          <a class="cta" href="tel:+16196954334" onclick="gtag_report_conversion('tel:+16196954334');">Call (619) 695‑4334</a>
+          <a class="cta" href="#contact" onclick="gtag_report_conversion('#contact');">
             Request a Quote
           </a>
 
@@ -368,7 +368,7 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
   </footer>
 
   <div class="floating-call">
-    <a href="tel:+16196954334" onclick="return gtag_report_conversion('tel:+16196954334');">📞 Call Grant</a>
+    <a href="tel:+16196954334" onclick="gtag_report_conversion('tel:+16196954334');">📞 Call Grant</a>
   </div>
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
