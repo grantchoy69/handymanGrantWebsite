@@ -7,6 +7,22 @@ generateLandingPage <- function(indexPath, pageSlug, jsonPath) {
   # ----- read index.html -----
   indexLines <- readLines(indexPath, warn = FALSE)
   indexText  <- paste(indexLines, collapse = "\n")
+  # ----- robust Meet Grant section extraction -----
+  meetGrantMatch <- regexpr(
+    "<section id=\"meet-grant\"[\\s\\S]*?</section>",
+    indexText,
+    perl = TRUE
+  )
+  
+  if (meetGrantMatch[1] == -1) {
+    meetGrantHtml <- ""
+  } else {
+    meetGrantHtml <- substr(
+      indexText,
+      meetGrantMatch[1],
+      meetGrantMatch[1] + attr(meetGrantMatch, "match.length") - 1
+    )
+  }
   
   # ----- load config JSON -----
   cfg <- jsonlite::fromJSON(jsonPath)
@@ -129,6 +145,7 @@ generateLandingPage <- function(indexPath, pageSlug, jsonPath) {
   # ----- assemble new <main> -----
   mainHtml <- paste0(
     heroHtml, "\n",
+    meetGrantHtml, "\n",
     servicesHtml, "\n",
     whyHtml, "\n",
     contactHtml, "\n",
