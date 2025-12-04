@@ -16,6 +16,6 @@ generateLandingPage("index.html", "ceiling-fan-installation", "ceilingFanInstall
 generateLandingPage("index.html", "door-repair", "doorRepair.json")
 generateLandingPage("index.html", "fence-repair", "fenceRepair.json")
 
-generateLandingPage("index.html", "handyman-for-women-and-seniors", "handymanWomenSeniors.json")
-generateLandingPage("index.html", "senior-home-repairs", "seniorHomeRepairs.json")
-generateLandingPage("index.html", "aging-in-place-home-help", "agingInPlace.json")
+generateLandingPage("index.html", "handyman-for-women-and-seniors", "handymanWomenSeniors.json", TRUE)
+generateLandingPage("index.html", "senior-home-repairs", "seniorHomeRepairs.json", TRUE)
+generateLandingPage("index.html", "aging-in-place-home-help", "agingInPlace.json", TRUE)

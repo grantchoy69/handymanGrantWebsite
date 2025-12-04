@@ -1,4 +1,4 @@
-generateLandingPage <- function(indexPath, pageSlug, jsonPath) {
+generateLandingPage <- function(indexPath, pageSlug, jsonPath, aboutMe = FALSE) {
   if (!requireNamespace("jsonlite", quietly = TRUE)) {
     stop("Please install jsonlite: install.packages('jsonlite')")
   }
@@ -14,7 +14,11 @@ generateLandingPage <- function(indexPath, pageSlug, jsonPath) {
     perl = TRUE
   )
   
-  if (meetGrantMatch[1] == -1) {
+  if (!aboutMe) {
+    # feature disabled for this page
+    meetGrantHtml <- ""
+  } else if (meetGrantMatch[1] == -1) {
+    # enabled, but section missing in index.html
     meetGrantHtml <- ""
   } else {
     meetGrantHtml <- substr(
@@ -23,6 +27,7 @@ generateLandingPage <- function(indexPath, pageSlug, jsonPath) {
       meetGrantMatch[1] + attr(meetGrantMatch, "match.length") - 1
     )
   }
+  
   
   # ----- load config JSON -----
   cfg <- jsonlite::fromJSON(jsonPath)
