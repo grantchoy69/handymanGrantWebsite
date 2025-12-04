@@ -13,8 +13,8 @@ generateLandingPage <- function(indexPath, pageSlug, jsonPath) {
   
   # ----- find structural markers in index.html -----
   mainStart    <- regexpr("<main class=\"container\">", indexText)
-  footerStart  <- regexpr("<footer class=\"foot\">", indexText)
-  contactStart <- regexpr("<section id=\"contact\"", indexText) - 1
+  footerStart  <- regexpr("<footer class=\"foot\">", indexText) - 2
+  contactStart <- regexpr("<section id=\"contact\"", indexText) - 2
   mainEnd      <- regexpr("</main>", indexText) 
   
   if (mainStart == -1 || footerStart == -1 ||
