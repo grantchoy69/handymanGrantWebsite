@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
 <!-- Google tag (gtag.js) - Google Ads -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17749862714"></script>
 <script>
@@ -226,6 +227,29 @@
       font-size: 0.7rem;
     }
   }
+/* Modal background */
+.image-modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.8);
+  justify-content: center;
+  align-items: center;
+}
+
+/* The zoomed-in image */
+.image-modal img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 8px;
+}
+
+/* Close cursor */
+.image-modal:hover {
+  cursor: zoom-out;
+}
 
 </style>
 
@@ -233,11 +257,14 @@
 <body>
   <header>
     <div class="container nav">
-      <div class="brand">
-        <div class="logo">🛠️</div>
-        <span>Handyman Grant<br><small>San Diego • Licensed ≤$1,000 jobs</small></span>
-      </div>
-      <nav>
+      <a href="index.html" style="text-decoration: none; color: inherit; cursor: pointer;">
+  <div class="brand">
+    <div class="logo">🛠️</div>
+    <span>Handyman Grant<br><small>San Diego • Licensed ≤$1,000 jobs</small></span>
+  </div>
+</a>
+      <nav style="display: flex; gap: 0.8rem;">
+        <a class="btn" href="work.html">See My Work</a>
         <a class="btn"
         href="#contact"
         onclick="gtag_report_conversion('#contact');">Get a Quote</a>
@@ -262,6 +289,7 @@
         </div>
       </div>
     </section>
+
 
     <section id="services">
       <h2>Toilet Installation Services</h2>
@@ -341,5 +369,25 @@
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
+  <script>
+function openImageModal(src) {
+  const modal = document.getElementById('imageModal');
+  const modalImg = document.getElementById('imageModalImg');
+
+  modalImg.src = src;
+  modal.style.display = 'flex';
+}
+
+document.addEventListener('click', function(e) {
+  const modal = document.getElementById('imageModal');
+  if (e.target === modal) {
+    modal.style.display = 'none';
+  }
+});
+</script>
+<div id="imageModal" class="image-modal">
+  <img id="imageModalImg" src="">
+</div>
+
 </body>
 </html>
