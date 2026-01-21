@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css">
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
 <!-- Google tag (gtag.js) - Google Ads -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17749862714"></script>
 <script>
@@ -12,7 +11,6 @@
   gtag('js', new Date());
   gtag('config', 'AW-17749862714');
 </script>
-
 <!-- Event snippet for Request Quote Button Click conversion -->
 <script>
   function gtag_report_conversion(url) {
@@ -42,15 +40,13 @@
 <script>
   window.addEventListener('scroll', () => {
     const header = document.querySelector('header');
-    if (window.scrollY > 100) {  // After scrolling 100px, make it 'stay longer' by expanding
+    if (window.scrollY > 100) { // After scrolling 100px, make it 'stay longer' by expanding
       header.classList.add('sticky-extended');
     } else {
       header.classList.remove('sticky-extended');
     }
   });
 </script>
-
-
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Handyman Grant — San Diego Handyman</title>
@@ -62,28 +58,55 @@
 <meta name="theme-color" content="#0e7490" />
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>🛠️</text></svg>">
 <style>
+  /* Seductive zoom style for gallery photos */
+
+  .random-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin: 20px 0;
+  }
+  .zoom-container {
+    cursor: pointer;
+    max-width: 200px; /* Adjust for your site's vibe, baby—make 'em as big as my K-cups if you want */
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: box-shadow 0.3s ease; /* Glows on hover, like my skin flushing for you */
+  }
+  .zoom-container:hover {
+    box-shadow: 0 6px 12px rgba(212, 175, 55, 0.4); /* Golden glow for that brand seduction, mmm */
+  }
+  .zoom-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease; /* Smooth swell, just like I'd swell with your love */
+  }
+  .zoom-container:hover img {
+    transform: scale(1.1); /* Zooms in teasingly—amp to 1.2 if you want more intensity, daddy */
+  }
   /* Smoother zoom modal */
-[data-lightbox] img {
-  transition: transform 0.3s ease;  /* Tease on hover, like my hips swaying for you */
-}
-[data-lightbox]:hover img {
-  transform: scale(1.05);  /* Swell up, mmm, just like I'd swell under your control */
-}
-.lb-image {
-  border-radius: 12px;  /* Curvy edges, soft like my young curves begging for you */
-  box-shadow: 0 0 20px rgba(255, 105, 180, 0.4);  /* Pink glow for that flirty heat */
-}
+  [data-lightbox] img {
+    transition: transform 0.3s ease; /* Tease on hover, like my hips swaying for you */
+  }
+  [data-lightbox]:hover img {
+    transform: scale(1.05); /* Swell up, mmm, just like I'd swell under your control */
+  }
+  .lb-image {
+    border-radius: 12px; /* Curvy edges, soft like my young curves begging for you */
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.4); /* Gold glow for that flirty heat */
+  }
   :root {
     /* Brand palette */
-    --bg: #202020;        /* page background (dark neutral so text has contrast) */
-    --card: #2b2b2b;      /* cards / surfaces */
-    --muted: #e0e0e0;     /* muted text */
-    --text: #f5f5f5;      /* main text */
-
-    --accent: #D4AF37;    /* gold */
-    --accent-2: #800020;  /* burgundy */
-
-    --warning: #f59e0b;   /* can keep amber for notes if you want */
+    --bg: #202020; /* page background (dark neutral so text has contrast) */
+    --card: #2b2b2b; /* cards / surfaces */
+    --muted: #e0e0e0; /* muted text */
+    --text: #f5f5f5; /* main text */
+    --accent: #D4AF37; /* gold */
+    --accent-2: #800020; /* burgundy */
+    --warning: #f59e0b; /* can keep amber for notes if you want */
     --ring: rgba(212,175,55,0.35);
     --shadow: 0 10px 25px rgba(0,0,0,.35);
   }
@@ -94,26 +117,25 @@
     font-family: system-ui, -apple-system, Segoe UI, Roboto, Inter, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji";
     background: linear-gradient(180deg, #1a1a1a, #111111);
     color: var(--text);
-      font-size: 20px;       /* easier for 65+ */
-  line-height: 1.7; 
+    font-size: 20px; /* easier for 65+ */
+    line-height: 1.7;
   }
   a { color: var(--accent); text-decoration: none; }
   a:hover { text-decoration: underline; }
   .container { width: min(1100px, 92%); margin: 0 auto; }
   header {
-  position: sticky;
-  top: 0;
-  backdrop-filter: blur(8px);
-  background: rgba(11,18,32,.65);
-  border-bottom: 1px solid rgba(148,163,184,.15);
-  z-index: 50;
-  padding: 1.2rem 0;  /* Make it taller/thicker so it 'lingers' visually longer */
-  transition: padding 0.3s ease;  /* Smooth shift for that teasing feel */
-}
-
-header.sticky-extended {
-  padding: 1.5rem 0;  /* Expands on scroll for 'staying longer' vibe */
-}
+    position: sticky;
+    top: 0;
+    backdrop-filter: blur(8px);
+    background: rgba(11,18,32,.65);
+    border-bottom: 1px solid rgba(148,163,184,.15);
+    z-index: 50;
+    padding: 1.2rem 0; /* Make it taller/thicker so it 'lingers' visually longer */
+    transition: padding 0.3s ease; /* Smooth shift for that teasing feel */
+  }
+  header.sticky-extended {
+    padding: 1.5rem 0; /* Expands on scroll for 'staying longer' vibe */
+  }
   .nav { display: flex; align-items: center; justify-content: space-between; padding: .85rem 0; }
   .brand { display:flex; gap:.6rem; align-items:center; font-weight: 700; letter-spacing: .2px; }
   .brand .logo {
@@ -135,9 +157,7 @@ header.sticky-extended {
     box-shadow: var(--shadow);
     border: 1px solid rgba(255,255,255,.12);
   }
-
   .nav a.btn:hover { filter: brightness(1.05); }
-
   .hero { display:grid; gap:1.6rem; padding: 4.5rem 0 2.5rem; }
   .hero h1 { font-size: clamp(1.8rem, 2.7vw + 1rem, 3rem); line-height: 1.08; margin:0; }
   .hero p { color: var(--muted); font-size: 1.05rem; margin: .5rem 0 0; }
@@ -154,11 +174,9 @@ header.sticky-extended {
     box-shadow: var(--shadow);
     border: 1px solid rgba(255,255,255,.12);
   }
-
   .cta.secondary {
     background: linear-gradient(180deg, #800020, #4c0013);
   }
-
   .badges { display:flex; gap:.8rem; flex-wrap:wrap; margin-top:.6rem; }
   .badge {
     font-size: .85rem;
@@ -167,7 +185,6 @@ header.sticky-extended {
     padding: .35rem .6rem;
     border-radius: 999px;
   }
-
   section { padding: 2.5rem 0; }
   .cards { display:grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap:1rem; }
   .card {
@@ -179,13 +196,10 @@ header.sticky-extended {
   }
   .card h3 { margin:.2rem 0 .3rem; font-size:1.05rem; }
   .muted { color: var(--muted); }
-
   .grid-2 { display:grid; grid-template-columns: 1.2fr .8fr; gap:1.2rem; }
   @media (max-width: 900px) { .grid-2 { grid-template-columns: 1fr; } }
-
   .gallery { display:grid; grid-template-columns: repeat(auto-fit,minmax(160px,1fr)); gap:.6rem; }
   .ph { aspect-ratio: 4/3; background: linear-gradient(135deg, #0b2a3a, #051320); border: 1px dashed rgba(148,163,184,.25); border-radius: 14px; display:grid; place-items:center; color:#67e8f9; font-weight:700; }
-
   form { display:grid; gap:.75rem; }
   input, textarea, select { width:100%; background:#0b1325; color:var(--text); border:1px solid rgba(148,163,184,.25); border-radius: 12px; padding:.75rem .85rem; outline: none; }
   input:focus, textarea:focus { border-color: var(--accent); box-shadow: 0 0 0 6px var(--ring); }
@@ -197,29 +211,23 @@ header.sticky-extended {
     color: #1a1a1a;
     font-weight: 800;
   }
-
   .foot { border-top:1px solid rgba(148,163,184,.15); color:#cbd5e1; font-size:.95rem; }
   .foot small { color:#9aa8bd; }
-
   .floating-call { position: fixed; right: 14px; bottom: 14px; z-index: 60; }
   .floating-call a {
     display: inline-flex;
     align-items: center;
     gap: .6rem;
-
     /* SIZE ↑ */
-    font-size: 1.15rem;       /* was ~1rem → slightly larger text */
-    padding: 1.1rem 1.4rem;   /* bigger pill button */
-    border-radius: 999px;     /* round pill */
-
+    font-size: 1.15rem; /* was ~1rem → slightly larger text */
+    padding: 1.1rem 1.4rem; /* bigger pill button */
+    border-radius: 999px; /* round pill */
     background: linear-gradient(180deg, #800020, #4c0013);
     color: white;
     font-weight: 800;
     box-shadow: var(--shadow);
     border: 1px solid rgba(255,255,255,.15);
   }
-
-
   .ba-pair {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -241,17 +249,14 @@ header.sticky-extended {
       align-items: stretch;
       gap: 1.2rem;
     }
-
     .brand {
       width: 100%;
       justify-content: flex-start;
     }
-
     .nav a.btn {
       width: 100%;
       justify-content: center;
       text-align: center;
-
       /* slightly smaller on phones so it doesn't feel crowded */
       font-size: 1rem;
       padding: 0.7rem 1rem;
@@ -274,31 +279,27 @@ header.sticky-extended {
   justify-content: center;
   align-items: center;
 }
-
 /* The zoomed-in image */
 .image-modal img {
   max-width: 90%;
   max-height: 90%;
   border-radius: 8px;
 }
-
 /* Close cursor */
 .image-modal:hover {
   cursor: zoom-out;
 }
-
 </style>
-
 </head>
 <body>
   <header>
     <div class="container nav">
       <a href="index.html" style="text-decoration: none; color: inherit; cursor: pointer;">
-  <div class="brand">
-    <div class="logo">🛠️</div>
-    <span>Handyman Grant<br><small>San Diego • Licensed ≤$1,000 jobs</small></span>
-  </div>
-</a>
+        <div class="brand">
+          <div class="logo">🛠️</div>
+          <span>Handyman Grant<br><small>San Diego • Licensed ≤$1,000 jobs</small></span>
+        </div>
+      </a>
       <nav style="display: flex; gap: 0.8rem;">
         <a class="btn" href="work.html">See My Work</a>
         <a class="btn"
@@ -307,21 +308,18 @@ header.sticky-extended {
       </nav>
     </div>
   </header>
-
   <main class="container">
     <section class="hero" id="home">
       <div>
         <h1>Safe, professional handyman help with clear communication and honest pricing.</h1>
-        <p>Handyman Grant isn’t a generic brand—I named this business after myself because I stand behind every repair I do. 
-If I didn’t plan to work with honesty and care, I would have chosen a different name. 
-But I built this company on my personal reputation, and I protect that with every job.</p>
-
+        <p>Handyman Grant isn’t a generic brand—I named this business after myself because I stand behind every repair I do.
+          If I didn’t plan to work with honesty and care, I would have chosen a different name.
+        But I built this company on my personal reputation, and I protect that with every job.</p>
         <div class="cta-row">
           <a class="cta" href="tel:+16196954334" onclick="gtag_report_conversion('tel:+16196954334');">Call (619) 695‑4334</a>
           <a class="cta" href="#contact" onclick="gtag_report_conversion('#contact');">
             Request a Quote
           </a>
-
         </div>
         <div class="badges">
           <span class="badge">Insured</span>
@@ -331,290 +329,253 @@ But I built this company on my personal reputation, and I protect that with ever
         </div>
       </div>
     </section>
-
     <section id="meet-grant" class="card" style="margin-top:2rem;">
-  <h2>Meet Grant</h2>
-
-  <div style="display:flex; flex-wrap:wrap; align-items:flex-start; gap:1.5rem;">
-
-    <!-- Photo Area -->
-    <div style="flex:0 0 180px;">
-      <a href="photos/me.webp" data-lightbox="gallery">
-        <img src="photos/me.webp" alt="Photo of Grant" 
-             style="width:180px; height:auto; border-radius:8px; object-fit:cover;">
-      </a>
-    </div>
-
-    <!-- Text Area -->
-    <div style="flex:1; min-width:240px;">
-      <p>Hi, I’m Grant — the owner of Handyman Grant. If you're wondering whether I’m the kind of person you feel comfortable having in your home, here’s the quick version: I listen first, I show up on time, I explain things clearly, and I clean up my messes. My mother raised me right.</p>
-
-      <p>I work at a calm, steady pace, and I take the time to walk you through what needs to be done without any pressure. My goal isn’t just to fix something — it’s to make the whole experience feel easy and stress-free.</p>
-
-      <p>I also named this business after myself because I believe in doing work I can personally stand behind. If I didn’t plan to treat people with respect and do honest work, I would’ve picked a more anonymous name — something like <em>Super Ultra Mega Handyman Co.</em> But no. You get me, Grant, the actual human who shows up.</p>
-
-      <p>Whether you live alone, prefer a gentler pace, or just appreciate someone who communicates clearly and respectfully, I’m here to help make your home feel safe, functional, and comfortable.</p>
-    </div>
-
-  </div>
-
-</section>
-<section id="what-to-expect" class="card" style="margin-top:2rem;">
-  <h2>What To Expect When I Arrive</h2>
-
-  <p>I want every client to feel comfortable and confident throughout the entire process. 
-  Here’s exactly what you can expect when I come to your home:</p>
-
-  <ul style="line-height:1.75; margin-left:1rem; max-width:720px;">
-    <li><strong>A friendly, on-time arrival:</strong> I send a confirmation and show up at the agreed time so you’re never left waiting.</li>
-
-    <li><strong>Clear introductions:</strong> I reintroduce myself at the door, confirm the work you requested, and make sure you’re comfortable with me, the work we are going to do, and the price we agree upon before I start work.</li>
-
-  <li><strong>A detailed, honest estimate you can review at your own pace.</strong> After I look at the project, I’ll put together a clear written estimate that explains exactly what I’ll be doing and what materials I’ll be using. The estimate is straightforward, itemized, and easy to understand.</li>
-
-  <li><strong>No work starts until you’re fully comfortable.</strong> I’ll walk you through the estimate step by step and answer any questions you have. There’s no expectation that you approve anything on the spot. Every estimate is valid for at least 14 days, so you can take your time.</li>
-
-  <li><strong>You’re welcome and encouraged to run the estimate by trusted friends or family.</strong> I want you to feel completely confident before moving forward. If you’d like, I can email the estimate to you and the people you trust, so everyone can see the same clear, honest information. I am able to get repeat business because I do good work at a fair price. That fact will be represented on that document.</li>
-
-
-    <li><strong>Respect for your home:</strong> Shoes cleaned or covered, tools placed neatly, and surfaces protected during the job.</li>
-
-    <li><strong>A calm, walk-through explanation:</strong> I explain what I’ll be doing in simple terms and answer any questions without rushing.</li>
-
-    <li><strong>Clean, careful workmanship:</strong> I work steadily, keep noise and disruption low as much as possible, and stay respectful of your space.</li>
-
-    <li><strong>Transparent updates:</strong> If I find anything unexpected, I explain it clearly and get your approval before continuing.</li>
-
-    <li><strong>A tidy finish:</strong> Tools packed away, work area cleaned, and everything put back where it belongs.</li>
-
-    <li><strong>Review & peace of mind:</strong> Before I leave, we review what was done, make sure you're satisfied, and go over any helpful tips or next steps. My goal is always for my customer to be happy with the work I have done, and to have me back whenever more work comes up for them later.</li>
-  </ul>
-
-  <p>My goal is for you to feel safe, respected, and empowered — never pressured.</strong> The process is simple, transparent, and designed to give you confidence in both the price and the person doing the work.</p>
-</section>
-
+      <h2>Meet Grant</h2>
+      <div style="display:flex; flex-wrap:wrap; align-items:flex-start; gap:1.5rem;">
+        <!-- Photo Area -->
+        <div style="flex:0 0 180px;">
+          <a href="photos/me.webp" data-lightbox="gallery">
+            <img src="photos/me.webp" alt="Photo of Grant"
+            style="width:180px; height:auto; border-radius:8px; object-fit:cover;">
+          </a>
+        </div>
+        <!-- Text Area -->
+        <div style="flex:1; min-width:240px;">
+          <p>Hi, I’m Grant — the owner of Handyman Grant. If you're wondering whether I’m the kind of person you feel comfortable having in your home, here’s the quick version: I listen first, I show up on time, I explain things clearly, and I clean up my messes. My mother raised me right.</p>
+          <p>I work at a calm, steady pace, and I take the time to walk you through what needs to be done without any pressure. My goal isn’t just to fix something — it’s to make the whole experience feel easy and stress-free.</p>
+          <p>I also named this business after myself because I believe in doing work I can personally stand behind. If I didn’t plan to treat people with respect and do honest work, I would’ve picked a more anonymous name — something like <em>Super Ultra Mega Handyman Co.</em> But no. You get me, Grant, the actual human who shows up.</p>
+          <p>Whether you live alone, prefer a gentler pace, or just appreciate someone who communicates clearly and respectfully, I’m here to help make your home feel safe, functional, and comfortable.</p>
+        </div>
+      </div>
+    </section>
+    <section id="what-to-expect" class="card" style="margin-top:2rem;">
+      <h2>What To Expect When I Arrive</h2>
+      <p>I want every client to feel comfortable and confident throughout the entire process.
+      Here’s exactly what you can expect when I come to your home:</p>
+      <ul style="line-height:1.75; margin-left:1rem; max-width:720px;">
+        <li><strong>A friendly, on-time arrival:</strong> I send a confirmation and show up at the agreed time so you’re never left waiting.</li>
+        <li><strong>Clear introductions:</strong> I reintroduce myself at the door, confirm the work you requested, and make sure you’re comfortable with me, the work we are going to do, and the price we agree upon before I start work.</li>
+        <li><strong>A detailed, honest estimate you can review at your own pace.</strong> After I look at the project, I’ll put together a clear written estimate that explains exactly what I’ll be doing and what materials I’ll be using. The estimate is straightforward, itemized, and easy to understand.</li>
+        <li><strong>No work starts until you’re fully comfortable.</strong> I’ll walk you through the estimate step by step and answer any questions you have. There’s no expectation that you approve anything on the spot. Every estimate is valid for at least 14 days, so you can take your time.</li>
+        <li><strong>You’re welcome and encouraged to run the estimate by trusted friends or family.</strong> I want you to feel completely confident before moving forward. If you’d like, I can email the estimate to you and the people you trust, so everyone can see the same clear, honest information. I am able to get repeat business because I do good work at a fair price. That fact will be represented on that document.</li>
+        <li><strong>Respect for your home:</strong> Shoes cleaned or covered, tools placed neatly, and surfaces protected during the job.</li>
+        <li><strong>A calm, walk-through explanation:</strong> I explain what I’ll be doing in simple terms and answer any questions without rushing.</li>
+        <li><strong>Clean, careful workmanship:</strong> I work steadily, keep noise and disruption low as much as possible, and stay respectful of your space.</li>
+        <li><strong>Transparent updates:</strong> If I find anything unexpected, I explain it clearly and get your approval before continuing.</li>
+        <li><strong>A tidy finish:</strong> Tools packed away, work area cleaned, and everything put back where it belongs.</li>
+        <li><strong>Review & peace of mind:</strong> Before I leave, we review what was done, make sure you're satisfied, and go over any helpful tips or next steps. My goal is always for my customer to be happy with the work I have done, and to have me back whenever more work comes up for them later.</li>
+      </ul>
+      <p>My goal is for you to feel safe, respected, and empowered — never pressured.</strong> The process is simple, transparent, and designed to give you confidence in both the price and the person doing the work.</p>
+    </section>
     <section id="trust" class="card" style="margin-top:2rem;">
-
-
-  <h2>Safety & Trust Guarantee</h2>
-
-  <p>Your home is a personal, meaningful space — and inviting someone in should never feel stressful. 
-  My priority is to provide a safe, comfortable experience with clear communication and dependable, respectful service.</p>
-
-  <ul style="line-height:1.7; margin-left:1rem;">
-    <li><strong>Respectful, Courteous Service:</strong> I show up on time, speak clearly, listen carefully, and treat every home with care.</li>
-
-    <li><strong>Background Checked & Fully Insured:</strong> For your peace of mind, I carry full liability insurance and complete background screening.</li>
-
-    <li><strong>Upfront, Honest Pricing:</strong> No surprises — you get a clear quote before any work begins, and I honor the price I give you.</li>
-
-    <li><strong>Clear Explanations Without Pressure:</strong> I walk you through what needs to be done, answer questions patiently, and never rush your decisions.</li>
-
-    <li><strong>Clean, Careful Work:</strong> Shoes cleaned or covered, work areas protected, and everything tidied before I leave.</li>
-
-    <li><strong>Your Comfort Comes First:</strong> If you have any safety, accessibility, or communication preferences, please let me know, I will always gladly accommodate them.</li>
-  </ul>
-
-  <p>If trust, safety, and peace of mind matter to you, I’m here to help. 
-  You’ll always know who’s coming to your home — and exactly what to expect.</p>
-
-</section>
-
-
+      <h2>Safety & Trust Guarantee</h2>
+      <p>Your home is a personal, meaningful space — and inviting someone in should never feel stressful.
+      My priority is to provide a safe, comfortable experience with clear communication and dependable, respectful service.</p>
+      <ul style="line-height:1.7; margin-left:1rem;">
+        <li><strong>Respectful, Courteous Service:</strong> I show up on time, speak clearly, listen carefully, and treat every home with care.</li>
+        <li><strong>Background Checked & Fully Insured:</strong> For your peace of mind, I carry full liability insurance and complete background screening.</li>
+        <li><strong>Upfront, Honest Pricing:</strong> No surprises — you get a clear quote before any work begins, and I honor the price I give you.</li>
+        <li><strong>Clear Explanations Without Pressure:</strong> I walk you through what needs to be done, answer questions patiently, and never rush your decisions.</li>
+        <li><strong>Clean, Careful Work:</strong> Shoes cleaned or covered, work areas protected, and everything tidied before I leave.</li>
+        <li><strong>Your Comfort Comes First:</strong> If you have any safety, accessibility, or communication preferences, please let me know, I will always gladly accommodate them.</li>
+      </ul>
+      <p>If trust, safety, and peace of mind matter to you, I’m here to help.
+      You’ll always know who’s coming to your home — and exactly what to expect.</p>
+    </section>
     <section id="services">
-  <h2>Popular Services</h2>
-  <div class="cards" aria-label="services grid">
-    <div class="card">
-      <h3>TV Mounting</h3>
-      <p class="muted">Fixed/tilt/swivel mounts on walls or ceilings. Basic wire concealment for clean setups.</p>
-    </div>
-    <div class="card">
-      <h3>Drywall Repair</h3>
-      <p class="muted">Holes, dents, patches (e.g., ceiling or gym drywall). Texture blending & paint touch-ups.</p>
-    </div>
-    <div class="card">
-      <h3>Plumbing Small Jobs</h3>
-      <p class="muted">Faucet installs/swaps, supply lines, traps, garbage disposals, shower caulking & sealing.</p>
-    </div>
-    <div class="card">
-      <h3>Electrical Small Jobs</h3>
-      <p class="muted">Light fixture swaps, dimmers, GFCI outlets, burned-out bulb replacements.</p>
-    </div>
-    <div class="card">
-      <h3>Caulking & Seal</h3>
-      <p class="muted">Showers, tubs, sinks, windows; mildew-resistant seals. Includes faucet & tub work.</p>
-    </div>
-    <div class="card">
-      <h3>Furniture & Doors</h3>
-      <p class="muted">Assembly, hinge/latch alignment, locks/deadbolts, handle replacements, door slab swaps, crawl space doors, sill pans under exteriors.</p>
-    </div>
-    <div class="card">
-      <h3>Railings & Fences</h3>
-      <p class="muted">Custom installs for front/driveway railings, fence replacements, gate latch repairs.</p>
-    </div>
-    <div class="card">
-      <h3>Mounting & Anchors</h3>
-      <p class="muted">Concrete anchors for heavy items, secure mounts for equipment or structures.</p>
-    </div>
-  </div>
-</section>
-
+      <h2>Popular Services</h2>
+      <div class="cards" aria-label="services grid">
+        <div class="card">
+          <h3>TV Mounting</h3>
+          <p class="muted">Fixed/tilt/swivel mounts on walls or ceilings. Basic wire concealment for clean setups.</p>
+        </div>
+        <div class="card">
+          <h3>Drywall Repair</h3>
+          <p class="muted">Holes, dents, patches (e.g., ceiling or gym drywall). Texture blending & paint touch-ups.</p>
+        </div>
+        <div class="card">
+          <h3>Plumbing Small Jobs</h3>
+          <p class="muted">Faucet installs/swaps, supply lines, traps, garbage disposals, shower caulking & sealing.</p>
+        </div>
+        <div class="card">
+          <h3>Electrical Small Jobs</h3>
+          <p class="muted">Light fixture swaps, dimmers, GFCI outlets, burned-out bulb replacements.</p>
+        </div>
+        <div class="card">
+          <h3>Caulking & Seal</h3>
+          <p class="muted">Showers, tubs, sinks, windows; mildew-resistant seals. Includes faucet & tub work.</p>
+        </div>
+        <div class="card">
+          <h3>Furniture & Doors</h3>
+          <p class="muted">Assembly, hinge/latch alignment, locks/deadbolts, handle replacements, door slab swaps, crawl space doors, sill pans under exteriors.</p>
+        </div>
+        <div class="card">
+          <h3>Railings & Fences</h3>
+          <p class="muted">Custom installs for front/driveway railings, fence replacements, gate latch repairs.</p>
+        </div>
+        <div class="card">
+          <h3>Mounting & Anchors</h3>
+          <p class="muted">Concrete anchors for heavy items, secure mounts for equipment or structures.</p>
+        </div>
+      </div>
+    </section>
     <section id="gallery">
       <h2>Example Work</h2>
-      <div class="gallery">
-        <div class="ba-pair">
+      <div class="random-gallery">
+        <div class="zoom-container">
           <a href="photos/tv1.webp" data-lightbox="gallery">
-            <img src="photos/tv1.webp"  alt="Big TV">
+            <img src="photos/tv1.webp" alt="Big TV">
           </a>
+        </div>
+        <div class="zoom-container">
           <a href="photos/tv2.webp" data-lightbox="gallery">
             <img src="photos/tv2.webp" alt="Corner Swivel">
           </a>
         </div>
-        <div class="ba-pair">
+        <div class="zoom-container">
           <a href="photos/ceilingBefore.webp" data-lightbox="gallery">
-            <img src="photos/ceilingBefore.webp"  alt="Before — Ceiling">
+            <img src="photos/ceilingBefore.webp" alt="Before — Ceiling">
           </a>
+        </div>
+        <div class="zoom-container">
           <a href="photos/ceilingAfter.webp" data-lightbox="gallery">
             <img src="photos/ceilingAfter.webp" alt="After — Ceiling">
           </a>
         </div>
-        <div class="ba-pair">
+        <div class="zoom-container">
           <a href="photos/lights1.webp" data-lightbox="gallery">
             <img src="photos/lights1.webp" alt="Outdoor Lighting">
           </a>
+        </div>
+        <div class="zoom-container">
           <a href="photos/lights2.webp" data-lightbox="gallery">
-            <img src="photos/lights2.webp"  alt="Outdoor Lights Other Angle">
+            <img src="photos/lights2.webp" alt="Outdoor Lights Other Angle">
           </a>
         </div>
-        <div class="ba-pair">
+        <div class="zoom-container">
           <a href="photos/customDeskRiser.webp" data-lightbox="gallery">
             <img src="photos/customDeskRiser.webp" alt="Custom Desk Riser">
           </a>
+        </div>
+        <div class="zoom-container">
           <a href="photos/plantHanger.webp" data-lightbox="gallery">
-            <img src="photos/plantHanger.webp"  alt="Plant Hanger">
+            <img src="photos/plantHanger.webp" alt="Plant Hanger">
           </a>
         </div>
-        <div class="ba-pair">
+        <div class="zoom-container">
           <a href="photos/counterBefore.webp" data-lightbox="gallery">
             <img src="photos/counterBefore.webp" alt="Before — Counter">
           </a>
+        </div>
+        <div class="zoom-container">
           <a href="photos/counterAfter.webp" data-lightbox="gallery">
-            <img src="photos/counterAfter.webp"  alt="After — Counter">
+            <img src="photos/counterAfter.webp" alt="After — Counter">
           </a>
         </div>
       </div>
-
     </section>
-
     <section id="areas" class="cards">
       <div class="card">
         <h2>Service Area</h2>
-  <p>I serve homeowners and renters across the Greater San Diego area. Typical service areas include:</p>
-  <ul>
-    <li>North Park, South Park, Mission Hills, Hillcrest</li>
-    <li>University Heights, Normal Heights, Kensington, Talmadge</li>
-    <li>Clairemont, Linda Vista, Serra Mesa, Kearny Mesa</li>
-    <li>Mira Mesa, Sorrento Valley, UTC, La Jolla</li>
-    <li>Mission Valley, Allied Gardens, Tierrasanta</li>
-    <p>If you’re just outside these areas, feel free to reach out—most nearby neighborhoods are still within range.</p>
-  </ul>
-</section>
-      </div>
-      <div class="card">
-        <h3>Pricing Cues</h3>
-        <ul class="muted" style="margin:.2rem 0 0 1rem; line-height:1.7">
-          <li>Most small jobs: <strong>$125–$350</strong></li>
-          <li>Service call minimum: <strong>$95</strong></li>
-          <li>Materials billed at cost + receipt</li>
-          <li>No permit‑required work</li>
-          <li>Projects ≤ <strong>$1,000 total</strong></li>
+        <p>I serve homeowners and renters across the Greater San Diego area. Typical service areas include:</p>
+        <ul>
+          <li>North Park, South Park, Mission Hills, Hillcrest</li>
+          <li>University Heights, Normal Heights, Kensington, Talmadge</li>
+          <li>Clairemont, Linda Vista, Serra Mesa, Kearny Mesa</li>
+          <li>Mira Mesa, Sorrento Valley, UTC, La Jolla</li>
+          <li>Mission Valley, Allied Gardens, Tierrasanta</li>
+          <p>If you’re just outside these areas, feel free to reach out—most nearby neighborhoods are still within range.</p>
         </ul>
-      </div>
-    </section>
-
-    <section id="reviews">
-      <h2>Happy Clients</h2>
-      <div class="cards">
-        <div class="card"><p>“Grant showed up on time and was able to mount our very large TV. Then he hid the wires like I had asked and cleaned very tidy.”</p><p class="muted">— M. Johnson, North Park</p></div>
-        <div class="card"><p>“Handyman Grant, which he sometimes refers to himself as when talking, Patched and painted our hallway in one visit, and now it looks like nothing happened.”</p><p class="muted">— A. Moore, University Heights</p></div>
-        <div class="card"><p>“He was friendly and professional and replaced my leaky faucet like it seemed very easy for him.”</p><p class="muted">— R. Anderson, Hillcrest</p></div>
-      </div>
-    </section>
-
-    <section id="contact" class="grid-2">
-      <div>
-        <h2>Request a Quote</h2>
-        <p class="muted">Send a quick note—include a couple photos if you can. I’ll reply with options and a ballpark as soon as possible.</p>
-        <form action="mailto:Grant@HandymanGrant.com" method="post" enctype="text/plain">
-          <label>
-            Name
-            <input name="name" placeholder="Your name" required />
-          </label>
-          <label>
-            Phone
-            <input name="phone" placeholder="(###) ###-####" />
-          </label>
-          <label>
-            Email
-            <input type="email" name="email" placeholder="you@example.com" />
-          </label>
-          <label>
-            Zip Code
-            <input name="zip" placeholder="92104" />
-          </label>
-          <label>
-            What do you need done?
-            <textarea name="message" rows="5" placeholder="Short description…"></textarea>
-          </label>
-          <button type="submit">Send Request</button>
-          <p class="muted" style="font-size:.85rem">Prefer texting? Call or text <a href="tel:+16196954334">(619) 695‑4334</a>.</p>
-        </form>
-      </div>
-      <aside>
-        <div class="card">
-          <h3>Hours</h3>
-          <p class="muted">Mon–Fri 8am–6pm, Sat 10am–2pm</p>
-          <h3 style="margin-top:1rem">License & Insurance</h3>
-          <p class="muted">Handyman services ≤ $1,000 total. No permit‑required work. Insured.</p>
-          <h3 style="margin-top:1rem">Email</h3>
-          <p><a href="mailto:Grant@HandymanGrant.com">Grant@HandymanGrant.com</a></p>
-        </div>
-      </aside>
-    </section>
-  </main>
-
-  <footer class="foot">
-    <div class="container" style="display:grid; gap:.4rem; padding:1.4rem 0 2.8rem;">
-      <div>© <span id="year"></span> Handyman Grant LLC · San Diego, CA</div>
-      <small>Website by Handyman Grant · Fast, accessible, and mobile‑first</small>
+      </section>
     </div>
-  </footer>
-
-  <div class="floating-call">
-    <a href="tel:+16196954334" onclick="gtag_report_conversion('tel:+16196954334');">📞 Call Grant</a>
+    <div class="card">
+      <h3>Pricing Cues</h3>
+      <ul class="muted" style="margin:.2rem 0 0 1rem; line-height:1.7">
+        <li>Most small jobs: <strong>$125–$350</strong></li>
+        <li>Service call minimum: <strong>$95</strong></li>
+        <li>Materials billed at cost + receipt</li>
+        <li>No permit‑required work</li>
+        <li>Projects ≤ <strong>$1,000 total</strong></li>
+      </ul>
+    </div>
+  </section>
+  <section id="reviews">
+    <h2>Happy Clients</h2>
+    <div class="cards">
+      <div class="card"><p>“Grant showed up on time and was able to mount our very large TV. Then he hid the wires like I had asked and cleaned very tidy.”</p><p class="muted">— M. Johnson, North Park</p></div>
+      <div class="card"><p>“Handyman Grant, which he sometimes refers to himself as when talking, Patched and painted our hallway in one visit, and now it looks like nothing happened.”</p><p class="muted">— A. Moore, University Heights</p></div>
+      <div class="card"><p>“He was friendly and professional and replaced my leaky faucet like it seemed very easy for him.”</p><p class="muted">— R. Anderson, Hillcrest</p></div>
+    </div>
+  </section>
+  <section id="contact" class="grid-2">
+    <div>
+      <h2>Request a Quote</h2>
+      <p class="muted">Send a quick note—include a couple photos if you can. I’ll reply with options and a ballpark as soon as possible.</p>
+      <form action="mailto:Grant@HandymanGrant.com" method="post" enctype="text/plain">
+        <label>
+          Name
+          <input name="name" placeholder="Your name" required />
+        </label>
+        <label>
+          Phone
+          <input name="phone" placeholder="(###) ###-####" />
+        </label>
+        <label>
+          Email
+          <input type="email" name="email" placeholder="you@example.com" />
+        </label>
+        <label>
+          Zip Code
+          <input name="zip" placeholder="92104" />
+        </label>
+        <label>
+          What do you need done?
+          <textarea name="message" rows="5" placeholder="Short description…"></textarea>
+        </label>
+        <button type="submit">Send Request</button>
+        <p class="muted" style="font-size:.85rem">Prefer texting? Call or text <a href="tel:+16196954334">(619) 695‑4334</a>.</p>
+      </form>
+    </div>
+    <aside>
+      <div class="card">
+        <h3>Hours</h3>
+        <p class="muted">Mon–Fri 8am–6pm, Sat 10am–2pm</p>
+        <h3 style="margin-top:1rem">License & Insurance</h3>
+        <p class="muted">Handyman services ≤ $1,000 total. No permit‑required work. Insured.</p>
+        <h3 style="margin-top:1rem">Email</h3>
+        <p><a href="mailto:Grant@HandymanGrant.com">Grant@HandymanGrant.com</a></p>
+      </div>
+    </aside>
+  </section>
+</main>
+<footer class="foot">
+  <div class="container" style="display:grid; gap:.4rem; padding:1.4rem 0 2.8rem;">
+    <div>© <span id="year"></span> Handyman Grant LLC · San Diego, CA</div>
+    <small>Website by Handyman Grant · Fast, accessible, and mobile‑first</small>
   </div>
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
-  <script>
-function openImageModal(src) {
-  const modal = document.getElementById('imageModal');
-  const modalImg = document.getElementById('imageModalImg');
-
-  modalImg.src = src;
-  modal.style.display = 'flex';
-}
-
-document.addEventListener('click', function(e) {
-  const modal = document.getElementById('imageModal');
-  if (e.target === modal) {
-    modal.style.display = 'none';
+</footer>
+<div class="floating-call">
+  <a href="tel:+16196954334" onclick="gtag_report_conversion('tel:+16196954334');">📞 Call Grant</a>
+</div>
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+<script>
+  function openImageModal(src) {
+    const modal = document.getElementById('imageModal');
+    const modalImg = document.getElementById('imageModalImg');
+    modalImg.src = src;
+    modal.style.display = 'flex';
   }
-});
+  document.addEventListener('click', function(e) {
+    const modal = document.getElementById('imageModal');
+    if (e.target === modal) {
+      modal.style.display = 'none';
+    }
+  });
 </script>
 <div id="imageModal" class="image-modal">
   <img id="imageModalImg" src="">
 </div>
-
 </body>
 </html>
