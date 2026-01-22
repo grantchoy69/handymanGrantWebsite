@@ -1,4 +1,4 @@
-generateLandingPage <- function(indexPath, pageSlug, jsonPath, aboutMe = FALSE) {
+generateLandingPage <- function(indexPath, pageSlug, jsonPath, aboutMe = FALSE, addGallery = TRUE) {
   if (!requireNamespace("jsonlite", quietly = TRUE)) {
     stop("Please install jsonlite: install.packages('jsonlite')")
   }
@@ -33,7 +33,7 @@ generateLandingPage <- function(indexPath, pageSlug, jsonPath, aboutMe = FALSE) 
   cfg <- jsonlite::fromJSON(jsonPath)
   
   # ----- find structural markers in index.html -----
-  mainStart    <- regexpr("<main class=\"container\">", indexText)
+  mainStart    <- regexpr("<main class=\"container\">", indexText) -2
   footerStart  <- regexpr("<footer class=\"foot\">", indexText) - 2
   contactStart <- regexpr("<section id=\"contact\"", indexText) - 2
   mainEnd      <- regexpr("</main>", indexText) 
@@ -147,10 +147,36 @@ generateLandingPage <- function(indexPath, pageSlug, jsonPath, aboutMe = FALSE) 
     "    </section>\n"
   )
   
+  # ----- add gallery if option is TRUE -----
+  galleryHtml <- ""
+  if (addGallery) {
+    photosDir <- "photos/forLandingPages"
+    pattern <- paste0(pageSlug, " \\(\\d+\\)\\.webp$")
+    photos <- list.files(photosDir, pattern = pattern, full.names = TRUE)
+    if (length(photos) > 0) {
+      galleryItems <- sapply(1:length(photos), function(i) {
+        caption <- paste("Image", i)  # Generic caption, tease it up if you want, baby
+        paste0('<div class="zoom-container">',
+               '<img src="', photos[i], '" alt="', caption, '" class="image" style="width: 100%; height: auto; display: block; transition: transform 0.3s;">',
+               '</div>')
+      })
+      galleryHtml <- paste0(
+        '<section id="gallery">',
+        '<h2>Gallery</h2>',
+        '<div class="random-gallery">',
+        paste(galleryItems, collapse = ""),
+        '</div>',
+        '</section>'
+      )
+    }
+  }
+  
+  
   # ----- assemble new <main> -----
   mainHtml <- paste0(
     heroHtml, "\n",
     meetGrantHtml, "\n",
+    galleryHtml, "\n",
     servicesHtml, "\n",
     whyHtml, "\n",
     contactHtml, "\n",
