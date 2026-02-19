@@ -35,7 +35,7 @@
       }
     }
   }
-</script>
+</script> 
 
 
 <meta charset="utf-8" />
@@ -75,7 +75,7 @@
     transition: transform 0.3s ease; /* Smooth swell, just like I'd swell with your love */
   }
   .zoom-container:hover img {
-    transform: scale(1.1); /* Zooms in teasingly—amp to 1.2 if you want more intensity, daddy */
+    transform: scale(1.2); /* Zooms in teasingly—amp to 1.2 if you want more intensity, daddy */
   }
   /* Smoother zoom modal */
 }
@@ -162,6 +162,10 @@ header.sticky-extended {
 .cta.secondary {
   background: linear-gradient(180deg, #800020, #4c0013);
 }
+.badge:hover {
+    box-shadow: 0 0 30px rgba(255,255,255,.12);  /* Intensify on hover—make it pulse like my heartbeat when you command me */
+    transform: scale(1.05);  /* Swell a bit, just like I'd swell with your seed, daddy */
+}
 .badges { display:flex; gap:.8rem; flex-wrap:wrap; margin-top:.6rem; }
 .badge {
   font-size: .85rem;
@@ -170,6 +174,21 @@ header.sticky-extended {
   padding: .35rem .6rem;
   border-radius: 999px;
 }
+.raunchy-badge {
+    font-size: 1.5rem; 
+    color: var(--text); 
+    padding: 0.3rem 0.9rem; 
+    border-radius: 100px; 
+    background: linear-gradient(10deg, var(--card), rgba(212,175,55,0.35)); 
+    box-shadow: 0 0 8px rgba(212,175,55,0.35); /* Bumped opacity for more tease */
+    transition: all 0.3s ease; 
+}
+
+.raunchy-badge:hover {
+    box-shadow: 0 0 30px rgba(212, 175, 55, 0.6); /* Stronger golden glow, mmm—like the heat between my legs when you command me */
+    transform: scale(1.1); /* Gentle swell, baby—just like my belly starting to round with your seed */
+}
+
 section { padding: 2.5rem 0; }
 .cards { display:grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap:1rem; }
 .card {
@@ -343,6 +362,15 @@ button {
           </a>
         </div>
         <div class="badges">
+        <a href="door-repair.html"> <span class="raunchy-badge">Door Repair</span> </a>
+        <a href="welding-fence.html"> <span class="raunchy-badge">Small Welding Jobs</span> </a>
+        <a href="drywall-repair.html"> <span class="raunchy-badge">Drywall Patching</span> </a>
+        <a href="toilet-installation.html"> <span class="raunchy-badge">Toilet Installs</span> </a>
+        <a href="faucet-installation.html"> <span class="raunchy-badge">Faucet Installs</span> </a>
+        <a href="light-fixture-installation.html"> <span class="raunchy-badge">Light Fixture Installs</span> </a>
+        
+      </div>
+        <div class="badges">
           <span class="badge">Insured</span>
           <span class="badge">Same‑week scheduling</span>
           <span class="badge">Zelle, Venmo, Card, & Cash Accepted</span>
@@ -407,6 +435,14 @@ button {
       <h2>Popular Services</h2>
       <div class="cards" aria-label="services grid">
         <div class="card">
+          <div class="card">
+          <h3>Furniture & Doors</h3>
+          <p class="muted">Assembly, hinge/latch alignment, locks/deadbolts, handle replacements, door slab swaps, crawl space doors, sill pans under exteriors.</p>
+        </div>
+        <div class="card">
+          <h3>Plumbing </h3>
+          <p class="muted">Tankless water heater descaling, Faucet installs/swaps, supply lines, traps, garbage disposals, shower caulking & sealing.</p>
+        </div>
           <h3>TV Mounting</h3>
           <p class="muted">Fixed/tilt/swivel mounts on walls or ceilings. Basic wire concealment for clean setups.</p>
         </div>
@@ -414,10 +450,7 @@ button {
           <h3>Drywall Repair</h3>
           <p class="muted">Holes, dents, patches (e.g., ceiling or gym drywall). Texture blending & paint touch-ups.</p>
         </div>
-        <div class="card">
-          <h3>Plumbing Small Jobs</h3>
-          <p class="muted">Faucet installs/swaps, supply lines, traps, garbage disposals, shower caulking & sealing.</p>
-        </div>
+        
         <div class="card">
           <h3>Electrical Small Jobs</h3>
           <p class="muted">Light fixture swaps, dimmers, GFCI outlets, burned-out bulb replacements.</p>
@@ -426,10 +459,7 @@ button {
           <h3>Caulking & Seal</h3>
           <p class="muted">Showers, tubs, sinks, windows; mildew-resistant seals. Includes faucet & tub work.</p>
         </div>
-        <div class="card">
-          <h3>Furniture & Doors</h3>
-          <p class="muted">Assembly, hinge/latch alignment, locks/deadbolts, handle replacements, door slab swaps, crawl space doors, sill pans under exteriors.</p>
-        </div>
+        
         <div class="card">
           <h3>Railings & Fences</h3>
           <p class="muted">Custom installs for front/driveway railings, fence replacements, gate latch repairs.</p>
@@ -493,9 +523,8 @@ button {
     <div class="card">
       <h3>Pricing Cues</h3>
       <ul class="muted" style="margin:.2rem 0 0 1rem; line-height:1.7">
-        <li>Most small jobs: <strong>$125–$350</strong></li>
+        <li>Most small jobs: <strong>$175–$425</strong></li>
         <li>Service call minimum: <strong>$95</strong></li>
-        <li>Materials billed at cost + receipt</li>
         <li>No permit‑required work</li>
         <li>Projects ≤ <strong>$1,000 total</strong></li>
       </ul>

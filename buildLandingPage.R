@@ -156,9 +156,9 @@ generateLandingPage <- function(indexPath, pageSlug, jsonPath, aboutMe = FALSE, 
     if (length(photos) > 0) {
       galleryItems <- sapply(1:length(photos), function(i) {
         caption <- paste("Image", i)  # Generic caption, tease it up if you want, baby
-        paste0('<div class="zoom-container">',
-               '<img src="', photos[i], '" alt="', caption, '" class="image" style="width: 100%; height: auto; display: block; transition: transform 0.3s;">',
-               '</div>')
+        paste0('<div class="zoom-container">\n',
+               '<img src="', photos[i], '" alt="', caption, '" class="image" style="width: 100%; height: auto; display: block; transition: transform 0.3s;">\n',
+               '</div>\n')
       })
       galleryHtml <- paste0(
         '<section id="gallery">',

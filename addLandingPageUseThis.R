@@ -15,6 +15,7 @@ generateLandingPage("index.html", "light-fixture-installation", "lightFixtureIns
 generateLandingPage("index.html", "ceiling-fan-installation", "ceilingFanInstallation.json")
 generateLandingPage("index.html", "door-repair", "doorRepair.json")
 generateLandingPage("index.html", "fence-repair", "fenceRepair.json")
+generateLandingPage("index.html", "welding-fence", "welding-fence.json")
 
 generateLandingPage("index.html", "handyman-for-women-and-seniors", "handymanWomenSeniors.json", TRUE)
 generateLandingPage("index.html", "senior-home-repairs", "seniorHomeRepairs.json", TRUE)
