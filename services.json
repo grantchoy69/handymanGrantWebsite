@@ -6,22 +6,24 @@
       "title": "Welding & Custom Metal Work | Handyman Grant San Diego",
       "metaDescription": "Professional welding and custom metal work in San Diego. Handrails, gates, security doors, anchor bolts, and structural repairs with clear communication and honest pricing.",
       "hero": {
-        "headline": "Skilled welding and custom metal work for your home.",
-        "subheadline": "Handrails, gates, security doors, and structural fixes — done right the first time."
+        "headline": "Real welder for gate, fence, and handrail repairs — plus custom metal work.",
+        "subheadline": "Gate repair, fence fixes, handrails, and structural welding done properly."
       },
-      "intro": "I provide high-quality welding and custom metal fabrication for homeowners who need more than basic handyman work. Whether you need a new handrail, gate repair, security door, or custom metal solutions, I bring real skill and clean execution to every job.",
+      "intro": "I’m a real welder who shows up to repair gates, fences, and handrails — not just someone with a grinder. I also do custom fabrication when you need something built new. Whether it’s fixing an existing gate or building something from scratch, I bring actual welding skill and clean execution to every job.",
       "benefits": [
-        "Real welding experience — not just basic repairs",
-        "Custom work built to fit your specific home",
+        "Real welding experience — not just basic handyman repairs",
+        "Gate and fence repair work done properly",
+        "Custom metal work built to fit your home",
         "Clean, professional results with minimal disruption",
         "Clear communication and honest pricing upfront"
       ],
       "servicesIncluded": [
-        "Custom handrails and railings",
         "Gate fabrication and repair",
-        "Security door and gate installation",
-        "Anchor bolts and structural welding",
         "Metal fence and gate latch repairs",
+        "Handrail repair and replacement",
+        "Custom handrails and railings",
+        "Security door and gate work",
+        "Anchor bolts and structural welding",
         "Custom brackets and mounting solutions"
       ],
       "process": [
@@ -41,33 +43,34 @@
     },
     {
       "slug": "electrical",
-      "serviceName": "Electrical & GFCI Work",
-      "title": "Electrical & GFCI Work | Handyman Grant San Diego",
-      "metaDescription": "GFCI outlet and switch rewires, wet area compliance, code-aware electrical upgrades, and technical electrical fixes in San Diego. Clear communication and honest pricing.",
+      "serviceName": "Electrical Work",
+      "title": "Electrical Work | Handyman Grant San Diego",
+      "metaDescription": "Code-aware electrical repairs, GFCI upgrades, outlet and switch work, and troubleshooting in San Diego. Clean, professional electrical work with honest pricing.",
       "hero": {
-        "headline": "Code-aware electrical and GFCI work done right.",
-        "subheadline": "GFCI upgrades, wet area compliance, and technical electrical fixes that pass inspection."
+        "headline": "Code-aware electrical work for your home.",
+        "subheadline": "GFCI upgrades, troubleshooting, and proper electrical repairs done right."
       },
-      "intro": "I handle GFCI outlet and switch rewires, wet area compliance upgrades, and other technical electrical work that requires care and code knowledge. All work is done cleanly and inspected properly.",
+      "intro": "I handle electrical repairs, outlet and switch work, GFCI upgrades, and troubleshooting that requires care and code knowledge. I focus on doing the job properly and cleanly so it passes inspection and doesn’t create new problems later.",
       "benefits": [
         "Code-aware work that passes inspection",
-        "Experience with GFCI and wet area requirements",
-        "Clean, careful electrical work with minimal disruption",
-        "Clear explanations and honest pricing"
+        "Clean, careful electrical repairs with minimal disruption",
+        "Clear explanations so you understand what’s being done",
+        "Honest pricing with no surprises"
       ],
       "servicesIncluded": [
-        "GFCI outlet and switch rewires",
-        "Wet area compliance upgrades",
-        "Code-aware electrical fixes",
-        "Technical electrical troubleshooting"
+        "GFCI outlet and switch upgrades",
+        "Wet area compliance work",
+        "Outlet, switch, and fixture repairs",
+        "Electrical troubleshooting and diagnostics",
+        "Code-aware electrical fixes"
       ],
       "process": [
         "On-site assessment and clear quote",
         "Explanation of code requirements and options",
         "Clean, careful work with surfaces protected",
-        "Final walkthrough and inspection walkthrough if needed"
+        "Final walkthrough so everything is working properly"
       ],
-      "pricingNote": "Most GFCI and electrical work ranges from $275–$750 depending on scope. Written estimate provided before starting.",
+      "pricingNote": "Most electrical repair and upgrade work ranges from $275–$750 depending on scope. Written estimate provided before starting.",
       "testimonials": [],
       "faq": [],
       "cta": {
@@ -154,28 +157,28 @@
       "slug": "tankless",
       "serviceName": "Tankless Water Heater Descaling",
       "title": "Tankless Water Heater Descaling | Handyman Grant San Diego",
-      "metaDescription": "Professional tankless water heater descaling and maintenance in San Diego. Restore efficiency and extend the life of your tankless system with honest pricing.",
+      "metaDescription": "Professional tankless water heater descaling and maintenance in San Diego. Regular service that helps keep your system running efficiently at a fair price.",
       "hero": {
-        "headline": "Tankless water heater descaling and maintenance.",
-        "subheadline": "Restore performance and efficiency to your tankless system."
+        "headline": "Regular maintenance for your tankless water heater.",
+        "subheadline": "Restore efficiency and help extend the life of your system."
       },
-      "intro": "I provide professional tankless water heater descaling services to remove mineral buildup, restore flow and efficiency, and help extend the life of your unit. Regular descaling keeps your system running properly and can prevent costly issues later.",
+      "intro": "Tankless water heaters need regular descaling to stay efficient and reliable. I provide this maintenance service cleanly and properly so your unit performs the way it should. It’s the kind of ongoing care that helps prevent bigger issues later, and I’m happy to be the guy you call for it.",
       "benefits": [
-        "Restores water flow and heating efficiency",
-        "Helps prevent premature failure of the unit",
-        "Clean process with proper flushing technique",
-        "Clear explanation of maintenance recommendations"
+        "Helps restore water flow and heating efficiency",
+        "Regular maintenance that can extend the life of your unit",
+        "Clean process with proper technique",
+        "Clear recommendations so you know when it’s needed again"
       ],
       "servicesIncluded": [
         "Full tankless descaling service",
         "System flush and cleaning",
         "Performance check after service",
-        "Maintenance recommendations"
+        "Maintenance recommendations for the future"
       ],
       "process": [
-        "Assessment of current performance and scale buildup",
-        "Clear quote and explanation of the process",
-        "Thorough descaling with proper chemicals and technique",
+        "On-site assessment of current performance",
+        "Clear explanation and quote before starting",
+        "Thorough descaling with proper equipment and technique",
         "Final performance check and walkthrough"
       ],
       "pricingNote": "Most tankless descaling services range from $275–$450. Written estimate provided before starting.",
