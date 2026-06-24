@@ -1,0 +1,191 @@
+{
+  "services": [
+    {
+      "slug": "welding",
+      "serviceName": "Welding & Custom Metal Work",
+      "title": "Welding & Custom Metal Work | Handyman Grant San Diego",
+      "metaDescription": "Professional welding and custom metal work in San Diego. Handrails, gates, security doors, anchor bolts, and structural repairs with clear communication and honest pricing.",
+      "hero": {
+        "headline": "Skilled welding and custom metal work for your home.",
+        "subheadline": "Handrails, gates, security doors, and structural fixes — done right the first time."
+      },
+      "intro": "I provide high-quality welding and custom metal fabrication for homeowners who need more than basic handyman work. Whether you need a new handrail, gate repair, security door, or custom metal solutions, I bring real skill and clean execution to every job.",
+      "benefits": [
+        "Real welding experience — not just basic repairs",
+        "Custom work built to fit your specific home",
+        "Clean, professional results with minimal disruption",
+        "Clear communication and honest pricing upfront"
+      ],
+      "servicesIncluded": [
+        "Custom handrails and railings",
+        "Gate fabrication and repair",
+        "Security door and gate installation",
+        "Anchor bolts and structural welding",
+        "Metal fence and gate latch repairs",
+        "Custom brackets and mounting solutions"
+      ],
+      "process": [
+        "Free on-site assessment and transparent quote",
+        "Clear explanation of options before any work begins",
+        "Clean, careful work with surfaces protected",
+        "Final walkthrough so you’re completely satisfied"
+      ],
+      "pricingNote": "Most welding and custom metal jobs range from $350–$950 depending on scope and materials. I’ll always give you a clear written estimate before starting any work.",
+      "testimonials": [],
+      "faq": [],
+      "cta": {
+        "primaryText": "Get a Quote for Your Project",
+        "secondaryText": "Call or Text (619) 695-4334"
+      },
+      "relatedServices": ["railings", "doors", "electrical"]
+    },
+    {
+      "slug": "electrical",
+      "serviceName": "Electrical & GFCI Work",
+      "title": "Electrical & GFCI Work | Handyman Grant San Diego",
+      "metaDescription": "GFCI outlet and switch rewires, wet area compliance, code-aware electrical upgrades, and technical electrical fixes in San Diego. Clear communication and honest pricing.",
+      "hero": {
+        "headline": "Code-aware electrical and GFCI work done right.",
+        "subheadline": "GFCI upgrades, wet area compliance, and technical electrical fixes that pass inspection."
+      },
+      "intro": "I handle GFCI outlet and switch rewires, wet area compliance upgrades, and other technical electrical work that requires care and code knowledge. All work is done cleanly and inspected properly.",
+      "benefits": [
+        "Code-aware work that passes inspection",
+        "Experience with GFCI and wet area requirements",
+        "Clean, careful electrical work with minimal disruption",
+        "Clear explanations and honest pricing"
+      ],
+      "servicesIncluded": [
+        "GFCI outlet and switch rewires",
+        "Wet area compliance upgrades",
+        "Code-aware electrical fixes",
+        "Technical electrical troubleshooting"
+      ],
+      "process": [
+        "On-site assessment and clear quote",
+        "Explanation of code requirements and options",
+        "Clean, careful work with surfaces protected",
+        "Final walkthrough and inspection walkthrough if needed"
+      ],
+      "pricingNote": "Most GFCI and electrical work ranges from $275–$750 depending on scope. Written estimate provided before starting.",
+      "testimonials": [],
+      "faq": [],
+      "cta": {
+        "primaryText": "Get a Quote for Electrical Work",
+        "secondaryText": "Call or Text (619) 695-4334"
+      },
+      "relatedServices": ["welding", "doors", "plumbing"]
+    },
+    {
+      "slug": "doors",
+      "serviceName": "Doors & Security Doors",
+      "title": "Doors & Door Hardware | Handyman Grant San Diego",
+      "metaDescription": "Door slab replacement, hinge and latch alignment, lock installation, and security door work in San Diego. Clean, professional door work with honest pricing.",
+      "hero": {
+        "headline": "Door replacement, hardware, and security upgrades.",
+        "subheadline": "Clean door slab swaps, hinge/latch work, lock installs, and security door solutions."
+      },
+      "intro": "I handle door slab replacements, hinge and latch alignment, lock installation, and security door work. Whether you need a simple door swap or a more secure solution, I do the job cleanly and properly.",
+      "benefits": [
+        "Clean door slab replacement with proper fit",
+        "Hinge, latch, and lock hardware work",
+        "Security door and gate experience",
+        "Respectful of your home and finishes"
+      ],
+      "servicesIncluded": [
+        "Door slab replacement and fitting",
+        "Hinge and latch alignment/repair",
+        "Lock and deadbolt installation",
+        "Security door and gate work"
+      ],
+      "process": [
+        "Assessment and clear quote",
+        "Explanation of options and hardware choices",
+        "Clean work with floor and wall protection",
+        "Final walkthrough and smooth operation check"
+      ],
+      "pricingNote": "Most door and hardware work ranges from $225–$650. Written estimate before starting.",
+      "testimonials": [],
+      "faq": [],
+      "cta": {
+        "primaryText": "Get a Quote for Door Work",
+        "secondaryText": "Call or Text (619) 695-4334"
+      },
+      "relatedServices": ["welding", "electrical"]
+    },
+    {
+      "slug": "plumbing",
+      "serviceName": "Plumbing Specialties",
+      "title": "Plumbing Specialties | Handyman Grant San Diego",
+      "metaDescription": "Faucet replacement and repair, toilet installation and removal, supply line work, and general plumbing repairs in San Diego with clear communication and honest pricing.",
+      "hero": {
+        "headline": "Faucets, toilets, and plumbing repairs done cleanly.",
+        "subheadline": "Faucet work, toilet swaps, supply lines, and reliable plumbing repairs."
+      },
+      "intro": "I handle faucet replacement and repair, toilet removal and installation, supply line work, and other common plumbing issues. I focus on clean, respectful work that solves the problem without creating new ones.",
+      "benefits": [
+        "Clean faucet and toilet work with minimal mess",
+        "Proper installation and leak prevention",
+        "Respect for your finishes and home",
+        "Clear explanations and honest pricing"
+      ],
+      "servicesIncluded": [
+        "Faucet replacement and repair",
+        "Toilet removal and installation",
+        "Supply line and shutoff valve work",
+        "General plumbing troubleshooting and repairs"
+      ],
+      "process": [
+        "On-site assessment and clear quote",
+        "Explanation of options and parts needed",
+        "Clean work with floor protection",
+        "Final walkthrough and leak check"
+      ],
+      "pricingNote": "Most faucet, toilet, and plumbing repair work ranges from $225–$650. Written estimate before starting.",
+      "testimonials": [],
+      "faq": [],
+      "cta": {
+        "primaryText": "Get a Quote for Plumbing Work",
+        "secondaryText": "Call or Text (619) 695-4334"
+      },
+      "relatedServices": ["electrical", "tankless"]
+    },
+    {
+      "slug": "tankless",
+      "serviceName": "Tankless Water Heater Descaling",
+      "title": "Tankless Water Heater Descaling | Handyman Grant San Diego",
+      "metaDescription": "Professional tankless water heater descaling and maintenance in San Diego. Restore efficiency and extend the life of your tankless system with honest pricing.",
+      "hero": {
+        "headline": "Tankless water heater descaling and maintenance.",
+        "subheadline": "Restore performance and efficiency to your tankless system."
+      },
+      "intro": "I provide professional tankless water heater descaling services to remove mineral buildup, restore flow and efficiency, and help extend the life of your unit. Regular descaling keeps your system running properly and can prevent costly issues later.",
+      "benefits": [
+        "Restores water flow and heating efficiency",
+        "Helps prevent premature failure of the unit",
+        "Clean process with proper flushing technique",
+        "Clear explanation of maintenance recommendations"
+      ],
+      "servicesIncluded": [
+        "Full tankless descaling service",
+        "System flush and cleaning",
+        "Performance check after service",
+        "Maintenance recommendations"
+      ],
+      "process": [
+        "Assessment of current performance and scale buildup",
+        "Clear quote and explanation of the process",
+        "Thorough descaling with proper chemicals and technique",
+        "Final performance check and walkthrough"
+      ],
+      "pricingNote": "Most tankless descaling services range from $275–$450. Written estimate provided before starting.",
+      "testimonials": [],
+      "faq": [],
+      "cta": {
+        "primaryText": "Get a Quote for Tankless Descaling",
+        "secondaryText": "Call or Text (619) 695-4334"
+      },
+      "relatedServices": ["plumbing", "electrical"]
+    }
+  ]
+}
