@@ -29,8 +29,34 @@ section { padding:2.2rem 0; }
 .card { background:var(--card); border:1px solid rgba(255,255,255,.08); border-radius:14px; padding:1.3rem; box-shadow:var(--shadow); }
 h2 { font-size:1.65rem; margin:0 0 1rem; }
 .grid-2 { display:grid; grid-template-columns:1fr 1fr; gap:1.2rem; }
-@media (max-width:800px){ .grid-2{grid-template-columns:1fr;} }
-ul { padding-left:1.1rem; } ul li { margin-bottom:.45rem; }
+.random-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+  margin: 20px 0;
+}
+.zoom-container {
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  height: 220px;
+  position: relative;
+}
+.zoom-container:hover {
+  box-shadow: 0 8px 20px rgba(212, 175, 55, 0.4);
+  transform: translateY(-2px);
+}
+.zoom-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+.zoom-container:hover img {
+  transform: scale(1.15);
+}
 .muted { color:var(--muted); }
 .foot { border-top:1px solid rgba(148,163,184,.15); color:#cbd5e1; font-size:.9rem; padding:1.5rem 0; }
 </style>
@@ -70,6 +96,31 @@ ul { padding-left:1.1rem; } ul li { margin-bottom:.45rem; }
         <div class="card">Custom metal work built to fit your home</div>
         <div class="card">Clean, professional results with minimal disruption</div>
         <div class="card">Clear communication and honest pricing upfront</div>
+      </div>
+    </section>
+
+    <!-- New Gallery Section -->
+    <section>
+      <h2>Examples of My Work</h2>
+      <div class="random-gallery">
+                <div class="zoom-container">
+          <img src="../photos/gateHingeCoolGate (4).webp" alt="Gate hinge repair weld detail">
+        </div>
+        <div class="zoom-container">
+          <img src="../photos/gateHingeCoolGate (1).webp" alt="Gate hinge close-up showing strong weld">
+        </div>
+        <div class="zoom-container">
+          <img src="../photos/gateHingeCoolGate (2).webp" alt="Welded gate frame detail">
+        </div>
+        <div class="zoom-container">
+          <img src="../photos/welding-railing-01.webp" alt="Custom welded handrail with scroll details on steps">
+        </div>
+        <div class="zoom-container">
+          <img src="../photos/welding-fence (2).webp" alt="Finished black metal railing on garden steps">
+        </div>
+        <div class="zoom-container">
+          <img src="../photos/welding-fence (7).webp" alt="Modern stainless steel handrail on concrete steps">
+        </div>
       </div>
     </section>
 

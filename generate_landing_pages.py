@@ -1,13 +1,12 @@
 #!/usr/bin/env python3
 """
-Handyman Grant Landing Page Generator (Fixed)
+Handyman Grant Landing Page Generator - Supports Gallery
 """
 
 import json
 from pathlib import Path
 
 def build_list_html(items, wrapper="ul"):
-    """Build HTML list from a Python list."""
     if not items:
         return ""
     lis = "\n".join([f"        <li>{item}</li>" for item in items])
@@ -15,6 +14,16 @@ def build_list_html(items, wrapper="ul"):
         return f"<ul>\n{lis}\n      </ul>"
     else:
         return f"<ol>\n{lis}\n      </ol>"
+
+def build_gallery_html(gallery):
+    if not gallery:
+        return ""
+    items = []
+    for photo in gallery:
+        items.append(f'''        <div class="zoom-container">
+          <img src="{photo.get('src', '')}" alt="{photo.get('alt', '')}">
+        </div>''')
+    return '\n'.join(items)
 
 def generate_landing_pages():
     base_dir = Path(__file__).parent
@@ -36,7 +45,6 @@ def generate_landing_pages():
         if not slug:
             continue
 
-        # Start with the template
         html = template
 
         # Simple replacements
@@ -55,27 +63,31 @@ def generate_landing_pages():
         html = html.replace('{{ cta.primaryText }}', cta.get('primaryText', 'Get a Quote'))
         html = html.replace('{{ cta.secondaryText }}', cta.get('secondaryText', 'Call (619) 695-4334'))
 
-        # Benefits (as cards)
+        # Benefits
         benefits_html = ""
         for b in service.get('benefits', []):
             benefits_html += f'        <div class="card">{b}</div>\n'
         html = html.replace('{% for benefit in benefits %}\n        <div class="card">{{ benefit }}</div>\n        {% endfor %}', benefits_html.strip())
 
-        # Services Included (as <ul>)
+        # Gallery (new)
+        gallery_html = build_gallery_html(service.get('gallery', []))
+        html = html.replace('{% for photo in gallery %}\n        <div class="zoom-container">\n          <img src="{{ photo.src }}" alt="{{ photo.alt }}">\n        </div>\n        {% endfor %}', gallery_html)
+
+        # Services Included
         services_html = build_list_html(service.get('servicesIncluded', []), "ul")
         html = html.replace(
             '{% for item in servicesIncluded %}\n          <li>{{ item }}</li>\n          {% endfor %}',
             services_html
         )
 
-        # Process (as <ol>)
+        # Process
         process_html = build_list_html(service.get('process', []), "ol")
         html = html.replace(
             '{% for step in process %}\n          <li>{{ step }}</li>\n          {% endfor %}',
             process_html
         )
 
-        # Write the file
+        # Write file
         out_path = output_dir / f"{slug}.html"
         with open(out_path, 'w', encoding='utf-8') as f:
             f.write(html)

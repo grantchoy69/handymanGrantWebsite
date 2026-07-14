@@ -33,6 +33,32 @@
         "Final walkthrough so you’re completely satisfied"
       ],
       "pricingNote": "Most welding and custom metal jobs range from $350–$950 depending on scope and materials. I’ll always give you a clear written estimate before starting any work.",
+      "gallery": [
+        {
+          "src": "../photos/gateHingeCoolGate (4).webp",
+          "alt": "Gate hinge repair weld detail"
+        },
+        {
+          "src": "../photos/gateHingeCoolGate (1).webp",
+          "alt": "Gate hinge close-up showing strong weld"
+        },
+        {
+          "src": "../photos/gateHingeCoolGate (2).webp",
+          "alt": "Welded gate frame detail"
+        },
+        {
+          "src": "../photos/welding-railing-01.webp",
+          "alt": "Custom welded handrail with scroll details on steps"
+        },
+        {
+          "src": "../photos/welding-fence (2).webp",
+          "alt": "Finished black metal railing on garden steps"
+        },
+        {
+          "src": "../photos/welding-fence (7).webp",
+          "alt": "Modern stainless steel handrail on concrete steps"
+        }
+      ],
       "testimonials": [],
       "faq": [],
       "cta": {
