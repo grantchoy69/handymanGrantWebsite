@@ -105,6 +105,69 @@
       },
       "relatedServices": ["welding", "doors", "plumbing"]
     },
+        {
+      "slug": "doors",
+      "serviceName": "Doors & Security Doors",
+      "title": "Doors & Door Hardware | Handyman Grant San Diego",
+      "metaDescription": "Door slab replacement, hinge and latch alignment, lock installation, and security door work in San Diego. Clean, professional door work with honest pricing.",
+      "hero": {
+        "headline": "Door replacement, hardware, and security upgrades.",
+        "subheadline": "Clean door slab swaps, hinge/latch work, lock installs, and security door solutions."
+      },
+      "intro": "I handle door slab replacements, hinge and latch alignment, lock installation, and security door work. Whether you need a simple door swap or a more secure solution, I do the job cleanly and properly.",
+      "benefits": [
+        "Clean door slab replacement with proper fit",
+        "Hinge, latch, and lock hardware work",
+        "Security door and gate experience",
+        "Respectful of your home and finishes"
+      ],
+      "servicesIncluded": [
+        "Door slab replacement and fitting",
+        "Hinge and latch alignment/repair",
+        "Lock and deadbolt installation",
+        "Security door and gate work"
+      ],
+      "process": [
+        "Assessment and clear quote",
+        "Explanation of options and hardware choices",
+        "Clean work with floor and wall protection",
+        "Final walkthrough and smooth operation check"
+      ],
+      "pricingNote": "Most door and hardware work ranges from $225–$650. Written estimate before starting.",
+      "gallery": [
+        {
+          "src": "../photos/security-door-sunburst-01.jpg",
+          "alt": "White security door with sunburst design installed"
+        },
+        {
+          "src": "../photos/IMG_5081.JPEG",
+          "alt": "Clean white security door with sunburst pattern"
+        },
+        {
+          "src": "../photos/IMG_5082.JPEG",
+          "alt": "New white 6-panel door being installed"
+        },
+        {
+          "src": "../photos/IMG_0162.webp",
+          "alt": "White door with modern black hardware installed"
+        },
+        {
+          "src": "../photos/IMG_0790.webp",
+          "alt": "White utility door with brass knob in stucco opening"
+        },
+        {
+          "src": "../photos/IMG_1574.JPEG",
+          "alt": "Tan door installed in brick wall"
+        }
+      ],
+      "testimonials": [],
+      "faq": [],
+      "cta": {
+        "primaryText": "Get a Quote for Door Work",
+        "secondaryText": "Call or Text (619) 695-4334"
+      },
+      "relatedServices": ["welding", "electrical"]
+    },
     {
       "slug": "doors",
       "serviceName": "Doors & Security Doors",
@@ -134,6 +197,32 @@
         "Final walkthrough and smooth operation check"
       ],
       "pricingNote": "Most door and hardware work ranges from $225–$650. Written estimate before starting.",
+      "gallery": [
+        {
+          "src": "../photos/security-door-sunburst-01.jpg",
+          "alt": "White security door with sunburst design installed"
+        },
+        {
+          "src": "../photos/IMG_5081.JPEG",
+          "alt": "Clean white security door with sunburst pattern"
+        },
+        {
+          "src": "../photos/IMG_5082.JPEG",
+          "alt": "New white 6-panel door being installed"
+        },
+        {
+          "src": "../photos/IMG_0162.webp",
+          "alt": "White door with modern black hardware installed"
+        },
+        {
+          "src": "../photos/IMG_0790.webp",
+          "alt": "White utility door with brass knob in stucco opening"
+        },
+        {
+          "src": "../photos/IMG_1574.JPEG",
+          "alt": "Tan door installed in brick wall"
+        }
+      ],
       "testimonials": [],
       "faq": [],
       "cta": {
