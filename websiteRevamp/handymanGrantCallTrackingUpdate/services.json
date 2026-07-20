@@ -1,0 +1,407 @@
+{
+  "services": [
+    {
+      "slug": "welding",
+      "serviceName": "Welding & Custom Metal Work",
+      "title": "Mobile Welding & Custom Metal Work | Handyman Grant San Diego",
+      "metaDescription": "Mobile welding and custom metal work in San Diego for gates, railings, security doors, brackets, hinges, and practical metal repairs.",
+      "hero": {
+        "headline": "Mobile welding for gates, railings, brackets, security doors, and custom metal repairs.",
+        "subheadline": "Thoughtful repairs and small fabrication built around how the metal actually failed."
+      },
+      "intro": "Broken metal rarely fails for no reason. I look at the load, leverage, alignment, and original design before deciding whether the right fix is a clean repair, added reinforcement, or a newly fabricated part. I handle gate and fence repairs, handrails, security doors, brackets, anchor points, and custom metal work with the goal of leaving the piece stronger, cleaner, and working the way it should.",
+      "benefits": [
+        "Real welding and metalworking skill applied to the cause of the failure",
+        "Repair, reinforcement, and fabrication options explained clearly",
+        "Mobile service for gates, railings, security doors, and installed metalwork",
+        "Custom brackets, tabs, stops, plates, and small fabricated parts",
+        "Clean execution with fit, alignment, movement, and finish checked before I leave"
+      ],
+      "servicesIncluded": [
+        "Gate fabrication, alignment, and weld repair",
+        "Metal fence, hinge, latch, and frame repairs",
+        "Handrail and railing repair or replacement",
+        "Security door and security gate welding",
+        "Custom brackets, tabs, stops, and mounting plates",
+        "Anchor points, reinforcement plates, and structural metal repairs",
+        "Repair or recreation of damaged metal parts",
+        "Small custom fabrication for residential projects"
+      ],
+      "process": [
+        "Send close-up photos, a wider context photo, and rough measurements",
+        "I assess how the part failed and recommend repair, reinforcement, or fabrication",
+        "You receive a clear written estimate covering labor, materials, and the proposed approach",
+        "I complete the work, check alignment and movement, and walk through the finished repair"
+      ],
+      "pricingNote": "Most welding and custom metal jobs range from $350-$950 depending on access, materials, fabrication time, and finish work. I provide a clear written estimate before work begins.",
+      "gallery": [
+        {
+          "src": "../photos/gateHingeCoolGate (4).webp",
+          "alt": "Gate hinge repair weld detail"
+        },
+        {
+          "src": "../photos/gateHingeCoolGate (1).webp",
+          "alt": "Gate hinge close-up showing strong weld"
+        },
+        {
+          "src": "../photos/gateHingeCoolGate (2).webp",
+          "alt": "Welded gate frame detail"
+        },
+        {
+          "src": "../photos/welding-railing-01.webp",
+          "alt": "Custom welded handrail with scroll details on steps"
+        },
+        {
+          "src": "../photos/welding-fence (2).webp",
+          "alt": "Finished black metal railing on garden steps"
+        },
+        {
+          "src": "../photos/welding-fence (7).webp",
+          "alt": "Modern stainless steel handrail on concrete steps"
+        }
+      ],
+      "testimonials": [],
+      "faq": [],
+      "cta": {
+        "primaryText": "Get a Welding Quote",
+        "secondaryText": "Call or Text (619) 695-4334"
+      },
+      "relatedServices": [
+        "doors",
+        "electrical",
+        "drywall"
+      ]
+    },
+    {
+      "slug": "electrical",
+      "serviceName": "Electrical Work",
+      "title": "Electrical Repair & Installation | Handyman Grant San Diego",
+      "metaDescription": "Electrical troubleshooting, GFCI upgrades, outlet and switch repair, light fixtures, and ceiling fan installation in San Diego.",
+      "hero": {
+        "headline": "Electrical troubleshooting and upgrades handled carefully from diagnosis through testing.",
+        "subheadline": "GFCIs, outlets, switches, fixtures, ceiling fans, and practical electrical repairs."
+      },
+      "intro": "Good electrical work starts with understanding the symptom instead of immediately swapping parts. I troubleshoot outlets, switches, GFCIs, fixtures, and ceiling fans, then explain what I found and what the repair requires. The work is completed carefully, connections are kept tidy and secure, and everything is tested before the job is wrapped up.",
+      "benefits": [
+        "Diagnosis focused on the cause of the problem",
+        "Careful device selection, connections, grounding, and testing",
+        "Clear explanations without burying you in electrical jargon",
+        "Clean fixture and ceiling fan installations with thoughtful layout",
+        "Written estimates and approval before additional work is added"
+      ],
+      "servicesIncluded": [
+        "GFCI outlet replacement, upgrades, and troubleshooting",
+        "Outlet and light switch repair or replacement",
+        "Light fixture installation and replacement",
+        "Ceiling fan installation and replacement",
+        "Dead outlet, intermittent power, and device troubleshooting",
+        "Wet-area device and protection corrections",
+        "Dimmer, timer, occupancy sensor, and specialty switch installation",
+        "Minor wiring corrections at accessible boxes and devices"
+      ],
+      "process": [
+        "Describe the symptom and send photos of the device, fixture, or affected area",
+        "I test the circuit and devices to identify the likely cause",
+        "I explain the repair options and provide a clear estimate",
+        "The repair is completed, tested under normal use, and reviewed with you"
+      ],
+      "pricingNote": "Most electrical troubleshooting, repair, and installation work ranges from $275-$750 depending on access, diagnosis time, devices, and fixture complexity. Written estimate provided before starting.",
+      "gallery": [],
+      "testimonials": [],
+      "faq": [],
+      "cta": {
+        "primaryText": "Get an Electrical Quote",
+        "secondaryText": "Call or Text (619) 695-4334"
+      },
+      "relatedServices": [
+        "welding",
+        "doors",
+        "plumbing"
+      ]
+    },
+    {
+      "slug": "doors",
+      "serviceName": "Doors & Security Doors",
+      "title": "Door Repair & Security Door Work | Handyman Grant San Diego",
+      "metaDescription": "Door repair in San Diego for sticking, sagging, rubbing, and hard-to-latch doors, plus slabs, locks, hardware, and security doors.",
+      "hero": {
+        "headline": "Doors that stick, sag, rub, or refuse to latch fixed at the source.",
+        "subheadline": "Door fitting, hinge and latch repair, lock installation, slab swaps, and security door work."
+      },
+      "intro": "A door can look simple while the real problem is hiding in the hinges, frame, slab, latch alignment, weatherstripping, or years of movement in the opening. I diagnose what is actually causing the bind or poor fit, then adjust, repair, or replace the right parts. The goal is smooth operation, even gaps, dependable hardware, and a door that feels solid every time you use it.",
+      "benefits": [
+        "The cause of sticking, sagging, rubbing, or latch problems identified first",
+        "Careful fitting that protects the slab, frame, trim, and surrounding finish",
+        "Experience with interior, exterior, utility, and security doors",
+        "Hardware selected and installed for reliable everyday use",
+        "Final operation check for swing, latch, lock, clearance, and weather seal"
+      ],
+      "servicesIncluded": [
+        "Sticking, sagging, rubbing, and misaligned door repair",
+        "Hinge replacement, reinforcement, and adjustment",
+        "Latch, strike plate, handle, lock, and deadbolt installation",
+        "Interior and exterior door slab replacement and fitting",
+        "Security door installation, adjustment, and repair",
+        "Door closer and self-closing hardware repair",
+        "Weatherstripping, sweeps, and perimeter seal replacement",
+        "Minor frame, jamb, casing, and trim corrections"
+      ],
+      "process": [
+        "Send photos of the full door, hinges, latch area, and uneven gaps",
+        "I inspect the opening and identify where the alignment or hardware is failing",
+        "You receive a clear estimate and explanation of the repair plan",
+        "I complete the work and test swing, latch, lock, clearance, and seal"
+      ],
+      "pricingNote": "Most door and hardware work ranges from $225-$750 depending on the door, opening, hardware, and amount of fitting required. Written estimate provided before starting.",
+      "gallery": [
+        {
+          "src": "../photos/security-door-sunburst-01.jpg",
+          "alt": "White security door with sunburst design installed"
+        },
+        {
+          "src": "../photos/IMG_5081.JPEG",
+          "alt": "Clean white security door with sunburst pattern"
+        },
+        {
+          "src": "../photos/IMG_5082.JPEG",
+          "alt": "New white 6-panel door being installed"
+        },
+        {
+          "src": "../photos/IMG_0162.webp",
+          "alt": "White door with modern black hardware installed"
+        },
+        {
+          "src": "../photos/IMG_0790.webp",
+          "alt": "White utility door with brass knob in stucco opening"
+        },
+        {
+          "src": "../photos/IMG_1574.JPEG",
+          "alt": "Tan door installed in brick wall"
+        }
+      ],
+      "testimonials": [],
+      "faq": [],
+      "cta": {
+        "primaryText": "Get a Door Repair Quote",
+        "secondaryText": "Call or Text (619) 695-4334"
+      },
+      "relatedServices": [
+        "welding",
+        "electrical",
+        "punch-list"
+      ]
+    },
+    {
+      "slug": "plumbing",
+      "serviceName": "Plumbing Specialties",
+      "title": "Plumbing Repairs & Fixture Installation | Handyman Grant San Diego",
+      "metaDescription": "Faucets, toilets, disposals, supply lines, shutoffs, traps, and practical plumbing repairs in San Diego with careful leak testing.",
+      "hero": {
+        "headline": "Fixture installs and plumbing repairs that stay dry and work the way they should.",
+        "subheadline": "Faucets, toilets, disposals, supply lines, shutoffs, traps, and common plumbing problems."
+      },
+      "intro": "Small plumbing problems can turn into expensive damage when connections are rushed or the underlying issue is missed. I handle fixture replacements and common repairs with close attention to shutoffs, seals, alignment, drainage, and leak testing. I also take the time to point out worn or questionable parts that could create the next problem.",
+      "benefits": [
+        "Connections assembled carefully and tested under normal use",
+        "Clean fixture removal and installation with the surrounding area protected",
+        "Troubleshooting that looks beyond the most obvious leak",
+        "Clear explanation of parts, options, and any conditions discovered",
+        "Final leak, drainage, flush, and operation check before cleanup"
+      ],
+      "servicesIncluded": [
+        "Kitchen and bathroom faucet repair or replacement",
+        "Toilet removal, installation, reset, and common repairs",
+        "Garbage disposal replacement and connection work",
+        "Supply line and flexible connector replacement",
+        "Accessible shutoff valve repair and replacement",
+        "Sink trap, tailpiece, and under-sink drainage repairs",
+        "Leak diagnosis around fixtures and exposed connections",
+        "General plumbing fixture troubleshooting and upgrades"
+      ],
+      "process": [
+        "Send photos of the fixture and the visible plumbing below or behind it",
+        "I assess the problem, existing connections, and likely parts required",
+        "You receive a clear estimate and explanation before work begins",
+        "The repair or installation is completed, tested thoroughly, and cleaned up"
+      ],
+      "pricingNote": "Most faucet, toilet, disposal, and common plumbing repair work ranges from $225-$750 depending on access, parts, corrosion, and existing conditions. Written estimate before starting.",
+      "gallery": [],
+      "testimonials": [],
+      "faq": [],
+      "cta": {
+        "primaryText": "Get a Plumbing Quote",
+        "secondaryText": "Call or Text (619) 695-4334"
+      },
+      "relatedServices": [
+        "electrical",
+        "tankless",
+        "drywall"
+      ]
+    },
+    {
+      "slug": "tankless",
+      "serviceName": "Tankless Water Heater Descaling",
+      "title": "Tankless Water Heater Descaling | Handyman Grant San Diego",
+      "metaDescription": "Tankless water heater descaling, flushing, filter cleaning, and performance checks in San Diego to remove mineral buildup and restore flow.",
+      "hero": {
+        "headline": "Tankless descaling that clears mineral buildup and helps your heater perform properly.",
+        "subheadline": "A thorough flush, filter check, and performance review for routine tankless maintenance."
+      },
+      "intro": "San Diego's mineral-heavy water can build scale inside a tankless heat exchanger, reducing flow and forcing the unit to work harder. I connect a proper flush system, circulate descaling solution through the heater, clean accessible inlet filters, and check operation after the service. You get a clean maintenance visit and a straightforward recommendation for when the system should be serviced again.",
+      "benefits": [
+        "Mineral buildup flushed from the heat exchanger",
+        "Water flow and heater response checked before and after service",
+        "Accessible inlet filter inspected and cleaned",
+        "Proper pump, hoses, and descaling solution used for the flush",
+        "Maintenance timing explained based on water conditions and system use"
+      ],
+      "servicesIncluded": [
+        "Tankless water heater isolation and system preparation",
+        "Descaling solution circulation through the heat exchanger",
+        "Fresh-water flush after descaling",
+        "Accessible inlet filter cleaning",
+        "Visual check of valves, hoses, and nearby connections",
+        "Post-service hot water and flow check",
+        "Maintenance interval recommendation"
+      ],
+      "process": [
+        "Send the heater brand, model, and photos of the unit and isolation valves",
+        "I confirm the setup and provide a clear service estimate",
+        "The unit is isolated, descaled, flushed, and returned to operation",
+        "I check performance and review maintenance observations with you"
+      ],
+      "pricingNote": "Most tankless descaling services range from $275-$450 depending on access, valve setup, unit condition, and service time. Written estimate provided before scheduling.",
+      "gallery": [],
+      "testimonials": [],
+      "faq": [],
+      "cta": {
+        "primaryText": "Schedule Tankless Service",
+        "secondaryText": "Call or Text (619) 695-4334"
+      },
+      "relatedServices": [
+        "plumbing",
+        "electrical"
+      ]
+    },
+    {
+      "slug": "drywall",
+      "serviceName": "Drywall Repair",
+      "title": "Drywall & Ceiling Repair | Handyman Grant San Diego",
+      "metaDescription": "Drywall and ceiling repair in San Diego for holes, access cuts, dents, cracks, texture blending, paint-ready finishes, and touch-up paint.",
+      "hero": {
+        "headline": "Drywall and ceiling repairs finished to blend into the room.",
+        "subheadline": "Holes, access cuts, dents, cracks, texture matching, and paint-ready finishing."
+      },
+      "intro": "A good drywall repair is built in stages. The patch needs solid backing, the joints need the right reinforcement, and each coat has to be shaped with the final wall or ceiling in mind. I repair everything from doorknob holes and anchor damage to larger access cuts and ceiling patches, then blend the texture and finish so the repair stops drawing attention.",
+      "benefits": [
+        "Solid patching methods selected for the size and location of the damage",
+        "Careful feathering and sanding to avoid a visible mound around the repair",
+        "Texture blending for common San Diego wall and ceiling finishes",
+        "Floors, furniture, and nearby surfaces protected from dust and compound",
+        "Paint-ready finishing with touch-up painting available when practical"
+      ],
+      "servicesIncluded": [
+        "Small and medium wall hole repair",
+        "Larger drywall access cut and section repair",
+        "Ceiling patching and texture repair",
+        "Doorknob, anchor, dent, and impact damage repair",
+        "Crack repair and popped fastener correction",
+        "Texture matching and blending",
+        "Paint-ready sanding and finishing",
+        "Small-area primer and paint touch-ups"
+      ],
+      "process": [
+        "Send one wide photo and close photos showing the size, texture, and location",
+        "I assess backing, patch method, texture, drying time, and finish requirements",
+        "You receive a clear estimate and an explanation of the expected visit schedule",
+        "The area is protected, repaired in stages, cleaned, and reviewed when complete"
+      ],
+      "pricingNote": "Most drywall and ceiling repair jobs range from $175-$650 depending on size, texture, access, drying time, and painting. Written estimate provided before starting.",
+      "gallery": [
+        {
+          "src": "../photos/ceilingBefore.webp",
+          "alt": "Ceiling damage before drywall repair"
+        },
+        {
+          "src": "../photos/ceilingAfter.webp",
+          "alt": "Ceiling after clean drywall and texture repair"
+        }
+      ],
+      "testimonials": [],
+      "faq": [],
+      "cta": {
+        "primaryText": "Get a Drywall Quote",
+        "secondaryText": "Call or Text (619) 695-4334"
+      },
+      "relatedServices": [
+        "plumbing",
+        "electrical",
+        "punch-list"
+      ]
+    },
+    {
+      "slug": "punch-list",
+      "serviceName": "Move-In & Punch List Work",
+      "title": "Punch List & Move-In Repairs | Handyman Grant San Diego",
+      "metaDescription": "Punch list, move-in, move-out, rental turnover, and pre-sale repairs in San Diego. Bundle multiple small jobs into one organized visit.",
+      "hero": {
+        "headline": "Turn a scattered repair list into one organized, productive visit.",
+        "subheadline": "Move-in, move-out, rental turnover, pre-sale, and general home punch list repairs."
+      },
+      "intro": "A punch list is often the most efficient way to use a handyman visit. Send a numbered list with photos, and I can group the work by tools, materials, and sequence before arriving. I help homeowners, landlords, property managers, renters, and real estate professionals finish the small repairs that keep a property from feeling complete.",
+      "benefits": [
+        "Multiple small repairs organized into one efficient scope",
+        "Numbered, itemized estimates that make approvals and priorities clear",
+        "Useful for move-ins, turnovers, pre-sale preparation, and deferred maintenance",
+        "Broad repair capability across doors, drywall, mounting, hardware, caulking, and fixtures",
+        "Final walkthrough against the original list so completed items are easy to verify"
+      ],
+      "servicesIncluded": [
+        "Door, hinge, latch, lock, and hardware adjustments",
+        "Drywall patches and small paint touch-ups",
+        "Caulking, sealing, and trim touch-ups",
+        "Cabinet, drawer, shelf, and closet hardware repairs",
+        "Light fixture, switch, outlet, and device replacements",
+        "Mirror, artwork, shelf, and household item mounting",
+        "Minor plumbing fixture and connection repairs",
+        "General move-in, move-out, rental, and pre-sale fix-up items"
+      ],
+      "process": [
+        "Send a numbered list with at least one clear photo for each item",
+        "I group the work, identify likely materials, and flag anything needing more information",
+        "You receive an itemized written estimate and can approve the full list or selected priorities",
+        "I work through the approved list efficiently and complete a final walkthrough"
+      ],
+      "pricingNote": "Most punch list and move-in repair visits range from $250-$950 depending on the number of items, materials, access, and variety of work. Written itemized estimate provided before starting.",
+      "gallery": [
+        {
+          "src": "../photos/ceilingAfter.webp",
+          "alt": "Clean ceiling repair as part of punch list work"
+        },
+        {
+          "src": "../photos/lights1.webp",
+          "alt": "Light fixture and electrical touch-up"
+        },
+        {
+          "src": "../photos/IMG_5082.JPEG",
+          "alt": "Door and hardware work on a punch list"
+        },
+        {
+          "src": "../photos/kitchen-counter-01.webp",
+          "alt": "Kitchen and finish work examples"
+        }
+      ],
+      "testimonials": [],
+      "faq": [],
+      "cta": {
+        "primaryText": "Send Your Repair List",
+        "secondaryText": "Call or Text (619) 695-4334"
+      },
+      "relatedServices": [
+        "drywall",
+        "doors",
+        "electrical"
+      ]
+    }
+  ]
+}
