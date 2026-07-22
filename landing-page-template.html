@@ -55,6 +55,15 @@ header { position: sticky; top:0; backdrop-filter: blur(8px); background: rgba(1
 .brand { display:flex; gap:.8rem; align-items:center; font-weight:700; }
 .brand-logo { display:block; width:132px; height:auto; flex:0 0 auto; }
 .nav a.btn { padding:.55rem .85rem; border-radius:10px; background:linear-gradient(180deg,#D4AF37,#b48a22); color:white; font-weight:600; font-size:.95rem; }
+.back-home-btn {
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:50px;
+  padding:.78rem 1.2rem;
+  font-size:1.06rem;
+  font-weight:750;
+}
 .hero { padding:3.5rem 0 2.5rem; }
 .hero h1 { font-size:clamp(1.9rem,2.8vw+1rem,3.1rem); line-height:1.1; margin:0 0 .6rem; }
 .hero p { color:var(--muted); font-size:1.1rem; max-width:620px; }
@@ -125,6 +134,11 @@ h2 { font-size:1.65rem; margin:0 0 1rem; }
   .nav { align-items:flex-start; }
   .brand-logo { width:104px; }
   .brand span { font-size:.92rem; }
+  .back-home-btn {
+    min-height:48px;
+    padding:.72rem 1rem;
+    font-size:1rem;
+  }
 
   .floating-call {
     left: 14px;
@@ -148,7 +162,7 @@ h2 { font-size:1.65rem; margin:0 0 1rem; }
           </span>
         </div>
       </a>
-      <nav><a class="btn" href="../index.html">Back to Home</a></nav>
+      <nav><a class="btn back-home-btn" href="../index.html">Back to Home</a></nav>
     </div>
   </header>
 
@@ -175,17 +189,9 @@ h2 { font-size:1.65rem; margin:0 0 1rem; }
       </div>
     </section>
 
-    <!-- New Gallery Section -->
-    <section>
-      <h2>Examples of My Work</h2>
-      <div class="random-gallery">
-        {% for photo in gallery %}
-        <div class="zoom-container">
-          <img src="{{ photo.src }}" alt="{{ photo.alt }}">
-        </div>
-        {% endfor %}
-      </div>
-    </section>
+    {{ gallerySection }}
+
+    {{ sharedTrustSections }}
 
     <section>
       <h2>Services Included</h2>
@@ -199,7 +205,7 @@ h2 { font-size:1.65rem; margin:0 0 1rem; }
     </section>
 
     <section>
-      <h2>What to Expect</h2>
+      <h2>How This Service Works</h2>
       <div class="card">
         <ol style="line-height:1.85; padding-left:1.3rem;">
           {% for step in process %}

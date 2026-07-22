@@ -2,7 +2,15 @@
 """Handyman Grant landing-page generator."""
 
 import json
+import re
 from pathlib import Path
+
+
+SHARED_SECTION_IDS = (
+    "meet-grant",
+    "what-to-expect",
+    "trust",
+)
 
 
 def build_list_items_html(items):
@@ -11,9 +19,7 @@ def build_list_items_html(items):
     return "\n".join(f"          <li>{item}</li>" for item in items)
 
 
-def build_gallery_html(gallery):
-    if not gallery:
-        return ""
+def build_gallery_items_html(gallery):
     items = []
     for photo in gallery:
         items.append(
@@ -24,16 +30,95 @@ def build_gallery_html(gallery):
     return "\n".join(items)
 
 
+def build_gallery_section_html(gallery):
+    """Return no gallery section when a service has no photos."""
+    if not gallery:
+        return ""
+
+    return (
+        '    <section id="gallery">\n'
+        '      <h2>Examples of My Work</h2>\n'
+        '      <div class="random-gallery">\n'
+        f'{build_gallery_items_html(gallery)}\n'
+        '      </div>\n'
+        '    </section>'
+    )
+
+
+def extract_section(index_html, section_id):
+    """Extract a canonical top-level section from index.html by id."""
+    pattern = re.compile(
+        rf'<section\b[^>]*\bid=["\']{re.escape(section_id)}["\'][^>]*>'
+        rf'[\s\S]*?</section>',
+        re.IGNORECASE,
+    )
+    match = pattern.search(index_html)
+
+    if not match:
+        raise ValueError(
+            f'Could not find <section id="{section_id}"> in index.html'
+        )
+
+    return match.group(0)
+
+
+def make_paths_relative_to_landing_page(section_html):
+    """Rewrite root-page links for pages stored inside landing-pages/."""
+    replacements = (
+        ('src="photos/', 'src="../photos/'),
+        ("src='photos/", "src='../photos/"),
+        ('href="photos/', 'href="../photos/'),
+        ("href='photos/", "href='../photos/"),
+        ('href="index.html', 'href="../index.html'),
+        ("href='index.html", "href='../index.html"),
+        ('href="work.html', 'href="../work.html'),
+        ("href='work.html", "href='../work.html"),
+    )
+
+    for old, new in replacements:
+        section_html = section_html.replace(old, new)
+
+    return section_html
+
+
+def clean_shared_section_copy(section_html):
+    """Remove a homepage-only aside that reads strangely on an ad page."""
+    section_html = section_html.replace(
+        "My goal is for you to feel confident you brought in someone who can "
+        "actually handle the job — without creating new problems or drama "
+        "with your wife.",
+        "My goal is for you to feel confident you brought in someone who can "
+        "actually handle the job without creating new problems or surprises.",
+    )
+    return section_html
+
+
+def build_shared_sections_html(index_html):
+    sections = []
+
+    for section_id in SHARED_SECTION_IDS:
+        section_html = extract_section(index_html, section_id)
+        section_html = make_paths_relative_to_landing_page(section_html)
+        section_html = clean_shared_section_copy(section_html)
+        sections.append("    " + section_html.replace("\n", "\n    "))
+
+    return "\n\n".join(sections)
+
+
 def generate_landing_pages():
     base_dir = Path(__file__).parent
     json_path = base_dir / "services.json"
+    index_path = base_dir / "index.html"
     template_path = base_dir / "landing-page-template.html"
     output_dir = base_dir / "landing-pages"
 
     with json_path.open("r", encoding="utf-8") as file:
         data = json.load(file)
 
+    index_html = index_path.read_text(encoding="utf-8")
     template = template_path.read_text(encoding="utf-8")
+    shared_sections_html = build_shared_sections_html(index_html)
+
     output_dir.mkdir(exist_ok=True)
     print(f"Generating landing pages into: {output_dir}")
 
@@ -44,39 +129,68 @@ def generate_landing_pages():
 
         html = template
         html = html.replace("{{ title }}", service.get("title", ""))
-        html = html.replace("{{ metaDescription }}", service.get("metaDescription", ""))
+        html = html.replace(
+            "{{ metaDescription }}",
+            service.get("metaDescription", ""),
+        )
         html = html.replace("{{ intro }}", service.get("intro", ""))
-        html = html.replace("{{ pricingNote }}", service.get("pricingNote", ""))
+        html = html.replace(
+            "{{ pricingNote }}",
+            service.get("pricingNote", ""),
+        )
 
         hero = service.get("hero", {})
-        html = html.replace("{{ hero.headline }}", hero.get("headline", ""))
-        html = html.replace("{{ hero.subheadline }}", hero.get("subheadline", ""))
+        html = html.replace(
+            "{{ hero.headline }}",
+            hero.get("headline", ""),
+        )
+        html = html.replace(
+            "{{ hero.subheadline }}",
+            hero.get("subheadline", ""),
+        )
 
         cta = service.get("cta", {})
-        html = html.replace("{{ cta.primaryText }}", cta.get("primaryText", "Get a Quote"))
-        html = html.replace("{{ cta.secondaryText }}", cta.get("secondaryText", "Call (619) 695-4334"))
+        html = html.replace(
+            "{{ cta.primaryText }}",
+            cta.get("primaryText", "Get a Quote"),
+        )
+        html = html.replace(
+            "{{ cta.secondaryText }}",
+            cta.get("secondaryText", "Call (619) 695-4334"),
+        )
 
         benefits_html = "\n".join(
             f'        <div class="card">{benefit}</div>'
             for benefit in service.get("benefits", [])
         )
         html = html.replace(
-            "{% for benefit in benefits %}\n        <div class=\"card\">{{ benefit }}</div>\n        {% endfor %}",
+            "{% for benefit in benefits %}\n"
+            '        <div class="card">{{ benefit }}</div>\n'
+            "        {% endfor %}",
             benefits_html,
         )
 
         html = html.replace(
-            "{% for photo in gallery %}\n        <div class=\"zoom-container\">\n          <img src=\"{{ photo.src }}\" alt=\"{{ photo.alt }}\">\n        </div>\n        {% endfor %}",
-            build_gallery_html(service.get("gallery", [])),
+            "{{ gallerySection }}",
+            build_gallery_section_html(service.get("gallery", [])),
         )
 
         html = html.replace(
-            "{% for item in servicesIncluded %}\n          <li>{{ item }}</li>\n          {% endfor %}",
+            "{{ sharedTrustSections }}",
+            shared_sections_html,
+        )
+
+        html = html.replace(
+            "{% for item in servicesIncluded %}\n"
+            "          <li>{{ item }}</li>\n"
+            "          {% endfor %}",
             build_list_items_html(service.get("servicesIncluded", [])),
         )
 
         html = html.replace(
-            "{% for step in process %}\n          <li>{{ step }}</li>\n          {% endfor %}",
+            "{% for step in process %}\n"
+            "          <li>{{ step }}</li>\n"
+            "          {% endfor %}",
             build_list_items_html(service.get("process", [])),
         )
 

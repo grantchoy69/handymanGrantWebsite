@@ -1,21 +1,22 @@
-# Handyman Grant Landing-Page Call Tracking
+# Handyman Grant Landing-Page Trust Sections
 
-Copy these files over the matching files in the website repository.
+Replace these files in the repository:
+
+- `landing-page-template.html`
+- `generate_landing_pages.py`
+- `landing-pages/`
 
 ## What changed
 
-- Added the Google Ads tag to the shared landing-page template.
-- Added the existing homepage conversion action:
-  `AW-17749862714/nReaCO3k_8YbELrS5Y9C`
-- Added a floating **Call Grant** button to every generated service page.
-- Added conversion tracking to all phone CTAs:
-  - Hero call button
-  - Bottom call button
-  - Floating Call Grant button
-- Added a 1.2-second navigation fallback so blocked tracking does not prevent a call.
-- Updated the shared template, so future generated pages receive the same tracking.
+- The generator now extracts the canonical `Meet Grant`, `What to Expect When I Arrive`, and `Safety & Trust Guarantee` sections from `index.html` every time it runs.
+- Those sections appear immediately after each service's example-work gallery.
+- Photo links are rewritten automatically for files inside `landing-pages/`.
+- Services with no gallery photos no longer render an empty gallery section.
+- The service-specific process heading is now `How This Service Works` to avoid duplicating the arrival-expectations heading.
+- The landing-page `Back to Home` button is larger and easier to tap.
+- Existing Google Ads conversion tracking remains on all three phone CTAs.
 
-## Regenerate pages
+## Regenerate the landing pages
 
 From the repository root:
 
