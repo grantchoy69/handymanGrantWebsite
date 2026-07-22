@@ -6,13 +6,6 @@ import re
 from pathlib import Path
 
 
-SHARED_SECTION_IDS = (
-    "meet-grant",
-    "what-to-expect",
-    "trust",
-)
-
-
 def build_list_items_html(items):
     if not items:
         return ""
@@ -24,7 +17,8 @@ def build_gallery_items_html(gallery):
     for photo in gallery:
         items.append(
             '        <div class="zoom-container">\n'
-            f'          <img src="{photo.get("src", "")}" alt="{photo.get("alt", "")}">\n'
+            f'          <img src="{photo.get("src", "")}" '
+            f'alt="{photo.get("alt", "")}" loading="lazy" decoding="async">\n'
             '        </div>'
         )
     return "\n".join(items)
@@ -82,7 +76,7 @@ def make_paths_relative_to_landing_page(section_html):
 
 
 def clean_shared_section_copy(section_html):
-    """Remove a homepage-only aside that reads strangely on an ad page."""
+    """Remove one homepage-only sentence from generated landing pages."""
     section_html = section_html.replace(
         "My goal is for you to feel confident you brought in someone who can "
         "actually handle the job — without creating new problems or drama "
@@ -93,16 +87,12 @@ def clean_shared_section_copy(section_html):
     return section_html
 
 
-def build_shared_sections_html(index_html):
-    sections = []
-
-    for section_id in SHARED_SECTION_IDS:
-        section_html = extract_section(index_html, section_id)
-        section_html = make_paths_relative_to_landing_page(section_html)
-        section_html = clean_shared_section_copy(section_html)
-        sections.append("    " + section_html.replace("\n", "\n    "))
-
-    return "\n\n".join(sections)
+def build_shared_section_html(index_html, section_id):
+    """Extract and prepare one shared section for a landing page."""
+    section_html = extract_section(index_html, section_id)
+    section_html = make_paths_relative_to_landing_page(section_html)
+    section_html = clean_shared_section_copy(section_html)
+    return "    " + section_html.replace("\n", "\n    ")
 
 
 def generate_landing_pages():
@@ -117,7 +107,13 @@ def generate_landing_pages():
 
     index_html = index_path.read_text(encoding="utf-8")
     template = template_path.read_text(encoding="utf-8")
-    shared_sections_html = build_shared_sections_html(index_html)
+
+    meet_grant_html = build_shared_section_html(index_html, "meet-grant")
+    what_to_expect_html = build_shared_section_html(
+        index_html,
+        "what-to-expect",
+    )
+    trust_html = build_shared_section_html(index_html, "trust")
 
     output_dir.mkdir(exist_ok=True)
     print(f"Generating landing pages into: {output_dir}")
@@ -159,25 +155,21 @@ def generate_landing_pages():
             cta.get("secondaryText", "Call (619) 695-4334"),
         )
 
-        benefits_html = "\n".join(
-            f'        <div class="card">{benefit}</div>'
-            for benefit in service.get("benefits", [])
-        )
         html = html.replace(
-            "{% for benefit in benefits %}\n"
-            '        <div class="card">{{ benefit }}</div>\n'
-            "        {% endfor %}",
-            benefits_html,
+            "{{ meetGrantSection }}",
+            meet_grant_html,
         )
-
         html = html.replace(
             "{{ gallerySection }}",
             build_gallery_section_html(service.get("gallery", [])),
         )
-
         html = html.replace(
-            "{{ sharedTrustSections }}",
-            shared_sections_html,
+            "{{ whatToExpectSection }}",
+            what_to_expect_html,
+        )
+        html = html.replace(
+            "{{ trustSection }}",
+            trust_html,
         )
 
         html = html.replace(
@@ -186,7 +178,6 @@ def generate_landing_pages():
             "          {% endfor %}",
             build_list_items_html(service.get("servicesIncluded", [])),
         )
-
         html = html.replace(
             "{% for step in process %}\n"
             "          <li>{{ step }}</li>\n"
