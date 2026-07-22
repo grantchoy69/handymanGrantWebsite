@@ -1,574 +1,903 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
-<!-- Google tag (gtag.js) - Google Ads -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17749862714"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'AW-17749862714');
-</script>
+  <!-- Google tag (gtag.js) - Google Ads -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17749862714"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-17749862714');
 
-<!-- Event snippet for Request Quote Button Click conversion -->
-<script>
-  function gtag_report_conversion(url) {
-    try {
+    function gtag_report_conversion(url) {
+      var navigated = false;
+
       var callback = function () {
+        if (navigated) return;
+        navigated = true;
+
         if (typeof url !== 'undefined' && url) {
           window.location = url;
         }
       };
+
       if (typeof gtag === 'function') {
         gtag('event', 'conversion', {
           'send_to': 'AW-17749862714/nReaCO3k_8YbELrS5Y9C',
           'event_callback': callback
         });
+
+        window.setTimeout(callback, 1200);
       } else {
-        // gtag not ready; just follow the link
         callback();
       }
-    } catch (e) {
-      // If something breaks, still follow the link
-      if (url) {
-        window.location = url;
-      }
+
+      return false;
     }
-  }
-</script>
+  </script>
 
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>See My Work — Handyman Grant</title>
-<meta name="description" content="Examples of handyman work in San Diego: TV mounting, drywall repair, plumbing, electrical, and more."/>
-<meta property="og:title" content="See My Work — Handyman Grant" />
-<meta property="og:description" content="Fast, reliable handyman services in San Diego." />
-<meta property="og:type" content="website" />
-<meta property="og:image" content="photos/tv1.webp" />
-<meta name="theme-color" content="#0e7490" />
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>🛠️</text></svg>">
-<style>
-  :root {
-    /* Brand palette */
-    --bg: #202020;        /* page background (dark neutral so text has contrast) */
-    --card: #2b2b2b;      /* cards / surfaces */
-    --muted: #e0e0e0;     /* muted text */
-    --text: #f5f5f5;      /* main text */
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Project Gallery | Handyman Grant San Diego</title>
+  <meta name="description" content="Browse before-and-after repairs, welding, doors, drywall, mounting, lighting, and custom handyman projects completed by Handyman Grant in San Diego.">
+  <meta property="og:title" content="Project Gallery | Handyman Grant">
+  <meta property="og:description" content="Real repair, installation, welding, and before-and-after project photos from Handyman Grant in San Diego.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="photos/weldedGateBeforeAfter.webp">
+  <meta name="theme-color" content="#202020">
+  <link rel="icon" type="image/png" href="photos/logo.png">
 
-    --accent: #D4AF37;    /* gold */
-    --accent-2: #800020;  /* burgundy */
+  <style>
+    :root {
+      --bg: #202020;
+      --card: #2b2b2b;
+      --muted: #d3d3d3;
+      --text: #f5f5f5;
+      --accent: #D4AF37;
+      --accent-dark: #b48a22;
+      --burgundy: #800020;
+      --burgundy-dark: #4c0013;
+      --border: rgba(255,255,255,.1);
+      --shadow: 0 10px 25px rgba(0,0,0,.35);
+      --ring: rgba(212,175,55,.38);
+    }
 
-    --warning: #f59e0b;   /* can keep amber for notes if you want */
-    --ring: rgba(212,175,55,0.35);
-    --shadow: 0 10px 25px rgba(0,0,0,.35);
-  }
-  * { box-sizing: border-box; }
-  html, body { height: 100%; }
-  body {
-    margin: 0;
-    font-family: system-ui, -apple-system, Segoe UI, Roboto, Inter, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji";
-    background: linear-gradient(180deg, #1a1a1a, #111111);
-    color: var(--text);
-      font-size: 20px;       /* easier for 65+ */
-  line-height: 1.7; 
-  }
-  a { color: var(--accent); text-decoration: none; }
-  a:hover { text-decoration: underline; }
-  .container { width: min(1100px, 92%); margin: 0 auto; }
-  header { position: sticky; top: 0; backdrop-filter: blur(8px); background: rgba(11,18,32,.65); border-bottom: 1px solid rgba(148,163,184,.15); z-index: 50; }
-  .nav { display: flex; align-items: center; justify-content: space-between; padding: .85rem 0; }
-  .brand { display:flex; gap:.6rem; align-items:center; font-weight: 700; letter-spacing: .2px; }
-  .brand .logo {
-    width: 38px;
-    height: 38px;
-    display: grid;
-    place-items: center;
-    border-radius: 12px;
-    background: radial-gradient(circle at 30% 30%, #D4AF37, #b48a22 60%, #4a3a10 100%);
-    box-shadow: inset 0 0 14px rgba(255,255,255,.08), 0 6px 20px rgba(0,0,0,.4);
-  }
-  .brand span small { display:block; color: var(--muted); font-weight: 500; font-size: .75rem; }
-  .nav a.btn {
-    padding: .6rem .9rem;
-    border-radius: 12px;
-    background: linear-gradient(180deg, #D4AF37, #b48a22);
-    color: white;
-    font-weight: 600;
-    box-shadow: var(--shadow);
-    border: 1px solid rgba(255,255,255,.12);
-  }
+    * {
+      box-sizing: border-box;
+    }
 
-  .nav a.btn:hover { filter: brightness(1.05); }
+    html {
+      scroll-behavior: smooth;
+    }
 
-  .hero { display:grid; gap:1.6rem; padding: 4.5rem 0 2.5rem; }
-  .hero h1 { font-size: clamp(1.8rem, 2.7vw + 1rem, 3rem); line-height: 1.08; margin:0; }
-  .hero p { color: var(--muted); font-size: 1.05rem; margin: .5rem 0 0; }
-  .cta-row { display:flex; gap:.8rem; flex-wrap:wrap; margin-top: 1.1rem; }
-  .cta {
-    display: inline-flex;
-    align-items: center;
-    gap: .55rem;
-    padding: .8rem 1rem;
-    border-radius: 14px;
-    background: linear-gradient(180deg, #D4AF37, #b48a22);
-    color: white;
-    font-weight: 700;
-    box-shadow: var(--shadow);
-    border: 1px solid rgba(255,255,255,.12);
-  }
+    body {
+      margin: 0;
+      padding-bottom: 90px;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Inter, "Helvetica Neue", Arial, sans-serif;
+      background: linear-gradient(180deg, #1a1a1a, #111);
+      color: var(--text);
+      font-size: 19px;
+      line-height: 1.65;
+    }
 
-  .cta.secondary {
-    background: linear-gradient(180deg, #800020, #4c0013);
-  }
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
 
-  .badges { display:flex; gap:.8rem; flex-wrap:wrap; margin-top:.6rem; }
-  .badge {
-    font-size: .85rem;
-    color: var(--text);
-    border: 1px solid rgba(212,175,55,.6); /* gold outline */
-    padding: .35rem .6rem;
-    border-radius: 999px;
-  }
+    a:hover {
+      text-decoration: none;
+    }
 
-  section { padding: 2.5rem 0; }
-  .cards { display:grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap:1rem; }
-  .card {
-    background: var(--card);
-    border: 1px solid rgba(255,255,255,.08);
-    border-radius: 16px;
-    padding: 1rem;
-    box-shadow: var(--shadow);
-  }
-  .card h3 { margin:.2rem 0 .3rem; font-size:1.05rem; }
-  .muted { color: var(--muted); }
+    .container {
+      width: min(1180px, 92%);
+      margin: 0 auto;
+    }
 
-  .grid-2 { display:grid; grid-template-columns: 1.2fr .8fr; gap:1.2rem; }
-  @media (max-width: 900px) { .grid-2 { grid-template-columns: 1fr; } }
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      padding: 1rem 0;
+      border-bottom: 1px solid rgba(148,163,184,.15);
+      background: rgba(17,17,17,.88);
+      backdrop-filter: blur(10px);
+    }
 
-  .gallery { display:grid; grid-template-columns: repeat(auto-fit,minmax(160px,1fr)); gap:.6rem; }
-  .ph { aspect-ratio: 4/3; background: linear-gradient(135deg, #0b2a3a, #051320); border: 1px dashed rgba(148,163,184,.25); border-radius: 14px; display:grid; place-items:center; color:#67e8f9; font-weight:700; }
-
-  form { display:grid; gap:.75rem; }
-  input, textarea, select { width:100%; background:#0b1325; color:var(--text); border:1px solid rgba(148,163,184,.25); border-radius: 12px; padding:.75rem .85rem; outline: none; }
-  input:focus, textarea:focus { border-color: var(--accent); box-shadow: 0 0 0 6px var(--ring); }
-  button {
-    padding: .9rem 1rem;
-    border-radius: 14px;
-    border: none;
-    background: linear-gradient(180deg, #D4AF37, #b48a22);
-    color: #1a1a1a;
-    font-weight: 800;
-  }
-
-  .foot { border-top:1px solid rgba(148,163,184,.15); color:#cbd5e1; font-size:.95rem; }
-  .foot small { color:#9aa8bd; }
-
-  .floating-call { position: fixed; right: 14px; bottom: 14px; z-index: 60; }
-  .floating-call a {
-    display: inline-flex;
-    align-items: center;
-    gap: .6rem;
-
-    /* SIZE ↑ */
-    font-size: 1.15rem;       /* was ~1rem → slightly larger text */
-    padding: 1.1rem 1.4rem;   /* bigger pill button */
-    border-radius: 999px;     /* round pill */
-
-    background: linear-gradient(180deg, #800020, #4c0013);
-    color: white;
-    font-weight: 800;
-    box-shadow: var(--shadow);
-    border: 1px solid rgba(255,255,255,.15);
-  }
-
-
-  .ba-pair {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 8px;
-  }
-  .ba-pair img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    border-radius: 12px;
-  }
-  @media (max-width: 560px) {
-    .ba-pair { grid-template-columns: 1fr; } /* stack on small phones */
-  }
-  /* Mobile header + button fixes */
-  @media (max-width: 520px) {
     .nav {
-      flex-direction: column;
-      align-items: stretch;
-      gap: 1.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
     }
 
     .brand {
-      width: 100%;
-      justify-content: flex-start;
+      display: flex;
+      align-items: center;
+      gap: .8rem;
+      color: var(--text);
+      font-weight: 700;
     }
 
-    .nav a.btn {
-      width: 100%;
+    .brand-logo {
+      display: block;
+      width: 132px;
+      height: auto;
+      flex: 0 0 auto;
+    }
+
+    .brand small {
+      display: block;
+      color: var(--muted);
+      font-size: .72rem;
+      font-weight: 500;
+    }
+
+    .header-actions {
+      display: flex;
+      gap: .75rem;
+      align-items: center;
+    }
+
+    .btn,
+    .cta {
+      display: inline-flex;
+      align-items: center;
       justify-content: center;
-      text-align: center;
+      min-height: 48px;
+      padding: .72rem 1rem;
+      border: 1px solid rgba(255,255,255,.13);
+      border-radius: 12px;
+      background: linear-gradient(180deg, var(--accent), var(--accent-dark));
+      color: #181818;
+      font-weight: 800;
+      box-shadow: var(--shadow);
+    }
 
-      /* slightly smaller on phones so it doesn't feel crowded */
+    .btn.secondary,
+    .cta.secondary {
+      background: linear-gradient(180deg, var(--burgundy), var(--burgundy-dark));
+      color: white;
+    }
+
+    .btn:hover,
+    .cta:hover {
+      filter: brightness(1.07);
+    }
+
+    .hero {
+      padding: 4.6rem 0 2.5rem;
+    }
+
+    .hero h1 {
+      max-width: 850px;
+      margin: 0;
+      font-size: clamp(2.2rem, 4vw + 1rem, 4.4rem);
+      line-height: 1.02;
+      letter-spacing: -.03em;
+    }
+
+    .hero p {
+      max-width: 760px;
+      margin: 1rem 0 0;
+      color: var(--muted);
+      font-size: 1.12rem;
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .8rem;
+      margin-top: 1.5rem;
+    }
+
+    .jump-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .65rem;
+      margin-top: 1.5rem;
+    }
+
+    .jump-links a {
+      padding: .42rem .75rem;
+      border: 1px solid rgba(212,175,55,.55);
+      border-radius: 999px;
+      color: var(--text);
+      font-size: .9rem;
+    }
+
+    .jump-links a:hover {
+      background: rgba(212,175,55,.1);
+    }
+
+    .gallery-section {
+      padding: 2.8rem 0;
+      scroll-margin-top: 120px;
+    }
+
+    .section-heading {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 1.15rem;
+    }
+
+    .section-heading h2 {
+      margin: 0;
+      font-size: clamp(1.65rem, 2vw + 1rem, 2.5rem);
+      line-height: 1.1;
+    }
+
+    .section-heading p {
+      max-width: 610px;
+      margin: .45rem 0 0;
+      color: var(--muted);
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.15rem;
+      align-items: start;
+    }
+
+    .portfolio-card {
+      margin: 0;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: var(--card);
+      box-shadow: var(--shadow);
+    }
+
+    .image-link {
+      display: block;
+      overflow: hidden;
+      background: #171717;
+      cursor: zoom-in;
+    }
+
+    .portfolio-card img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      transition: transform .28s ease, filter .28s ease;
+    }
+
+    .before-after-card img {
+      aspect-ratio: 16 / 10;
+      object-fit: contain;
+    }
+
+    .image-link:hover img {
+      transform: scale(1.025);
+      filter: brightness(1.04);
+    }
+
+    figcaption {
+      display: grid;
+      gap: .25rem;
+      padding: .9rem 1rem 1.05rem;
+    }
+
+    figcaption strong {
+      color: var(--text);
       font-size: 1rem;
-      padding: 0.7rem 1rem;
+      line-height: 1.3;
     }
-    .brand span {
-      font-size: 0.95rem;
+
+    figcaption span {
+      color: var(--muted);
+      font-size: .9rem;
+      line-height: 1.45;
     }
-    .brand span small {
-      font-size: 0.7rem;
+
+    .closing-cta {
+      margin: 2.5rem 0 4rem;
+      padding: 2rem;
+      border: 1px solid rgba(212,175,55,.35);
+      border-radius: 18px;
+      background: linear-gradient(135deg, rgba(212,175,55,.09), rgba(128,0,32,.11));
+      text-align: center;
+      box-shadow: var(--shadow);
     }
-  }
-/* Modal background */
-.image-modal {
-  display: none;
-  position: fixed;
-  z-index: 9999;
-  left: 0; top: 0;
-  width: 100%; height: 100%;
-  background: rgba(0,0,0,0.8);
-  justify-content: center;
-  align-items: center;
-}
 
-/* The zoomed-in image */
-.image-modal img {
-  max-width: 90%;
-  max-height: 90%;
-  border-radius: 8px;
-}
+    .closing-cta h2 {
+      margin: 0;
+      font-size: clamp(1.6rem, 2vw + 1rem, 2.4rem);
+    }
 
-/* Close cursor */
-.image-modal:hover {
-  cursor: zoom-out;
-}
+    .closing-cta p {
+      max-width: 650px;
+      margin: .7rem auto 0;
+      color: var(--muted);
+    }
 
-/* New styles for categorized galleries */
-.category-gallery {
-  display: flex;
-  overflow-x: auto;
-  gap: 1rem;
-  padding: 1rem 0;
-  white-space: nowrap;
-}
-.image-container {
-  display: inline-block;
-  text-align: center;
-  min-width: 200px; /* Adjust as needed for thumbnail size */
-  white-space: normal;
-}
-.image-container p.caption {
-  margin: 0 0 0.5rem;
-  font-size: 0.9rem;
-  color: var(--text);
-}
-.image-container img {
-  width: 100%;
-  height: auto;
-  border-radius: 12px;
-  object-fit: cover;
-}
+    .closing-cta .cta-row {
+      justify-content: center;
+    }
 
-</style>
+    .floating-call {
+      position: fixed;
+      right: 14px;
+      bottom: 14px;
+      z-index: 60;
+    }
 
+    .floating-call a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 54px;
+      padding: 1rem 1.35rem;
+      border: 1px solid rgba(255,255,255,.15);
+      border-radius: 999px;
+      background: linear-gradient(180deg, var(--burgundy), var(--burgundy-dark));
+      color: white;
+      font-weight: 800;
+      box-shadow: var(--shadow);
+    }
+
+    footer {
+      padding: 1.5rem 0 2.5rem;
+      border-top: 1px solid rgba(148,163,184,.15);
+      color: #cbd5e1;
+      font-size: .9rem;
+    }
+
+    .modal {
+      position: fixed;
+      inset: 0;
+      z-index: 1000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 22px;
+      background: rgba(0,0,0,.92);
+    }
+
+    .modal.open {
+      display: flex;
+    }
+
+    .modal-dialog {
+      position: relative;
+      display: grid;
+      gap: .75rem;
+      max-width: min(1200px, 96vw);
+      max-height: 94vh;
+    }
+
+    .modal img {
+      display: block;
+      max-width: 100%;
+      max-height: 84vh;
+      margin: auto;
+      border-radius: 10px;
+      box-shadow: 0 18px 60px rgba(0,0,0,.7);
+    }
+
+    .modal-caption {
+      color: white;
+      text-align: center;
+      font-weight: 700;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: -14px;
+      right: -14px;
+      width: 44px;
+      height: 44px;
+      border: 1px solid rgba(255,255,255,.22);
+      border-radius: 50%;
+      background: #222;
+      color: white;
+      font-size: 1.6rem;
+      cursor: pointer;
+    }
+
+    @media (max-width: 700px) {
+      body {
+        font-size: 18px;
+      }
+
+      header {
+        position: static;
+      }
+
+      .nav {
+        align-items: flex-start;
+      }
+
+      .brand-logo {
+        width: 104px;
+      }
+
+      .brand span {
+        font-size: .92rem;
+      }
+
+      .header-actions {
+        flex-direction: column;
+        width: min(160px, 42%);
+      }
+
+      .header-actions .btn {
+        width: 100%;
+        min-height: 44px;
+        padding: .58rem .7rem;
+        font-size: .88rem;
+      }
+
+      .hero {
+        padding-top: 3rem;
+      }
+
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .floating-call {
+        left: 14px;
+        right: 14px;
+      }
+
+      .floating-call a {
+        width: 100%;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      .portfolio-card img {
+        transition: none;
+      }
+    }
+  </style>
 </head>
+
 <body>
   <header>
     <div class="container nav">
-      <div class="brand">
-        <div class="logo">🛠️</div>
-        <span>Handyman Grant<br><small>San Diego • Licensed ≤$1,000 jobs</small></span>
-      </div>
-      <nav style="display: flex; gap: 0.8rem;">
+      <a class="brand" href="index.html">
+        <img class="brand-logo" src="photos/logo.png" alt="Handyman Grant LLC logo">
+        <span>
+          Handyman Grant
+          <small>San Diego • Insured • Projects up to $1,000</small>
+        </span>
+      </a>
+
+      <nav class="header-actions" aria-label="Page navigation">
         <a class="btn" href="index.html">Home</a>
-        <a class="btn" href="#contact" onclick="gtag_report_conversion('#contact');">Get a Quote</a>
+        <a class="btn secondary" href="index.html#contact" onclick="return gtag_report_conversion('index.html#contact');">Get a Quote</a>
       </nav>
     </div>
   </header>
 
   <main class="container">
+    <section class="hero">
+      <h1>A closer look at the work.</h1>
+      <p>
+        Real repairs, fabrication, installations, and finishes from projects around San Diego.
+        Click any photo to open it full size.
+      </p>
 
+      <div class="cta-row">
+        <a class="cta secondary" href="tel:+16196954334" onclick="return gtag_report_conversion('tel:+16196954334');">Call (619) 695-4334</a>
+        <a class="cta" href="index.html#contact" onclick="return gtag_report_conversion('index.html#contact');">Request a Quote</a>
+      </div>
 
-    <section id="gallery">
-      <h2>Example Work</h2>
-      <!-- Doors -->
-      <section>
-        <h3>Door Repair</h3>
-        <div class="category-gallery">
-          <div class="image-container">
-            <p class="caption">Has a Rodent Eaten the Bottom of your Door?</p>
-            <a href="photos/IMG_0143.webp" data-lightbox="door-gallery">
-              <img src="photos/IMG_0143.webp" alt="Rodent Damage">
-            </a>
-          </div>
-          <div class="image-container">
-            <p class="caption">Rodent Damage </p>
-            <a href="photos/IMG_0141.webp" data-lightbox="door-gallery">
-              <img src="photos/IMG_0141.webp" alt="Rodent Damage">
-            </a>
-          </div>
-          <div class="image-container">
-            <p class="caption">Have me put a snew slab in with a metal kick plate for extra rodent defense</p>
-            <a href="photos/IMG_0165.webp" data-lightbox="door-gallery">
-              <img src="photos/IMG_0165.webp" alt="Kick Plate">
-            </a>
-          </div>
-          <div class="image-container">
-            <p class="caption">The inside of the new door slab</p>
-            <a href="photos/IMG_0163.webp" data-lightbox="door-gallery">
-              <img src="photos/IMG_0163.webp" alt="Inside View">
-            </a>
-          </div>
-          <div class="image-container">
-            <p class="caption">If your door has sagged a bit, and swollen from the rain, causing plaster to catch</p>
-            <a href="photos/IMG_0312.webp" data-lightbox="door-gallery">
-              <img src="photos/IMG_0312.webp" alt="Inside View">
-            </a>
-          </div>
-          <div class="image-container">
-            <p class="caption">I am happy to help patch the plaster, slim the door, and shim your jambs.</p>
-            <a href="photos/IMG_0467.webp" data-lightbox="door-gallery">
-              <img src="photos/IMG_0467.webp" alt="Inside View">
-            </a>
-          </div>
-          
-          <!-- Add more TV pics here with <div class="image-container"><p class="caption">Your Caption</p><a>...</a></div> -->
-        </div>
-      </section>
-
-      <section>
-        <h3>Door Repair</h3>
-        <div class="category-gallery">
-          <div class="image-container">
-            <p class="caption">New custom tuscan handrails to span a nonstandard brick and wood staircase</p>
-            <a href="photos/welding-fence (1).webp" data-lightbox="weld-gallery">
-              <img src="photos/welding-fence (1).webp" alt="Handrail Side View">
-            </a>
-          </div>
-          <div class="image-container">
-            <p class="caption">Steel entryway plate for holding drinks and items while unlocking door</p>
-            <a href="photos/welding-fence (2).webp" data-lightbox="weld-gallery">
-              <img src="photos/welding-fence (2).webp" alt="Plate Damage">
-            </a>
-          </div>
-          <div class="image-container">
-            <p class="caption">Tack back on metal grate that your dog keeps escaping through</p>
-            <a href="photos/welding-fence (3).webp" data-lightbox="weld-gallery">
-              <img src="photos/welding-fence (3).webp" alt="Fence Tack">
-            </a>
-          </div>
-          <div class="image-container">
-            <p class="caption">Custom Garden Arbor for an out door kitchen</p>
-            <a href="photos/welding-fence (4).webp" data-lightbox="weld-gallery">
-              <img src="photos/welding-fence (4).webp" alt="Garden Arbor">
-            </a>
-          </div>
-          <div class="image-container">
-            <p class="caption">Stair Bottom View</p>
-            <a href="photos/welding-fence (5).webp" data-lightbox="weld-gallery">
-              <img src="photos/welding-fence (5).webp" alt="Garden Arbor">
-            </a>
-          </div>
-          <div class="image-container">
-            <p class="caption">Stair Top View</p>
-            <a href="photos/welding-fence (7).webp" data-lightbox="weld-gallery">
-              <img src="photos/welding-fence (7).webp" alt="Garden Arbor">
-            </a>
-          </div>
-          <div class="image-container">
-            <p class="caption">Garden Arbor Alt View</p>
-            <a href="photos/welding-fence (8).webp" data-lightbox="weld-gallery">
-              <img src="photos/welding-fence (8).webp" alt="Garden Arbor">
-            </a>
-          </div>
-          <!-- Add more TV pics here with <div class="image-container"><p class="caption">Your Caption</p><a>...</a></div> -->
-        </div>
-      </section>
-
-
-
-
-      <!-- TV Mounting Section -->
-      <section>
-        <h3>TV Mounting</h3>
-        <div class="category-gallery">
-          <div class="image-container">
-            <p class="caption">Big TV Wall Mount</p>
-            <a href="photos/tv1.webp" data-lightbox="tv-gallery">
-              <img src="photos/tv1.webp" alt="Big TV">
-            </a>
-          </div>
-          <div class="image-container">
-            <p class="caption">Corner Swivel Mount</p>
-            <a href="photos/tv2.webp" data-lightbox="tv-gallery">
-              <img src="photos/tv2.webp" alt="Corner Swivel">
-            </a>
-          </div>
-          <!-- Add more TV pics here with <div class="image-container"><p class="caption">Your Caption</p><a>...</a></div> -->
-        </div>
-      </section>
-
-      <!-- Drywall Repair Section -->
-      <section>
-        <h3>Drywall Repair</h3>
-        <div class="category-gallery">
-          <div class="image-container">
-            <p class="caption">Before - Ceiling Damage</p>
-            <a href="photos/ceilingBefore.webp" data-lightbox="drywall-gallery">
-              <img src="photos/ceilingBefore.webp" alt="Before — Ceiling">
-            </a>
-          </div>
-          <div class="image-container">
-            <p class="caption">After - Ceiling Patch</p>
-            <a href="photos/ceilingAfter.webp" data-lightbox="drywall-gallery">
-              <img src="photos/ceilingAfter.webp" alt="After — Ceiling">
-            </a>
-          </div>
-          <!-- Add more drywall pics here -->
-        </div>
-      </section>
-
-      <!-- Electrical Small Jobs Section -->
-      <section>
-        <h3>Electrical Small Jobs</h3>
-        <div class="category-gallery">
-          <div class="image-container">
-            <p class="caption">Outdoor Lighting Install</p>
-            <a href="photos/lights1.webp" data-lightbox="electrical-gallery">
-              <img src="photos/lights1.webp" alt="Outdoor Lighting">
-            </a>
-          </div>
-          <div class="image-container">
-            <p class="caption">Lights from Another Angle</p>
-            <a href="photos/lights2.webp" data-lightbox="electrical-gallery">
-              <img src="photos/lights2.webp" alt="Outdoor Lights Other Angle">
-            </a>
-          </div>
-          <!-- Add more electrical pics here -->
-        </div>
-      </section>
-
-      <!-- Custom Furniture Section -->
-      <section>
-        <h3>Custom Furniture</h3>
-        <div class="category-gallery">
-          <div class="image-container">
-            <p class="caption">Custom Desk Riser</p>
-            <a href="photos/customDeskRiser.webp" data-lightbox="furniture-gallery">
-              <img src="photos/customDeskRiser.webp" alt="Custom Desk Riser">
-            </a>
-          </div>
-          <div class="image-container">
-            <p class="caption">Plant Hanger Assembly</p>
-            <a href="photos/plantHanger.webp" data-lightbox="furniture-gallery">
-              <img src="photos/plantHanger.webp" alt="Plant Hanger">
-            </a>
-          </div>
-          <!-- Add more furniture pics here -->
-        </div>
-      </section>
-
-      <!-- Counter Repair (Plumbing/Caulking) Section -->
-      <section>
-        <h3>Counter Repair</h3>
-        <div class="category-gallery">
-          <div class="image-container">
-            <p class="caption">Before - Counter Issue</p>
-            <a href="photos/counterBefore.webp" data-lightbox="counter-gallery">
-              <img src="photos/counterBefore.webp" alt="Before — Counter">
-            </a>
-          </div>
-          <div class="image-container">
-            <p class="caption">After - Counter Fix</p>
-            <a href="photos/counterAfter.webp" data-lightbox="counter-gallery">
-              <img src="photos/counterAfter.webp" alt="After — Counter">
-            </a>
-          </div>
-          <!-- Add more counter/plumbing pics here -->
-        </div>
-      </section>
-
+      <nav class="jump-links" aria-label="Gallery categories">
+        <a href="#before-after">Before &amp; After</a>
+        <a href="#welding">Welding &amp; Metal</a>
+        <a href="#doors">Doors &amp; Security</a>
+        <a href="#other-work">Other Projects</a>
+      </nav>
     </section>
 
-        <section id="services" style="padding-top: 4rem;">
-      <h2>Popular Services</h2>
-      <div class="cards" aria-label="services grid">
-        <div class="card">
-          <h3>Doors</h3>
-          <p class="muted">Wont open wont close, latches stuck, new handles, wifi-lock set up.</p>
+    <section class="gallery-section" id="before-after">
+      <div class="section-heading">
+        <div>
+          <h2>Before &amp; After</h2>
+          <p>The original condition beside the finished repair, so the scope and result are easy to see.</p>
         </div>
-        <div class="card">
-          <h3>TV Mounting</h3>
-          <p class="muted">Fixed/tilt/swivel mounts on walls or ceilings. Basic wire concealment for clean setups.</p>
-        </div>
-        <div class="card">
-          <h3>Drywall Repair</h3>
-          <p class="muted">Holes, dents, patches (e.g., ceiling or gym drywall). Texture blending & paint touch-ups.</p>
-        </div>
-        <div class="card">
-          <h3>Plumbing Small Jobs</h3>
-          <p class="muted">Faucet installs/swaps, supply lines, traps, garbage disposals, shower caulking & sealing.</p>
-        </div>
-        <div class="card">
-          <h3>Electrical Small Jobs</h3>
-          <p class="muted">Light fixture swaps, dimmers, GFCI outlets, burned-out bulb replacements.</p>
-        </div>
-        <div class="card">
-          <h3>Caulking & Seal</h3>
-          <p class="muted">Showers, tubs, sinks, windows; mildew-resistant seals. Includes faucet & tub work.</p>
-        </div>
-        <div class="card">
-          <h3>Furniture & Doors</h3>
-          <p class="muted">Assembly, hinge/latch alignment, locks/deadbolts, handle replacements, door slab swaps, crawl space doors, sill pans under exteriors.</p>
-        </div>
-        <div class="card">
-          <h3>Railings & Fences</h3>
-          <p class="muted">Custom installs for front/driveway railings, fence replacements, gate latch repairs.</p>
-        </div>
-        <div class="card">
-          <h3>Mounting & Anchors</h3>
-          <p class="muted">Concrete anchors for heavy items, secure mounts for equipment or structures.</p>
-        </div>
+      </div>
+
+      <div class="gallery-grid">
+
+        <figure class="portfolio-card before-after-card">
+          <a class="image-link" href="photos/brokenDoorBeforeAfter5.webp" data-caption="Exterior utility door replacement">
+            <img src="photos/brokenDoorBeforeAfter5.webp" alt="Exterior utility door replacement" loading="lazy" decoding="async">
+          </a>
+          <figcaption>
+            <strong>Exterior utility door replacement</strong>
+            <span>A worn utility door replaced with a clean new slab, threshold, and black hardware.</span>
+          </figcaption>
+        </figure>
+
+        <figure class="portfolio-card before-after-card">
+          <a class="image-link" href="photos/brokenDoorBeforeAfter2.webp" data-caption="Damaged doorway rebuilt">
+            <img src="photos/brokenDoorBeforeAfter2.webp" alt="Damaged doorway rebuilt" loading="lazy" decoding="async">
+          </a>
+          <figcaption>
+            <strong>Damaged doorway rebuilt</strong>
+            <span>Rot-damaged material and a failed threshold removed before fitting the replacement door.</span>
+          </figcaption>
+        </figure>
+
+        <figure class="portfolio-card before-after-card">
+          <a class="image-link" href="photos/brokenDoorBeforeAfter3.webp" data-caption="Entry and security upgrade">
+            <img src="photos/brokenDoorBeforeAfter3.webp" alt="Entry and security upgrade" loading="lazy" decoding="async">
+          </a>
+          <figcaption>
+            <strong>Entry and security upgrade</strong>
+            <span>An awkward interior entry replaced with a better-fitting exterior door and security setup.</span>
+          </figcaption>
+        </figure>
+
+        <figure class="portfolio-card before-after-card">
+          <a class="image-link" href="photos/brokenDoorBeforeAfter4.webp" data-caption="Exterior door and security door">
+            <img src="photos/brokenDoorBeforeAfter4.webp" alt="Exterior door and security door" loading="lazy" decoding="async">
+          </a>
+          <figcaption>
+            <strong>Exterior door and security door</strong>
+            <span>New exterior door installation completed with a fitted sunburst security door.</span>
+          </figcaption>
+        </figure>
+
+        <figure class="portfolio-card before-after-card">
+          <a class="image-link" href="photos/drywallBeforeAfter2.webp" data-caption="Large ceiling repair">
+            <img src="photos/drywallBeforeAfter2.webp" alt="Large ceiling repair" loading="lazy" decoding="async">
+          </a>
+          <figcaption>
+            <strong>Large ceiling repair</strong>
+            <span>A wide ceiling opening closed, reinforced, finished, and blended back into the surrounding texture.</span>
+          </figcaption>
+        </figure>
+
+        <figure class="portfolio-card before-after-card">
+          <a class="image-link" href="photos/drywallBeforeAfter.webp" data-caption="Mechanical-room drywall finish">
+            <img src="photos/drywallBeforeAfter.webp" alt="Mechanical-room drywall finish" loading="lazy" decoding="async">
+          </a>
+          <figcaption>
+            <strong>Mechanical-room drywall finish</strong>
+            <span>Exposed framing and utilities enclosed with carefully fitted and finished drywall.</span>
+          </figcaption>
+        </figure>
+
+        <figure class="portfolio-card before-after-card">
+          <a class="image-link" href="photos/weldedGateBeforeAfter.webp" data-caption="Bent gate restored">
+            <img src="photos/weldedGateBeforeAfter.webp" alt="Bent gate restored" loading="lazy" decoding="async">
+          </a>
+          <figcaption>
+            <strong>Bent gate restored</strong>
+            <span>A badly sagging metal gate straightened, repaired, and returned to useful alignment.</span>
+          </figcaption>
+        </figure>
+
+        <figure class="portfolio-card before-after-card">
+          <a class="image-link" href="photos/weldedGateBeforeAfter2.webp" data-caption="Gate post and masonry repair">
+            <img src="photos/weldedGateBeforeAfter2.webp" alt="Gate post and masonry repair" loading="lazy" decoding="async">
+          </a>
+          <figcaption>
+            <strong>Gate post and masonry repair</strong>
+            <span>The failing gate connection and surrounding post area repaired for a cleaner, stronger fit.</span>
+          </figcaption>
+        </figure>
+
+        <figure class="portfolio-card before-after-card">
+          <a class="image-link" href="photos/weldedGateBeforeAfter3.webp" data-caption="Custom gate-closing hardware">
+            <img src="photos/weldedGateBeforeAfter3.webp" alt="Custom gate-closing hardware" loading="lazy" decoding="async">
+          </a>
+          <figcaption>
+            <strong>Custom gate-closing hardware</strong>
+            <span>A simple field-built spring and latch solution added to improve dependable closing.</span>
+          </figcaption>
+        </figure>
+
+        <figure class="portfolio-card before-after-card">
+          <a class="image-link" href="photos/weldedGateBeforeAfter4.webp" data-caption="Gate hinge reinforcement">
+            <img src="photos/weldedGateBeforeAfter4.webp" alt="Gate hinge reinforcement" loading="lazy" decoding="async">
+          </a>
+          <figcaption>
+            <strong>Gate hinge reinforcement</strong>
+            <span>A failed hinge connection rebuilt and welded back into the gate frame.</span>
+          </figcaption>
+        </figure>
+
+        <figure class="portfolio-card before-after-card">
+          <a class="image-link" href="photos/weldedExtensionBeforeAfter.webp" data-caption="Custom folding counter extension">
+            <img src="photos/weldedExtensionBeforeAfter.webp" alt="Custom folding counter extension" loading="lazy" decoding="async">
+          </a>
+          <figcaption>
+            <strong>Custom folding counter extension</strong>
+            <span>A narrow ledge converted into a useful folding counter with fabricated steel supports.</span>
+          </figcaption>
+        </figure>
+
+        <figure class="portfolio-card before-after-card">
+          <a class="image-link" href="photos/retainingWallBeforeAfter.webp" data-caption="Retaining wall and gravel pad">
+            <img src="photos/retainingWallBeforeAfter.webp" alt="Retaining wall and gravel pad" loading="lazy" decoding="async">
+          </a>
+          <figcaption>
+            <strong>Retaining wall and gravel pad</strong>
+            <span>An uneven backyard slope reshaped with a block retaining wall and leveled gravel area.</span>
+          </figcaption>
+        </figure>
       </div>
     </section>
 
-    <section id="pricing" class="card">
-      <h2>Pricing Cues</h2>
-      <ul class="muted" style="margin:.2rem 0 0 1rem; line-height:1.7">
-        <li>Most small jobs: <strong>$125–$350</strong></li>
-        <li>Service call minimum: <strong>$95</strong></li>
-        <li>Materials billed at cost + receipt</li>
-        <li>No permit‑required work</li>
-        <li>Projects ≤ <strong>$1,000 total</strong></li>
-      </ul>
+    <section class="gallery-section" id="welding">
+      <div class="section-heading">
+        <div>
+          <h2>Welding &amp; Custom Metal Work</h2>
+          <p>Gate repairs, railings, hinge work, custom fabrication, and one-off metal solutions.</p>
+        </div>
+      </div>
+
+      <div class="gallery-grid">
+
+        <figure class="portfolio-card">
+          <a class="image-link" href="photos/welding-railing-01.webp" data-caption="Custom decorative handrail">
+            <img src="photos/welding-railing-01.webp" alt="Custom decorative handrail" loading="lazy" decoding="async">
+          </a>
+          <figcaption>
+            <strong>Custom decorative handrail</strong>
+            <span>A welded handrail fitted to an exterior stair run with scroll details.</span>
+          </figcaption>
+        </figure>
+
+        <figure class="portfolio-card">
+          <a class="image-link" href="photos/welding-fence (2).webp" data-caption="Finished garden-step railing">
+            <img src="photos/welding-fence (2).webp" alt="Finished garden-step railing" loading="lazy" decoding="async">
+          </a>
+          <figcaption>
+            <strong>Finished garden-step railing</strong>
+            <span>Black metal railing installed along a stepped garden path.</span>
+          </figcaption>
+        </figure>
+
+        <figure class="portfolio-card">
+          <a class="image-link" href="photos/welding-fence (7).webp" data-caption="Modern steel stair rail">
+            <img src="photos/welding-fence (7).webp" alt="Modern steel stair rail" loading="lazy" decoding="async">
+          </a>
+          <figcaption>
+            <strong>Modern steel stair rail</strong>
+            <span>A clean steel handrail built to follow a concrete stairway.</span>
+          </figcaption>
+        </figure>
+
+        <figure class="portfolio-card">
+          <a class="image-link" href="photos/welding-fence (4).webp" data-caption="Custom garden arbor">
+            <img src="photos/welding-fence (4).webp" alt="Custom garden arbor" loading="lazy" decoding="async">
+          </a>
+          <figcaption>
+            <strong>Custom garden arbor</strong>
+            <span>A one-off welded arbor built for an outdoor garden and kitchen area.</span>
+          </figcaption>
+        </figure>
+
+        <figure class="portfolio-card">
+          <a class="image-link" href="photos/gateHingeCoolGate (1).webp" data-caption="Gate hinge weld detail">
+            <img src="photos/gateHingeCoolGate (1).webp" alt="Gate hinge weld detail" loading="lazy" decoding="async">
+          </a>
+          <figcaption>
+            <strong>Gate hinge weld detail</strong>
+            <span>Close-up of a repaired hinge connection and reinforced gate frame.</span>
+          </figcaption>
+        </figure>
+      </div>
     </section>
 
-    <section style="text-align: center; padding: 2rem 0;">
-      <a class="cta" href="tel:+16196954334" onclick="gtag_report_conversion('tel:+16196954334');">Call (619) 695‑4334</a>
-      <a class="cta" href="index.html#contact" onclick="gtag_report_conversion('index.html#contact');">Request a Quote</a>
+    <section class="gallery-section" id="doors">
+      <div class="section-heading">
+        <div>
+          <h2>Doors &amp; Security Doors</h2>
+          <p>Replacement slabs, fitted hardware, exterior doors, and security-door installations.</p>
+        </div>
+      </div>
+
+      <div class="gallery-grid">
+
+        <figure class="portfolio-card">
+          <a class="image-link" href="photos/security-door-sunburst-01.jpg" data-caption="Sunburst security door">
+            <img src="photos/security-door-sunburst-01.jpg" alt="Sunburst security door" loading="lazy" decoding="async">
+          </a>
+          <figcaption>
+            <strong>Sunburst security door</strong>
+            <span>A fitted security door with a distinctive radial pattern and clean white finish.</span>
+          </figcaption>
+        </figure>
+
+        <figure class="portfolio-card">
+          <a class="image-link" href="photos/IMG_0162.webp" data-caption="Utility door with black hardware">
+            <img src="photos/IMG_0162.webp" alt="Utility door with black hardware" loading="lazy" decoding="async">
+          </a>
+          <figcaption>
+            <strong>Utility door with black hardware</strong>
+            <span>A simple exterior door installation finished with modern black hardware.</span>
+          </figcaption>
+        </figure>
+
+        <figure class="portfolio-card">
+          <a class="image-link" href="photos/IMG_0790.webp" data-caption="Exterior utility door">
+            <img src="photos/IMG_0790.webp" alt="Exterior utility door" loading="lazy" decoding="async">
+          </a>
+          <figcaption>
+            <strong>Exterior utility door</strong>
+            <span>A replacement utility door fitted into an existing stucco opening.</span>
+          </figcaption>
+        </figure>
+
+        <figure class="portfolio-card">
+          <a class="image-link" href="photos/IMG_5082.JPEG" data-caption="Six-panel door installation">
+            <img src="photos/IMG_5082.JPEG" alt="Six-panel door installation" loading="lazy" decoding="async">
+          </a>
+          <figcaption>
+            <strong>Six-panel door installation</strong>
+            <span>A new six-panel slab prepared and fitted to the existing opening.</span>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="gallery-section" id="other-work">
+      <div class="section-heading">
+        <div>
+          <h2>Drywall, Lighting, Mounting &amp; Custom Builds</h2>
+          <p>A broader sample of finish work, fixture installation, mounting, and custom household projects.</p>
+        </div>
+      </div>
+
+      <div class="gallery-grid">
+
+        <figure class="portfolio-card">
+          <a class="image-link" href="photos/ceilingAfter.webp" data-caption="Finished ceiling patch">
+            <img src="photos/ceilingAfter.webp" alt="Finished ceiling patch" loading="lazy" decoding="async">
+          </a>
+          <figcaption>
+            <strong>Finished ceiling patch</strong>
+            <span>Drywall, texture, and finish blended after an overhead access repair.</span>
+          </figcaption>
+        </figure>
+
+        <figure class="portfolio-card">
+          <a class="image-link" href="photos/lights1.webp" data-caption="Outdoor lighting installation">
+            <img src="photos/lights1.webp" alt="Outdoor lighting installation" loading="lazy" decoding="async">
+          </a>
+          <figcaption>
+            <strong>Outdoor lighting installation</strong>
+            <span>Exterior fixtures installed and positioned for useful, even illumination.</span>
+          </figcaption>
+        </figure>
+
+        <figure class="portfolio-card">
+          <a class="image-link" href="photos/lights2.webp" data-caption="Exterior lights from another angle">
+            <img src="photos/lights2.webp" alt="Exterior lights from another angle" loading="lazy" decoding="async">
+          </a>
+          <figcaption>
+            <strong>Exterior lights from another angle</strong>
+            <span>A second view showing fixture placement and coverage.</span>
+          </figcaption>
+        </figure>
+
+        <figure class="portfolio-card">
+          <a class="image-link" href="photos/tv-mounting-02.webp" data-caption="Large TV mounting">
+            <img src="photos/tv-mounting-02.webp" alt="Large TV mounting" loading="lazy" decoding="async">
+          </a>
+          <figcaption>
+            <strong>Large TV mounting</strong>
+            <span>A large television mounted cleanly above a finished shelf and plant display.</span>
+          </figcaption>
+        </figure>
+
+        <figure class="portfolio-card">
+          <a class="image-link" href="photos/customDeskRiser.webp" data-caption="Custom desk riser">
+            <img src="photos/customDeskRiser.webp" alt="Custom desk riser" loading="lazy" decoding="async">
+          </a>
+          <figcaption>
+            <strong>Custom desk riser</strong>
+            <span>A compact custom platform built to improve desktop height and organization.</span>
+          </figcaption>
+        </figure>
+
+        <figure class="portfolio-card">
+          <a class="image-link" href="photos/plant-hanger-01.webp" data-caption="Custom hanging planter">
+            <img src="photos/plant-hanger-01.webp" alt="Custom hanging planter" loading="lazy" decoding="async">
+          </a>
+          <figcaption>
+            <strong>Custom hanging planter</strong>
+            <span>A wood and metal hanging planter assembled as a finished decorative feature.</span>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="closing-cta">
+      <h2>Have a project that looks like one of these?</h2>
+      <p>
+        Send a few photos and a short description. I can usually tell you what information
+        I need next and whether the job is a good fit.
+      </p>
+      <div class="cta-row">
+        <a class="cta secondary" href="tel:+16196954334" onclick="return gtag_report_conversion('tel:+16196954334');">Call or Text Grant</a>
+        <a class="cta" href="mailto:Grant@HandymanGrant.com">Email Photos</a>
+      </div>
     </section>
   </main>
 
-  <footer class="foot">
-    <div class="container" style="display:grid; gap:.4rem; padding:1.4rem 0 2.8rem;">
-      <div>© <span id="year"></span> Handyman Grant LLC · San Diego, CA</div>
-      <small>Website by Handyman Grant · Fast, accessible, and mobile‑first</small>
+  <div class="floating-call">
+    <a href="tel:+16196954334" onclick="return gtag_report_conversion('tel:+16196954334');">📞 Call Grant</a>
+  </div>
+
+  <footer>
+    <div class="container">
+      © <span id="year"></span> Handyman Grant LLC · San Diego, CA ·
+      <a href="index.html">Back to Home</a>
     </div>
   </footer>
 
-  <div class="floating-call">
-    <a href="tel:+16196954334" onclick="gtag_report_conversion('tel:+16196954334');">📞 Call Grant</a>
+  <div class="modal" id="imageModal" role="dialog" aria-modal="true" aria-label="Enlarged project photo">
+    <div class="modal-dialog">
+      <button class="modal-close" type="button" aria-label="Close enlarged image">&times;</button>
+      <img id="modalImage" src="" alt="">
+      <div class="modal-caption" id="modalCaption"></div>
+    </div>
   </div>
+
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    const modal = document.getElementById('imageModal');
+    const modalImage = document.getElementById('modalImage');
+    const modalCaption = document.getElementById('modalCaption');
+    const modalClose = modal.querySelector('.modal-close');
+    let lastFocusedLink = null;
+
+    function closeModal() {
+      modal.classList.remove('open');
+      modalImage.src = '';
+      document.body.style.overflow = '';
+
+      if (lastFocusedLink) {
+        lastFocusedLink.focus();
+      }
+    }
+
+    document.querySelectorAll('.image-link').forEach(function(link) {
+      link.addEventListener('click', function(event) {
+        event.preventDefault();
+        lastFocusedLink = link;
+
+        const image = link.querySelector('img');
+        modalImage.src = link.href;
+        modalImage.alt = image.alt;
+        modalCaption.textContent = link.dataset.caption || image.alt;
+        modal.classList.add('open');
+        document.body.style.overflow = 'hidden';
+        modalClose.focus();
+      });
+    });
+
+    modalClose.addEventListener('click', closeModal);
+
+    modal.addEventListener('click', function(event) {
+      if (event.target === modal) {
+        closeModal();
+      }
+    });
+
+    document.addEventListener('keydown', function(event) {
+      if (event.key === 'Escape' && modal.classList.contains('open')) {
+        closeModal();
+      }
+    });
   </script>
 </body>
 </html>
