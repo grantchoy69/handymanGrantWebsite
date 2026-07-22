@@ -36,16 +36,24 @@
       "pricingNote": "Most welding and custom metal jobs range from $350-$950 depending on access, materials, fabrication time, and finish work. I provide a clear written estimate before work begins.",
       "gallery": [
         {
-          "src": "../photos/gateHingeCoolGate (4).webp",
-          "alt": "Gate hinge repair weld detail"
+          "src": "../photos/weldedGateBeforeAfter.webp",
+          "alt": "Metal gate before and after welding, straightening, and alignment repair"
         },
         {
-          "src": "../photos/gateHingeCoolGate (1).webp",
-          "alt": "Gate hinge close-up showing strong weld"
+          "src": "../photos/weldedGateBeforeAfter2.webp",
+          "alt": "Gate post and surrounding masonry before and after repair"
         },
         {
-          "src": "../photos/gateHingeCoolGate (2).webp",
-          "alt": "Welded gate frame detail"
+          "src": "../photos/weldedGateBeforeAfter3.webp",
+          "alt": "Gate closing spring and latch hardware before and after repair"
+        },
+        {
+          "src": "../photos/weldedGateBeforeAfter4.webp",
+          "alt": "Damaged gate hinge before and after welded reinforcement"
+        },
+        {
+          "src": "../photos/weldedExtensionBeforeAfter.webp",
+          "alt": "Custom counter extension before and after fabrication and installation"
         },
         {
           "src": "../photos/welding-railing-01.webp",
@@ -54,10 +62,6 @@
         {
           "src": "../photos/welding-fence (2).webp",
           "alt": "Finished black metal railing on garden steps"
-        },
-        {
-          "src": "../photos/welding-fence (7).webp",
-          "alt": "Modern stainless steel handrail on concrete steps"
         }
       ],
       "testimonials": [],
@@ -155,28 +159,28 @@
       "pricingNote": "Most door and hardware work ranges from $225-$750 depending on the door, opening, hardware, and amount of fitting required. Written estimate provided before starting.",
       "gallery": [
         {
+          "src": "../photos/brokenDoorBeforeAfter5.webp",
+          "alt": "Worn exterior utility door before and after replacement with new hardware"
+        },
+        {
+          "src": "../photos/brokenDoorBeforeAfter2.webp",
+          "alt": "Damaged exterior doorway and threshold before and after door replacement"
+        },
+        {
+          "src": "../photos/brokenDoorBeforeAfter3.webp",
+          "alt": "Interior view before and after exterior door and security upgrade"
+        },
+        {
+          "src": "../photos/brokenDoorBeforeAfter4.webp",
+          "alt": "New exterior door before finish work and completed security door installation"
+        },
+        {
           "src": "../photos/security-door-sunburst-01.jpg",
           "alt": "White security door with sunburst design installed"
         },
         {
-          "src": "../photos/IMG_5081.JPEG",
-          "alt": "Clean white security door with sunburst pattern"
-        },
-        {
-          "src": "../photos/IMG_5082.JPEG",
-          "alt": "New white 6-panel door being installed"
-        },
-        {
           "src": "../photos/IMG_0162.webp",
           "alt": "White door with modern black hardware installed"
-        },
-        {
-          "src": "../photos/IMG_0790.webp",
-          "alt": "White utility door with brass knob in stucco opening"
-        },
-        {
-          "src": "../photos/IMG_1574.JPEG",
-          "alt": "Tan door installed in brick wall"
         }
       ],
       "testimonials": [],
@@ -319,12 +323,12 @@
       "pricingNote": "Most drywall and ceiling repair jobs range from $175-$650 depending on size, texture, access, drying time, and painting. Written estimate provided before starting.",
       "gallery": [
         {
-          "src": "../photos/ceilingBefore.webp",
-          "alt": "Ceiling damage before drywall repair"
+          "src": "../photos/drywallBeforeAfter2.webp",
+          "alt": "Large kitchen ceiling opening before and after drywall and texture repair"
         },
         {
-          "src": "../photos/ceilingAfter.webp",
-          "alt": "Ceiling after clean drywall and texture repair"
+          "src": "../photos/drywallBeforeAfter.webp",
+          "alt": "Mechanical room framing and utilities before and after drywall finishing"
         }
       ],
       "testimonials": [],
@@ -375,20 +379,20 @@
       "pricingNote": "Most punch list and move-in repair visits range from $250-$950 depending on the number of items, materials, access, and variety of work. Written itemized estimate provided before starting.",
       "gallery": [
         {
-          "src": "../photos/ceilingAfter.webp",
-          "alt": "Clean ceiling repair as part of punch list work"
+          "src": "../photos/brokenDoorBeforeAfter5.webp",
+          "alt": "Exterior utility door replacement completed as part of repair work"
         },
         {
-          "src": "../photos/lights1.webp",
-          "alt": "Light fixture and electrical touch-up"
+          "src": "../photos/drywallBeforeAfter2.webp",
+          "alt": "Ceiling access opening repaired, textured, and finished"
         },
         {
-          "src": "../photos/IMG_5082.JPEG",
-          "alt": "Door and hardware work on a punch list"
+          "src": "../photos/weldedExtensionBeforeAfter.webp",
+          "alt": "Custom counter extension fabricated and installed"
         },
         {
-          "src": "../photos/kitchen-counter-01.webp",
-          "alt": "Kitchen and finish work examples"
+          "src": "../photos/brokenDoorBeforeAfter4.webp",
+          "alt": "Exterior door and security door installation before and after"
         }
       ],
       "testimonials": [],
