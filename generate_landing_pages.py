@@ -114,6 +114,7 @@ def generate_landing_pages():
         "what-to-expect",
     )
     trust_html = build_shared_section_html(index_html, "trust")
+    quote_form_html = build_shared_section_html(index_html, "contact")
 
     output_dir.mkdir(exist_ok=True)
     print(f"Generating landing pages into: {output_dir}")
@@ -170,6 +171,10 @@ def generate_landing_pages():
         html = html.replace(
             "{{ trustSection }}",
             trust_html,
+        )
+        html = html.replace(
+            "{{ quoteFormSection }}",
+            quote_form_html,
         )
 
         html = html.replace(
