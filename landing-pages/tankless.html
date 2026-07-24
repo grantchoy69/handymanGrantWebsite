@@ -283,6 +283,42 @@ h2 { font-size:1.65rem; margin:0 0 1rem; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
 }
+/* HIGH-INTENT FLOATING QUOTE CTA */
+@media (min-width: 621px) {
+  .floating-quote a {
+    width: 96px;
+    gap: .55rem;
+    padding: 1.05rem .7rem;
+    border-width: 2px;
+    border-radius: 0 18px 18px 0;
+    opacity: 1;
+  }
+
+  .floating-quote-icon {
+    font-size: 1.55rem;
+  }
+
+  .floating-quote-label {
+    font-size: 1.05rem;
+    letter-spacing: .045em;
+  }
+}
+
+@media (max-width: 620px) {
+  .floating-quote a {
+    min-height: 48px;
+    padding: .75rem 1rem;
+  }
+
+  .floating-quote-icon {
+    font-size: 1.21rem;
+  }
+
+  .floating-quote-label {
+    font-size: .92rem;
+  }
+}
+/* END HIGH-INTENT FLOATING QUOTE CTA */
 </style>
 </head>
 <body>
