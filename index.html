@@ -100,6 +100,7 @@
 }
 * { box-sizing: border-box; }
 html, body { height: 100%; }
+html { scroll-behavior: smooth; }
 body {
   margin: 0;
   font-family: system-ui, -apple-system, Segoe UI, Roboto, Inter, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji";
@@ -197,6 +198,52 @@ button {
 }
 .foot { border-top:1px solid rgba(148,163,184,.15); color:#cbd5e1; font-size:.95rem; }
 .foot small { color:#9aa8bd; }
+
+#contact { scroll-margin-top: 120px; }
+.floating-quote {
+  position: fixed;
+  left: 0;
+  top: 50%;
+  z-index: 59;
+  transform: translateY(-50%);
+}
+.floating-quote a {
+  display: inline-flex;
+  width: 48px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: .35rem;
+  padding: .7rem .35rem;
+  border: 1px solid rgba(212,175,55,.55);
+  border-left: 0;
+  border-radius: 0 12px 12px 0;
+  background: rgba(43,43,43,.94);
+  color: var(--accent);
+  font-weight: 800;
+  text-decoration: none;
+  box-shadow: 0 8px 22px rgba(0,0,0,.34);
+  backdrop-filter: blur(8px);
+  opacity: .86;
+}
+.floating-quote a:hover,
+.floating-quote a:focus-visible {
+  opacity: 1;
+  filter: brightness(1.08);
+  text-decoration: none;
+}
+.floating-quote-icon {
+  font-size: 1.1rem;
+  line-height: 1;
+}
+.floating-quote-label {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-size: .76rem;
+  line-height: 1;
+  letter-spacing: .035em;
+}
+
 .floating-call { position: fixed; right: 14px; bottom: 14px; z-index: 60; }
 .floating-call a {
   display: inline-flex;
@@ -237,6 +284,39 @@ button {
   .brand span small {
     font-size: 0.7rem;
   }
+  #contact {
+    scroll-margin-top: 18px;
+  }
+  .floating-quote {
+    left: 14px;
+    top: auto;
+    bottom: 88px;
+    transform: none;
+  }
+  .floating-quote a {
+    width: auto;
+    flex-direction: row;
+    padding: .68rem .9rem;
+    border-left: 1px solid rgba(212,175,55,.55);
+    border-radius: 999px;
+  }
+  .floating-quote-label {
+    writing-mode: horizontal-tb;
+    transform: none;
+    font-size: .84rem;
+    letter-spacing: 0;
+  }
+  .floating-call {
+    left: 14px;
+    right: 14px;
+  }
+  .floating-call a {
+    width: 100%;
+    justify-content: center;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
 }
 .image-modal {
   display: none;
@@ -545,6 +625,13 @@ button {
       <small>Website by Handyman Grant · Fast, accessible, and mobile-first</small>
     </div>
   </footer>
+
+  <div class="floating-quote">
+    <a href="#contact" aria-label="Jump to the email quote request form">
+      <span class="floating-quote-icon" aria-hidden="true">✉</span>
+      <span class="floating-quote-label">Email Quote</span>
+    </a>
+  </div>
 
   <div class="floating-call">
     <a href="tel:+16196954334" onclick="gtag_report_conversion('tel:+16196954334');">📞 Call Grant</a>
