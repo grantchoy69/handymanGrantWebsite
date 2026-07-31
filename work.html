@@ -642,6 +642,15 @@
       </div>
 
       <div class="gallery-grid">
+        <figure class="portfolio-card before-after-card">
+          <a class="image-link" href="photos/weldedHandrailSupportBeforeAfter.webp" data-caption="Rusted handrail support rebuilt">
+            <img src="photos/weldedHandrailSupportBeforeAfter.webp" alt="Rusted handrail support before and after welded reconstruction" loading="lazy" decoding="async">
+          </a>
+          <figcaption>
+            <strong>Rusted handrail support rebuilt</strong>
+            <span>Severely corroded steel was removed and replaced with new welded supports, restoring a solid connection beneath the handrail.</span>
+          </figcaption>
+        </figure>
 
         <figure class="portfolio-card">
           <a class="image-link" href="photos/welding-railing-01.webp" data-caption="Custom decorative handrail">
@@ -827,83 +836,77 @@
       </p>
       <div class="cta-row">
         <a class="cta secondary" href="tel:+16196954334" onclick="return gtag_report_conversion('tel:+16196954334');">Call or Text Grant</a>
-        <a
-        class="cta"
-        href="mailto:Grant@HandymanGrant.com?subject=Project%20Photos"
-        onclick="return gtag_report_conversion('mailto:Grant@HandymanGrant.com?subject=Project%20Photos');"
-        >
-        Send Pictures
-      </a>
+        <a class="cta" href="mailto:Grant@HandymanGrant.com">Email Photos</a>
+      </div>
+    </section>
+  </main>
+
+  <div class="floating-call">
+    <a href="tel:+16196954334" onclick="return gtag_report_conversion('tel:+16196954334');">📞 Call Grant</a>
+  </div>
+
+  <footer>
+    <div class="container">
+      © <span id="year"></span> Handyman Grant LLC · San Diego, CA ·
+      <a href="index.html">Back to Home</a>
     </div>
-  </section>
-</main>
+  </footer>
 
-<div class="floating-call">
-  <a href="tel:+16196954334" onclick="return gtag_report_conversion('tel:+16196954334');">📞 Call Grant</a>
-</div>
-
-<footer>
-  <div class="container">
-    © <span id="year"></span> Handyman Grant LLC · San Diego, CA ·
-    <a href="index.html">Back to Home</a>
+  <div class="modal" id="imageModal" role="dialog" aria-modal="true" aria-label="Enlarged project photo">
+    <div class="modal-dialog">
+      <button class="modal-close" type="button" aria-label="Close enlarged image">&times;</button>
+      <img id="modalImage" src="" alt="">
+      <div class="modal-caption" id="modalCaption"></div>
+    </div>
   </div>
-</footer>
 
-<div class="modal" id="imageModal" role="dialog" aria-modal="true" aria-label="Enlarged project photo">
-  <div class="modal-dialog">
-    <button class="modal-close" type="button" aria-label="Close enlarged image">&times;</button>
-    <img id="modalImage" src="" alt="">
-    <div class="modal-caption" id="modalCaption"></div>
-  </div>
-</div>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
 
-<script>
-  document.getElementById('year').textContent = new Date().getFullYear();
+    const modal = document.getElementById('imageModal');
+    const modalImage = document.getElementById('modalImage');
+    const modalCaption = document.getElementById('modalCaption');
+    const modalClose = modal.querySelector('.modal-close');
+    let lastFocusedLink = null;
 
-  const modal = document.getElementById('imageModal');
-  const modalImage = document.getElementById('modalImage');
-  const modalCaption = document.getElementById('modalCaption');
-  const modalClose = modal.querySelector('.modal-close');
-  let lastFocusedLink = null;
+    function closeModal() {
+      modal.classList.remove('open');
+      modalImage.src = '';
+      document.body.style.overflow = '';
 
-  function closeModal() {
-    modal.classList.remove('open');
-    modalImage.src = '';
-    document.body.style.overflow = '';
-
-    if (lastFocusedLink) {
-      lastFocusedLink.focus();
+      if (lastFocusedLink) {
+        lastFocusedLink.focus();
+      }
     }
-  }
 
-  document.querySelectorAll('.image-link').forEach(function(link) {
-    link.addEventListener('click', function(event) {
-      event.preventDefault();
-      lastFocusedLink = link;
+    document.querySelectorAll('.image-link').forEach(function(link) {
+      link.addEventListener('click', function(event) {
+        event.preventDefault();
+        lastFocusedLink = link;
 
-      const image = link.querySelector('img');
-      modalImage.src = link.href;
-      modalImage.alt = image.alt;
-      modalCaption.textContent = link.dataset.caption || image.alt;
-      modal.classList.add('open');
-      document.body.style.overflow = 'hidden';
-      modalClose.focus();
+        const image = link.querySelector('img');
+        modalImage.src = link.href;
+        modalImage.alt = image.alt;
+        modalCaption.textContent = link.dataset.caption || image.alt;
+        modal.classList.add('open');
+        document.body.style.overflow = 'hidden';
+        modalClose.focus();
+      });
     });
-  });
 
-  modalClose.addEventListener('click', closeModal);
+    modalClose.addEventListener('click', closeModal);
 
-  modal.addEventListener('click', function(event) {
-    if (event.target === modal) {
-      closeModal();
-    }
-  });
+    modal.addEventListener('click', function(event) {
+      if (event.target === modal) {
+        closeModal();
+      }
+    });
 
-  document.addEventListener('keydown', function(event) {
-    if (event.key === 'Escape' && modal.classList.contains('open')) {
-      closeModal();
-    }
-  });
-</script>
+    document.addEventListener('keydown', function(event) {
+      if (event.key === 'Escape' && modal.classList.contains('open')) {
+        closeModal();
+      }
+    });
+  </script>
 </body>
 </html>
