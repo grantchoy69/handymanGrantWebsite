@@ -418,6 +418,7 @@ button {
 }
 /* END LARGE DESKTOP CALL CTA */
 </style>
+  <script src="quote-intake.js" defer></script>
 </head>
 <body>
   <header>
@@ -430,7 +431,7 @@ button {
       </a>
       <nav style="display: flex; gap: 0.8rem;">
         <a class="btn" href="work.html">See My Work</a>
-        <a class="btn" href="#contact" onclick="gtag_report_conversion('#contact');">Get a Quote</a>
+        <a class="btn" href="#contact">Get a Quote</a>
       </nav>
     </div>
   </header>
@@ -443,7 +444,7 @@ button {
         <p>Clear communication, honest pricing, and professional execution you can count on.</p>
         <div class="cta-row">
           <a class="cta" href="tel:+16196954334" onclick="gtag_report_conversion('tel:+16196954334');">Call (619) 695‑4334</a>
-          <a class="cta" href="#contact" onclick="gtag_report_conversion('#contact');">Request a Quote</a>
+          <a class="cta" href="#contact">Request a Quote</a>
         </div>
         <div class="badges">
           <span class="badge">Insured</span>
@@ -640,7 +641,7 @@ button {
       <div>
         <h2>Request a Quote</h2>
                 <p class="muted">Send a quick note about the project. A few clear photos and any helpful details usually help me price the work and get you scheduled faster.</p>
-        <form action="mailto:Grant@HandymanGrant.com" method="post" enctype="text/plain">
+        <form action="mailto:Grant@HandymanGrant.com" method="post" enctype="text/plain" data-hg-quote-form>
           <label>Name
             <input name="name" placeholder="Your name" required />
           </label>
@@ -657,7 +658,7 @@ button {
             <textarea name="message" rows="5" placeholder="Tell me what you'd like done and anything helpful to know..."></textarea>
           </label>
           <button type="submit">Send Request</button>
-          <p class="muted" style="font-size:.85rem">Prefer texting? Call or text <a href="tel:+16196954334">(619) 695‑4334</a>.</p>
+          <p class="muted" style="font-size:.85rem">Prefer texting? Call or text <a href="tel:+16196954334" onclick="gtag_report_conversion('tel:+16196954334');">(619) 695‑4334</a>.</p>
         </form>
       </div>
       <aside>
@@ -681,9 +682,9 @@ button {
   </footer>
 
   <div class="floating-quote">
-    <a href="#contact" aria-label="Jump to the email quote request form">
+    <a href="#contact" aria-label="Jump to the quote request form">
       <span class="floating-quote-icon" aria-hidden="true">✉</span>
-      <span class="floating-quote-label">Email Quote</span>
+      <span class="floating-quote-label">Get a Quote</span>
     </a>
   </div>
 

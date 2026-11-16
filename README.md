@@ -23,3 +23,11 @@ From the repository root:
     python generate_landing_pages.py
 
 The included `landing-pages` folder has already been regenerated and validated.
+
+## Website quote intake
+
+The homepage and all seven service pages submit quote requests to the Handyman Grant Supabase endpoint. A confirmed submission preserves referral/campaign attribution and sends a stable transaction ID with its Google Ads conversion. Opening the contact section alone does not count as a conversion. Phone tracking and the existing Google Analytics configuration remain in place.
+
+Review incoming requests in the admin app under **Quote requests**. Requests do not automatically create customers or jobs, and this release does not send email notifications. The original email form remains available when JavaScript is disabled.
+
+Run `node scripts/testQuoteIntake.cjs` to check browser submission behavior and the generated page wiring.
