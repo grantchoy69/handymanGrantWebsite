@@ -1,0 +1,16 @@
+{
+  "name": "handyman-grant-mcp",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Public service discovery and confirmation-gated quote intake for Handyman Grant.",
+  "engines": {
+    "node": ">=22.16.0 <25"
+  },
+  "scripts": {
+    "start": "node src/server.mjs",
+    "test": "node --test test/*.test.mjs",
+    "check": "node --check src/server.mjs && node --check src/quoteTools.mjs",
+    "smoke": "node scripts/smokeTest.mjs"
+  }
+}
