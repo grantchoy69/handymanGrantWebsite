@@ -1,0 +1,45 @@
+{
+  "enabled": true,
+  "submissionsEnabled": false,
+  "endpoint": "https://habydccnoclsgoioabnp.supabase.co/functions/v1/submit-quote-request",
+  "business": {
+    "name": "Handyman Grant LLC",
+    "website": "https://handymangrant.com/",
+    "portfolio": "https://handymangrant.com/work.html",
+    "telephone": "+16196954334",
+    "email": "Grant@HandymanGrant.com",
+    "serviceArea": {
+      "description": "Greater San Diego; nearby locations can be reviewed by Grant.",
+      "examples": [
+        "North Park",
+        "South Park",
+        "Mission Hills",
+        "Hillcrest",
+        "University Heights",
+        "Normal Heights",
+        "Kensington",
+        "Talmadge",
+        "Clairemont",
+        "Linda Vista",
+        "Serra Mesa",
+        "Kearny Mesa",
+        "Mira Mesa",
+        "Sorrento Valley",
+        "UTC",
+        "La Jolla",
+        "Mission Valley",
+        "Allied Gardens",
+        "Tierrasanta"
+      ]
+    },
+    "contactHours": {
+      "timeZone": "America/Los_Angeles",
+      "mondayToFriday": "08:00-18:00",
+      "saturday": "10:00-14:00"
+    },
+    "requestPolicy": "A quote request is not a booking, price guarantee, or acceptance of work. Grant reviews scope, scheduling, location, and referral options.",
+    "privacy": "Only provide the contact information and project description needed for this inquiry. Do not send passwords, payment card details, or unrelated personal information.",
+    "source": "https://handymangrant.com/",
+    "snapshotDate": "2026-11-16"
+  }
+}
