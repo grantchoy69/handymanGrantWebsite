@@ -10,6 +10,10 @@
   const GA4_DESTINATION = "G-65Z3SGSQP3";
   const FORM_SELECTOR = "form[data-hg-quote-form], #contact form";
   const CLIENT_VERSION = "handymangrant-web-quote-v1";
+  const MAX_PHOTOS = 5;
+  const MAX_PHOTO_BYTES = 5 * 1024 * 1024;
+  const MAX_TOTAL_PHOTO_BYTES = 20 * 1024 * 1024;
+  const PHOTO_TYPES = new Set(["image/jpeg", "image/png", "image/webp", "image/heic", "image/heif"]);
 
   const ATTRIBUTION_KEYS = [
     "gclid",
@@ -214,6 +218,115 @@
     statusElement.dataset.state = "idle";
   }
 
+  function initializePhotos(form, statusElement) {
+    const input = form.querySelector("[data-hg-photo-input]");
+    const list = form.querySelector("[data-hg-photo-list]");
+    const count = form.querySelector("[data-hg-photo-count]");
+    const photos = [];
+    let busy = false;
+
+    function revoke(photo) {
+      if (photo.url) {
+        window.URL.revokeObjectURL(photo.url);
+        photo.url = null;
+      }
+    }
+
+    function render() {
+      if (!list) return;
+      list.textContent = "";
+      for (const photo of photos) {
+        const item = document.createElement("li");
+        item.className = "quote-photo";
+        const fallback = document.createElement("span");
+        fallback.className = "quote-photo-fallback";
+        fallback.textContent = "Photo";
+        item.appendChild(fallback);
+        if (photo.url) {
+          const image = document.createElement("img");
+          image.src = photo.url;
+          image.alt = "Preview of " + photo.file.name;
+          image.loading = "lazy";
+          fallback.hidden = true;
+          image.addEventListener("error", () => {
+            image.hidden = true;
+            fallback.hidden = false;
+            revoke(photo);
+          }, { once: true });
+          item.appendChild(image);
+        }
+        const name = document.createElement("span");
+        name.className = "quote-photo-name";
+        name.textContent = photo.file.name;
+        item.appendChild(name);
+        const remove = document.createElement("button");
+        remove.type = "button";
+        remove.className = "quote-photo-remove";
+        remove.textContent = "Remove";
+        remove.setAttribute("aria-label", "Remove " + photo.file.name);
+        remove.disabled = busy;
+        remove.addEventListener("click", () => {
+          if (busy) return;
+          const index = photos.indexOf(photo);
+          if (index < 0) return;
+          revoke(photo);
+          photos.splice(index, 1);
+          render();
+        });
+        item.appendChild(remove);
+        list.appendChild(item);
+      }
+      if (count) count.textContent = photos.length ? `${photos.length} of ${MAX_PHOTOS} photos selected` : "No photos selected";
+    }
+
+    if (input) {
+      input.disabled = false;
+      input.addEventListener("change", () => {
+        if (busy) return;
+        const incoming = Array.from(input.files || []);
+        input.value = "";
+        const additions = incoming.filter(file => !photos.some(photo =>
+          photo.file.name === file.name && photo.file.size === file.size && photo.file.lastModified === file.lastModified));
+        let error = "";
+        if (photos.length + additions.length > MAX_PHOTOS) error = "Please choose no more than 5 photos in total.";
+        for (const file of additions) {
+          const supported = file.type ? PHOTO_TYPES.has(file.type.toLowerCase()) : /\.(jpe?g|png|webp|heic|heif)$/i.test(file.name);
+          if (!supported) error = "Please choose JPG, PNG, WebP, HEIC, or HEIF photos.";
+          if (!file.size || file.size > MAX_PHOTO_BYTES) error = "Each photo must be between 1 byte and 5 MB.";
+        }
+        const total = [...photos.map(photo => photo.file), ...additions].reduce((sum, file) => sum + file.size, 0);
+        if (total > MAX_TOTAL_PHOTO_BYTES) error = "Please keep the selected photos at 20 MB or less combined.";
+        if (error) {
+          setStatus(statusElement, error, "error");
+          return;
+        }
+        for (const file of additions) {
+          let url = null;
+          try { url = window.URL.createObjectURL(file); } catch { /* A filename tile is sufficient when previewing is unavailable. */ }
+          photos.push({ file, url });
+        }
+        clearStatus(statusElement);
+        render();
+      });
+    }
+    render();
+    return {
+      files: () => photos.map(photo => photo.file),
+      setBusy(value) {
+        busy = value;
+        if (input) input.disabled = value;
+        if (list) list.querySelectorAll("button").forEach(button => { button.disabled = value; });
+      },
+      clear() {
+        photos.forEach(revoke);
+        photos.length = 0;
+        if (input) input.value = "";
+        render();
+      },
+      dispose() { photos.forEach(revoke); },
+    };
+  }
+
   function getValue(formData, name) {
     const value = formData.get(name);
     return typeof value === "string" ? value.trim() : "";
@@ -315,13 +428,14 @@
     return "website";
   }
 
-  async function submitQuoteForm(form, statusElement, attribution) {
+  async function submitQuoteForm(form, statusElement, attribution, photoPicker) {
     if (form.dataset.hgSubmitting === "true") {
       return;
     }
     clearStatus(statusElement);
 
     const payload = buildPayload(form, attribution);
+    const photos = photoPicker.files();
     const validationError = validatePayload(payload);
 
     if (validationError) {
@@ -330,6 +444,7 @@
     }
 
     form.dataset.hgSubmitting = "true";
+    photoPicker.setBusy(true);
     const submitButton = form.querySelector('button[type="submit"], input[type="submit"]');
     const originalButtonText = submitButton?.textContent || "";
 
@@ -337,20 +452,26 @@
       submitButton.disabled = true;
       submitButton.setAttribute("aria-busy", "true");
       if ("textContent" in submitButton) {
-        submitButton.textContent = "Sending...";
+        submitButton.textContent = photos.length ? "Sending request and photos..." : "Sending...";
       }
     }
 
     const controller = new AbortController();
-    const timeoutId = window.setTimeout(() => controller.abort(), 15_000);
+    const timeoutId = window.setTimeout(() => controller.abort(), photos.length ? 90_000 : 15_000);
 
     try {
+      let body = JSON.stringify(payload);
+      let headers = { "Content-Type": "application/json" };
+      if (photos.length) {
+        body = new FormData();
+        body.append("payload", JSON.stringify(payload));
+        photos.forEach(file => body.append("photos", file, file.name));
+        headers = {};
+      }
       const response = await fetch(ENDPOINT, {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(payload),
+        headers,
+        body,
         signal: controller.signal,
       });
 
@@ -364,6 +485,10 @@
         );
       }
 
+      if (photos.length && result.photoCount !== photos.length) {
+        throw new Error("Your photos were not all confirmed. Your details and photos are still here so you can retry.");
+      }
+
       try {
         fireConversion(result.transactionId || payload.transactionId, inferClientSource(payload));
       } catch {
@@ -371,11 +496,14 @@
       }
 
       form.reset();
+      photoPicker.clear();
       delete form.dataset.hgPendingTransactionId;
       form.dataset.hgFormStartedAt = nowIso();
       setStatus(
         statusElement,
-        "Thanks — your quote request was sent. Grant will follow up using the contact information you provided.",
+        photos.length
+          ? "Thanks — your quote request and photos were sent. Grant will follow up using the contact information you provided."
+          : "Thanks — your quote request was sent. Grant will follow up using the contact information you provided.",
         "success",
       );
     } catch (error) {
@@ -386,6 +514,7 @@
       setStatus(statusElement, message, "error");
     } finally {
       delete form.dataset.hgSubmitting;
+      photoPicker.setBusy(false);
       window.clearTimeout(timeoutId);
 
       if (submitButton) {
@@ -427,9 +556,13 @@
       }
 
       const statusElement = ensureFormHelpers(form);
+      const photoPicker = initializePhotos(form, statusElement);
+      window.addEventListener("pagehide", (event) => {
+        if (!event.persisted) photoPicker.dispose();
+      });
       form.addEventListener("submit", (event) => {
         event.preventDefault();
-        void submitQuoteForm(form, statusElement, attribution);
+        void submitQuoteForm(form, statusElement, attribution, photoPicker);
       });
     });
   }

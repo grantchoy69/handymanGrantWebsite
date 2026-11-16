@@ -166,6 +166,16 @@ h2 { font-size:1.65rem; margin:0 0 1rem; }
 #contact button:hover {
   filter: brightness(1.06);
 }
+.quote-photo-picker { display: grid; gap: .5rem; min-width: 0; }
+.quote-photo-help { margin: 0; font-size: .85rem; font-weight: 400; }
+.quote-photo-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: .65rem; margin: 0; padding: 0; list-style: none; }
+.quote-photo { display: grid; align-content: start; gap: .4rem; min-width: 0; padding: .6rem; border: 1px solid rgba(212,175,55,.35); border-radius: 12px; background: #222; }
+.quote-photo img, .quote-photo-fallback { width: 100%; height: 100px; object-fit: cover; border-radius: 6px; }
+.quote-photo-fallback { display: grid; place-items: center; background: #393939; color: #eee; }
+.quote-photo [hidden] { display: none; }
+.quote-photo-name { overflow-wrap: anywhere; font-size: .8rem; }
+#contact .quote-photo-remove { min-height: 44px; padding: .45rem; font-size: .85rem; }
+#contact button:disabled, #contact input:disabled { opacity: .65; cursor: wait; }
 
 .floating-quote {
   position: fixed;
@@ -337,6 +347,7 @@ h2 { font-size:1.65rem; margin:0 0 1rem; }
   }
 }
 /* END LARGE DESKTOP CALL CTA */
+body:has(#contact:target) .floating-quote { display: none; }
 </style>
   <script src="../quote-intake.js" defer></script>
 </head>
@@ -486,6 +497,14 @@ h2 { font-size:1.65rem; margin:0 0 1rem; }
               <label>What do you need done?
                 <textarea name="message" rows="5" placeholder="Tell me what you'd like done and anything helpful to know..."></textarea>
               </label>
+              <div class="quote-photo-picker">
+                <label for="quote-photos">Photos (optional)</label>
+                <input id="quote-photos" name="photos" type="file" accept="image/jpeg,image/png,image/webp,image/heic,image/heif,.heic,.heif" multiple disabled data-hg-photo-input aria-describedby="quote-photo-help quote-photo-count" />
+                <p id="quote-photo-help" class="muted quote-photo-help">Add up to 5 photos: JPG, PNG, WebP, HEIC, or HEIF. Maximum 5 MB each and 20 MB combined. You can add more photos or remove them before sending.</p>
+                <p id="quote-photo-count" class="muted quote-photo-help" data-hg-photo-count aria-live="polite">No photos selected</p>
+                <ul class="quote-photo-list" data-hg-photo-list aria-label="Selected photos"></ul>
+                <noscript><p class="muted quote-photo-help">Photos cannot attach through the email fallback. Please attach them in your email app.</p></noscript>
+              </div>
               <button type="submit">Send Request</button>
               <p class="muted" style="font-size:.85rem">Prefer texting? Call or text <a href="tel:+16196954334" onclick="gtag_report_conversion('tel:+16196954334');">(619) 695‑4334</a>.</p>
             </form>
