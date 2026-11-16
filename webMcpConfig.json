@@ -1,6 +1,6 @@
 {
   "enabled": true,
-  "submissionsEnabled": false,
+  "submissionsEnabled": true,
   "endpoint": "https://habydccnoclsgoioabnp.supabase.co/functions/v1/submit-quote-request",
   "business": {
     "name": "Handyman Grant LLC",
