@@ -1,0 +1,32 @@
+# Isolated pilot only. Does not adopt or modify existing Render services.
+projects:
+  - name: Handyman Grant MCP
+    environments:
+      - name: staging
+        services:
+          - type: web
+            name: handyman-grant-mcp-staging
+            runtime: node
+            plan: free
+            region: oregon
+            branch: agent/handyman-grant-mcp-staging
+            rootDir: agentServices/handymanGrantMcp
+            autoDeployTrigger: 'off'
+            buildCommand: npm ci --ignore-scripts && npm run check && npm test
+            startCommand: npm start
+            healthCheckPath: /healthz
+            envVars:
+              - key: NODE_VERSION
+                value: '22'
+              - key: NODE_ENV
+                value: production
+              - key: HOST
+                value: 0.0.0.0
+              - key: DRAFT_ENCRYPTION_SECRET
+                generateValue: true
+              - key: QUOTE_INTAKE_URL
+                value: https://habydccnoclsgoioabnp.supabase.co/functions/v1/submit-quote-request
+              - key: QUOTE_SUBMISSIONS_ENABLED
+                value: 'false'
+              - key: ALLOWED_ORIGINS
+                value: https://chatgpt.com,https://handymangrant.com,https://www.handymangrant.com
