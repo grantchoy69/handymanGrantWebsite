@@ -31,3 +31,11 @@ The homepage and all seven service pages submit quote requests to the Handyman G
 Review incoming requests in the admin app under **Quote requests**. Requests do not automatically create customers or jobs, and this release does not send email notifications. The original email form remains available when JavaScript is disabled.
 
 Run `node scripts/testQuoteIntake.cjs` to check browser submission behavior and the generated page wiring.
+
+## Quote photos
+
+The homepage and seven service forms accept up to five optional JPEG, PNG, WebP, HEIC, or HEIF originals, with a 5 MiB limit per photo and 20 MiB combined. Customers can add photos in several selections and remove individual previews. Formats the browser cannot preview still show a filename tile. Files remain only in page memory until submitted; leaving or refreshing the page discards the selection.
+
+Requests without photos keep the existing JSON contract. Photo requests use multipart form data with a JSON `payload` field and repeated `photos` file fields. The browser supplies the multipart boundary. Only a successful response with `photoCount` equal to the selected count clears the form and records the conversion. Failed or incomplete uploads retain the fields, files, and transaction ID for retry. Photo requests allow 90 seconds, compared with 15 seconds for requests without photos.
+
+The backend must validate all originals and confirm every photo before returning success. Deploy that support and the admin photo viewer before publishing this frontend. Keep the existing private attachment storage and access controls; this website never needs a storage key.
